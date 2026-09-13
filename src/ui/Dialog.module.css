@@ -1,0 +1,75 @@
+/* 對話框：手機由底部貼齊的 sheet；桌機置中。用原生 <dialog>。 */
+.dialog {
+  width: 100%;
+  max-width: var(--content-max);
+  background: var(--color-surface);
+  border-radius: var(--radius-lg) var(--radius-lg) 0 0;
+  box-shadow: var(--shadow-raised);
+  overflow: hidden;
+  position: fixed;
+  inset: auto 0 0 0;
+  margin: 0 auto;
+  max-height: calc(100dvh - 32px);
+  display: flex;
+  flex-direction: column;
+}
+
+/* 未開啟時必須隱藏：上面的 display:flex 會蓋掉 UA 的 display:none */
+.dialog:not([open]) {
+  display: none;
+}
+
+.dialog[open] {
+  animation: sheet-in var(--motion-base) var(--motion-ease);
+}
+
+@keyframes sheet-in {
+  from {
+    transform: translateY(12px);
+    opacity: 0;
+  }
+
+  to {
+    transform: translateY(0);
+    opacity: 1;
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .dialog[open] {
+    animation: none;
+  }
+}
+
+@media (min-width: 720px) {
+  .dialog {
+    inset: 0;
+    margin: auto;
+    border-radius: var(--radius-lg);
+    max-height: calc(100vh - 64px);
+    width: calc(100% - 32px);
+  }
+}
+
+.header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: var(--space-3);
+  padding: var(--space-3) var(--space-3) var(--space-3) var(--space-5);
+  border-bottom: var(--border-width) solid var(--color-border);
+  flex: none;
+}
+
+.title {
+  font-size: var(--text-lg);
+  font-weight: var(--weight-semibold);
+  line-height: var(--leading-tight);
+}
+
+.body {
+  overflow-y: auto;
+  -webkit-overflow-scrolling: touch;
+  padding: var(--space-5);
+  padding-bottom: calc(var(--space-5) + var(--safe-bottom));
+}

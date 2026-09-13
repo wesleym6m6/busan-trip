@@ -1,0 +1,167 @@
+/* 工具頁：多個區塊，每區塊一組卡片 */
+.page {
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-6);
+  padding-top: calc(var(--space-4) + var(--safe-top));
+}
+
+.pageHead {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: var(--space-3);
+}
+
+.pageTitle {
+  font-size: var(--text-xl);
+  font-weight: var(--weight-semibold);
+  line-height: var(--leading-tight);
+}
+
+.row {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: var(--space-3);
+}
+
+.rowMain {
+  display: flex;
+  flex-direction: column;
+  gap: 2px;
+  min-width: 0;
+}
+
+.rowTitle {
+  font-size: var(--text-base);
+  font-weight: var(--weight-semibold);
+}
+
+.rowKo {
+  font-size: var(--text-md);
+  color: var(--color-text-secondary);
+}
+
+.rowBody {
+  font-size: var(--text-md);
+  color: var(--color-text-secondary);
+}
+
+.rowActions {
+  display: flex;
+  flex-wrap: wrap;
+  gap: var(--space-2);
+  margin-top: var(--space-3);
+}
+
+.list {
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-2);
+}
+
+.placeItem {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: var(--space-2);
+  padding: var(--space-2) 0;
+  border-bottom: var(--border-width) solid var(--color-border);
+}
+
+.placeItem:last-child {
+  border-bottom: 0;
+}
+
+.placeActions {
+  display: flex;
+  gap: var(--space-1);
+  flex: none;
+}
+
+.kv {
+  display: grid;
+  grid-template-columns: 6em 1fr;
+  gap: 4px var(--space-3);
+  font-size: var(--text-md);
+}
+
+.kv dt {
+  color: var(--color-text-secondary);
+}
+
+.kv dd {
+  margin: 0;
+  word-break: break-all;
+}
+
+.meta {
+  display: flex;
+  flex-wrap: wrap;
+  gap: var(--space-1) var(--space-3);
+  font-size: var(--text-md);
+  color: var(--color-text-secondary);
+}
+
+.notice {
+  font-size: var(--text-md);
+  color: var(--color-warn-text);
+  background: var(--color-warn-soft);
+  padding: var(--space-3);
+  border-radius: var(--radius-md);
+}
+
+/* 開關：44px 觸控高度，狀態用位置 + 顏色 + aria-checked */
+.switch {
+  flex: none;
+  width: 52px;
+  height: 32px;
+  border-radius: var(--radius-pill);
+  background: var(--color-border-strong);
+  position: relative;
+  transition: background-color var(--motion-base) var(--motion-ease);
+  margin: 6px 0;
+}
+
+.switchOn {
+  background: var(--color-primary);
+}
+
+.switchKnob {
+  position: absolute;
+  top: 3px;
+  left: 3px;
+  width: 26px;
+  height: 26px;
+  border-radius: 50%;
+  background: var(--color-surface);
+  box-shadow: var(--shadow-card);
+  transition: transform var(--motion-base) var(--motion-ease);
+}
+
+.switchOn .switchKnob {
+  transform: translateX(20px);
+}
+
+.reservationItem {
+  display: flex;
+  flex-direction: column;
+  gap: 4px;
+  padding: var(--space-2) 0;
+  border-bottom: var(--border-width) solid var(--color-border);
+  font-size: var(--text-md);
+}
+
+.reservationItem:last-child {
+  border-bottom: 0;
+}
+
+.reservationTitle {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: var(--space-2);
+  font-weight: var(--weight-semibold);
+  font-size: var(--text-base);
+}

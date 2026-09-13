@@ -1,0 +1,121 @@
+/* 全域基礎樣式：reset、字體、焦點、可及性工具類。元件樣式放各自的 .module.css。 */
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+}
+
+html {
+  -webkit-text-size-adjust: 100%;
+  text-size-adjust: 100%;
+  background: var(--color-bg);
+}
+
+body {
+  margin: 0;
+  font-family: var(--font-sans);
+  font-size: var(--text-base);
+  line-height: var(--leading-normal);
+  color: var(--color-text);
+  background: var(--color-bg);
+  -webkit-font-smoothing: antialiased;
+  overflow-x: hidden;
+  overflow-wrap: anywhere; /* 長韓文／中文字串不撐破容器 */
+}
+
+h1,
+h2,
+h3,
+h4,
+p,
+ul,
+ol,
+figure {
+  margin: 0;
+}
+
+ul,
+ol {
+  padding: 0;
+  list-style: none;
+}
+
+button {
+  font: inherit;
+  color: inherit;
+  background: none;
+  border: 0;
+  padding: 0;
+  cursor: pointer;
+  touch-action: manipulation;
+}
+
+a {
+  color: var(--color-primary);
+  text-decoration-thickness: 1px;
+  text-underline-offset: 2px;
+}
+
+img,
+svg {
+  display: block;
+  max-width: 100%;
+}
+
+/* 可見焦點：鍵盤操作時明確，滑鼠點擊不顯示 */
+:focus-visible {
+  outline: 2px solid var(--color-primary);
+  outline-offset: 2px;
+  border-radius: var(--radius-sm);
+}
+
+dialog {
+  border: 0;
+  padding: 0;
+  margin: 0;
+  max-width: none;
+  max-height: none;
+  color: inherit;
+}
+
+dialog::backdrop {
+  background: rgba(32, 52, 60, 0.45);
+}
+
+/* 只給螢幕閱讀器 */
+.sr-only {
+  position: absolute;
+  width: 1px;
+  height: 1px;
+  padding: 0;
+  margin: -1px;
+  overflow: hidden;
+  clip: rect(0, 0, 0, 0);
+  white-space: nowrap;
+  border: 0;
+}
+
+/* 裝飾動畫總開關：data-motion="off" 時所有裝飾動畫停止；系統 reduce-motion 亦停止 */
+[data-motion='off'] .motion-decor,
+[data-motion='off'] .motion-decor * {
+  animation: none !important;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .motion-decor,
+  .motion-decor * {
+    animation: none !important;
+  }
+
+  *,
+  *::before,
+  *::after {
+    transition-duration: 0.01ms !important;
+  }
+}
+
+/* 頂部離開可視區或分頁進入背景時暫停 */
+[data-decor-paused='true'] .motion-decor,
+[data-decor-paused='true'] .motion-decor * {
+  animation-play-state: paused !important;
+}

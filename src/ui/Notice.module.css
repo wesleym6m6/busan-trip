@@ -1,0 +1,105 @@
+/* 空狀態、載入、錯誤、行內狀態訊息 */
+.empty {
+  padding: var(--space-6) var(--space-4);
+  text-align: center;
+  color: var(--color-text-secondary);
+  border: var(--border-width) dashed var(--color-border-strong);
+  border-radius: var(--radius-lg);
+  background: var(--color-surface);
+}
+
+.emptyTitle {
+  font-size: var(--text-base);
+  font-weight: var(--weight-medium);
+  color: var(--color-text);
+  margin-bottom: var(--space-1);
+}
+
+.emptyBody {
+  font-size: var(--text-md);
+}
+
+.emptyAction {
+  margin-top: var(--space-3);
+}
+
+.banner {
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-2);
+  padding: var(--space-4);
+  border-radius: var(--radius-md);
+  border: var(--border-width) solid var(--color-border);
+  background: var(--color-surface);
+  font-size: var(--text-md);
+}
+
+.bannerDanger {
+  border-color: #efc7c3;
+  background: var(--color-danger-soft);
+  color: var(--color-danger-text);
+}
+
+.bannerTitle {
+  font-weight: var(--weight-semibold);
+  font-size: var(--text-base);
+}
+
+.issueList {
+  font-family: var(--font-mono);
+  font-size: var(--text-sm);
+  color: var(--color-text);
+  max-height: 40vh;
+  overflow: auto;
+  padding: var(--space-2);
+  background: var(--color-surface);
+  border-radius: var(--radius-sm);
+}
+
+.issueList li {
+  padding: 2px 0;
+}
+
+/* 行內狀態（複製結果等）：文字，不做浮動 toast */
+.inline {
+  font-size: var(--text-sm);
+  color: var(--color-text-secondary);
+  min-height: 1.4em;
+}
+
+.inlineOk {
+  color: var(--color-ok-text);
+}
+
+.inlineFail {
+  color: var(--color-danger-text);
+}
+
+.loading {
+  padding: var(--space-8) var(--space-4);
+  text-align: center;
+  color: var(--color-text-secondary);
+  font-size: var(--text-md);
+}
+
+.section {
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-3);
+}
+
+.sectionTitle {
+  font-size: var(--text-md);
+  font-weight: var(--weight-semibold);
+  color: var(--color-text-secondary);
+  letter-spacing: 0.02em;
+  padding: 0 var(--space-1);
+}
+
+.card {
+  background: var(--color-surface);
+  border: var(--border-width) solid var(--color-border);
+  border-radius: var(--radius-lg);
+  box-shadow: var(--shadow-card);
+  padding: var(--space-4);
+}

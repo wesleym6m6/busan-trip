@@ -1,0 +1,141 @@
+/*
+ * 全頁背景：固定在視窗後方的海面。
+ * - 三層淡海藍浪帶在畫面下半部緩慢左移（transform 專用、seamless loop）
+ * - 右上一抹日出光暈（靜態）
+ * - 海鷗橫越整個畫面一次
+ * 全部 pointer-events: none、aria-hidden，不佔版面、不影響點擊。
+ */
+.backdrop {
+  position: fixed;
+  inset: 0;
+  /* 在 .shell 的 stacking context 內墊到最底，內容（含 sticky 日期列）都在其上 */
+  z-index: -1;
+  pointer-events: none;
+  overflow: hidden;
+  background: linear-gradient(180deg, var(--color-bg) 0%, var(--color-bg) 45%, #eef2f6 100%);
+}
+
+/* 右上日出光暈：極慢的明暗呼吸（只動 opacity） */
+.glow {
+  position: absolute;
+  inset: 0;
+  background: radial-gradient(60vw 42vh at 88% -6%, rgba(224, 122, 87, var(--sea-glow-opacity)), rgba(224, 122, 87, 0) 70%);
+  animation: glow-breathe 16s ease-in-out infinite alternate;
+}
+
+@keyframes glow-breathe {
+  from {
+    opacity: 0.7;
+  }
+
+  to {
+    opacity: 1;
+  }
+}
+
+/* 遠景：整幅寬的廣安大橋線稿，極淡、靜態，位於頁首與日期列後方 */
+.bridge {
+  position: absolute;
+  top: 1vh;
+  left: 0;
+  width: 100%;
+  height: 27vh;
+  min-height: 180px;
+  /* xMidYMax slice：手機看到中央主跨（兩座塔），桌機看到整座橋 */
+  color: var(--color-primary-strong);
+  opacity: 0.16;
+}
+
+/* 浪帶：寬度 200%，path 以 50% 為一個週期，位移 -50% 後與起點完全相同 → 無縫循環 */
+.wave {
+  position: absolute;
+  left: 0;
+  bottom: 0;
+  width: 200%;
+  height: 54vh;
+  min-height: 280px;
+  color: var(--color-sea);
+  animation: wave-scroll var(--wave-cycle) linear infinite;
+  will-change: transform;
+}
+
+.wave2 {
+  height: 42vh;
+  min-height: 220px;
+  animation-duration: calc(var(--wave-cycle) * 1.35);
+  animation-direction: reverse;
+}
+
+.wave3 {
+  height: 30vh;
+  min-height: 160px;
+  animation-duration: calc(var(--wave-cycle) * 1.7);
+}
+
+/* 線稿浪紋：一條細線，維持「線稿」識別 */
+.waveLine {
+  position: absolute;
+  left: 0;
+  bottom: 21vh;
+  width: 200%;
+  height: 40px;
+  color: var(--color-sea);
+  opacity: 0.22;
+  animation: wave-scroll calc(var(--wave-cycle) * 1.15) linear infinite;
+  will-change: transform;
+}
+
+@keyframes wave-scroll {
+  from {
+    transform: translateX(0);
+  }
+
+  to {
+    transform: translateX(-50%);
+  }
+}
+
+/* 海鷗：每個 session 只飛一次，橫越整個畫面 */
+.gull {
+  position: absolute;
+  top: 9vh;
+  left: -40px;
+  width: 26px;
+  height: 14px;
+  color: var(--color-text-secondary);
+  opacity: 0;
+  animation: gull-fly var(--gull-duration) linear 1 forwards;
+  will-change: transform;
+}
+
+.gullSecond {
+  top: 13vh;
+  width: 18px;
+  height: 10px;
+  animation-delay: 0.9s;
+  animation-duration: calc(var(--gull-duration) * 1.15);
+}
+
+@keyframes gull-fly {
+  0% {
+    transform: translate(0, 0);
+    opacity: 0;
+  }
+
+  6% {
+    opacity: 0.9;
+  }
+
+  50% {
+    transform: translate(calc(50vw + 20px), -18px);
+  }
+
+  94% {
+    opacity: 0.9;
+  }
+
+  100% {
+    transform: translate(calc(100vw + 80px), 6px);
+    opacity: 0;
+  }
+}

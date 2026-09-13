@@ -1,0 +1,1040 @@
+{
+  "schemaVersion": 1,
+  "tripId": "busan-2026-demo",
+  "dataVersion": "demo-0.1.0",
+  "updatedAt": "2026-09-13T18:30:00+09:00",
+  "mode": "demo",
+  "trip": {
+    "id": "busan-2026-demo",
+    "name": "釜山小旅行",
+    "shortName": "BUSAN",
+    "locale": "zh-TW",
+    "timezone": "Asia/Seoul",
+    "startDate": null,
+    "endDate": null,
+    "lodgingPlaceIds": ["place-lodging-demo"]
+  },
+  "areas": [
+    { "id": "area-gimhae", "name": { "zh": "金海機場", "ko": "김해공항", "en": "Gimhae Airport" } },
+    { "id": "area-gwangalli", "name": { "zh": "廣安里", "ko": "광안리", "en": "Gwangalli" } },
+    { "id": "area-haeundae", "name": { "zh": "海雲台", "ko": "해운대", "en": "Haeundae" } },
+    { "id": "area-seomyeon", "name": { "zh": "西面", "ko": "서면", "en": "Seomyeon" } },
+    { "id": "area-jeonpo", "name": { "zh": "田浦", "ko": "전포", "en": "Jeonpo" } },
+    { "id": "area-gamcheon", "name": { "zh": "甘川", "ko": "감천", "en": "Gamcheon" } },
+    { "id": "area-nampo", "name": { "zh": "南浦洞・札嘎其", "ko": "남포동", "en": "Nampo-dong" } },
+    { "id": "area-songdo", "name": { "zh": "松島", "ko": "송도", "en": "Songdo" } }
+  ],
+  "places": [
+    {
+      "id": "place-gimhae-airport",
+      "kind": "transport",
+      "name": { "zh": "金海國際機場", "ko": "김해국제공항", "en": "Gimhae International Airport" },
+      "areaId": "area-gimhae",
+      "address": { "ko": "부산광역시 강서구 공항진입로 108", "zh": null, "en": "108 Gonghangjinip-ro, Gangseo-gu, Busan" },
+      "precision": "exact",
+      "coordinates": { "lat": 35.1795, "lng": 128.9382 },
+      "mapLinks": { "naver": null, "kakao": null, "google": null },
+      "images": [],
+      "hours": null,
+      "notes": "示範：航廈、報到櫃台位置待確認。",
+      "sources": [
+        { "type": "unverified", "label": "地址與座標憑記憶填入，尚未核對", "url": null, "verifiedAt": null, "note": null }
+      ]
+    },
+    {
+      "id": "place-lodging-demo",
+      "kind": "lodging",
+      "name": { "zh": "示範住宿（廣安里一帶）", "ko": "광안리 숙소 (示範)", "en": null },
+      "areaId": "area-gwangalli",
+      "address": { "ko": null, "zh": null, "en": null },
+      "precision": "area-only",
+      "coordinates": null,
+      "mapLinks": { "naver": null, "kakao": null, "google": null },
+      "images": [],
+      "hours": null,
+      "notes": "示範資料：實際住宿名稱、門牌與入住規則待使用者提供；精確位置是否可公開也待確認。目前只知道區域，因此不提供「給司機看」畫面。",
+      "sources": [
+        { "type": "demo", "label": "示範住宿，非真實訂房", "url": null, "verifiedAt": null, "note": null }
+      ]
+    },
+    {
+      "id": "place-gwangalli-beach",
+      "kind": "sight",
+      "name": { "zh": "廣安里海水浴場", "ko": "광안리해수욕장", "en": "Gwangalli Beach" },
+      "areaId": "area-gwangalli",
+      "address": { "ko": "부산광역시 수영구 광안해변로 219", "zh": null, "en": null },
+      "precision": "exact",
+      "coordinates": { "lat": 35.1532, "lng": 129.1186 },
+      "mapLinks": { "naver": null, "kakao": null, "google": null },
+      "images": [],
+      "hours": null,
+      "notes": "面對廣安大橋（광안대교）的沙灘。",
+      "sources": [
+        { "type": "unverified", "label": "地址憑記憶填入，尚未核對", "url": null, "verifiedAt": null, "note": null }
+      ]
+    },
+    {
+      "id": "place-haeundae-beach",
+      "kind": "sight",
+      "name": { "zh": "海雲台海水浴場", "ko": "해운대해수욕장", "en": "Haeundae Beach" },
+      "areaId": "area-haeundae",
+      "address": { "ko": "부산광역시 해운대구 해운대해변로 264", "zh": null, "en": null },
+      "precision": "exact",
+      "coordinates": { "lat": 35.1587, "lng": 129.1604 },
+      "mapLinks": { "naver": null, "kakao": null, "google": null },
+      "images": [],
+      "hours": null,
+      "notes": null,
+      "sources": [
+        { "type": "unverified", "label": "地址憑記憶填入，尚未核對", "url": null, "verifiedAt": null, "note": null }
+      ]
+    },
+    {
+      "id": "place-blueline-mipo",
+      "kind": "activity",
+      "name": { "zh": "海雲台藍線公園 尾浦站", "ko": "해운대 블루라인파크 미포정거장", "en": "Haeundae Blueline Park Mipo Station" },
+      "areaId": "area-haeundae",
+      "address": { "ko": "부산광역시 해운대구 달맞이길62번길 13", "zh": null, "en": null },
+      "precision": "exact",
+      "coordinates": null,
+      "mapLinks": { "naver": null, "kakao": null, "google": null },
+      "images": [],
+      "hours": null,
+      "notes": "天空膠囊列車（스카이캡슐）與海岸列車（해변열차）的起點站之一。",
+      "sources": [
+        { "type": "unverified", "label": "海雲台藍線公園官方網站", "url": "https://www.bluelinepark.com/", "verifiedAt": null, "note": "網址與地址皆未核對" }
+      ]
+    },
+    {
+      "id": "place-cheongsapo",
+      "kind": "sight",
+      "name": { "zh": "青沙浦", "ko": "청사포", "en": "Cheongsapo" },
+      "areaId": "area-haeundae",
+      "address": { "ko": "부산광역시 해운대구 청사포로 일대", "zh": null, "en": null },
+      "precision": "approximate",
+      "coordinates": null,
+      "mapLinks": { "naver": null, "kakao": null, "google": null },
+      "images": [],
+      "hours": null,
+      "notes": "紅白燈塔、踏石展望台（다릿돌전망대）步行可達；示範。",
+      "sources": [
+        { "type": "demo", "label": "示範描述", "url": null, "verifiedAt": null, "note": null }
+      ]
+    },
+    {
+      "id": "place-gamcheon",
+      "kind": "sight",
+      "name": { "zh": "甘川文化村", "ko": "감천문화마을", "en": "Gamcheon Culture Village" },
+      "areaId": "area-gamcheon",
+      "address": { "ko": "부산광역시 사하구 감내2로 203", "zh": null, "en": null },
+      "precision": "exact",
+      "coordinates": { "lat": 35.0975, "lng": 129.0107 },
+      "mapLinks": { "naver": null, "kakao": null, "google": null },
+      "images": [],
+      "hours": null,
+      "notes": null,
+      "sources": [
+        { "type": "unverified", "label": "地址憑記憶填入，尚未核對", "url": null, "verifiedAt": null, "note": null }
+      ]
+    },
+    {
+      "id": "place-jagalchi",
+      "kind": "food",
+      "name": { "zh": "札嘎其市場", "ko": "자갈치시장", "en": "Jagalchi Market" },
+      "areaId": "area-nampo",
+      "address": { "ko": "부산광역시 중구 자갈치해안로 52", "zh": null, "en": null },
+      "precision": "exact",
+      "coordinates": { "lat": 35.0966, "lng": 129.0306 },
+      "mapLinks": { "naver": null, "kakao": null, "google": null },
+      "images": [],
+      "hours": null,
+      "notes": "一樓買海鮮、二樓代客料理（費用未核對）。",
+      "sources": [
+        { "type": "unverified", "label": "地址憑記憶填入，尚未核對", "url": null, "verifiedAt": null, "note": null }
+      ]
+    },
+    {
+      "id": "place-biff",
+      "kind": "sight",
+      "name": { "zh": "BIFF 廣場・南浦洞", "ko": "BIFF광장", "en": "BIFF Square" },
+      "areaId": "area-nampo",
+      "address": { "ko": "부산광역시 중구 남포동 일대", "zh": null, "en": null },
+      "precision": "approximate",
+      "coordinates": null,
+      "mapLinks": { "naver": null, "kakao": null, "google": null },
+      "images": [],
+      "hours": null,
+      "notes": null,
+      "sources": [
+        { "type": "demo", "label": "示範描述", "url": null, "verifiedAt": null, "note": null }
+      ]
+    },
+    {
+      "id": "place-demo-gukbap",
+      "kind": "food",
+      "name": { "zh": "示範餐廳：豬肉湯飯（西面）", "ko": "돼지국밥 (示範)", "en": null },
+      "areaId": "area-seomyeon",
+      "address": { "ko": null, "zh": null, "en": null },
+      "precision": "unknown",
+      "coordinates": null,
+      "mapLinks": { "naver": null, "kakao": null, "google": null },
+      "images": [],
+      "hours": null,
+      "notes": "示範：實際店家未定，地址待確認。",
+      "sources": [
+        { "type": "demo", "label": "示範餐廳", "url": null, "verifiedAt": null, "note": null }
+      ]
+    },
+    {
+      "id": "place-jeonpo-cafe-street",
+      "kind": "cafe",
+      "name": { "zh": "田浦咖啡街", "ko": "전포카페거리", "en": "Jeonpo Cafe Street" },
+      "areaId": "area-jeonpo",
+      "address": { "ko": "부산광역시 부산진구 전포동 일대", "zh": null, "en": null },
+      "precision": "area-only",
+      "coordinates": null,
+      "mapLinks": { "naver": null, "kakao": null, "google": null },
+      "images": [],
+      "hours": null,
+      "notes": null,
+      "sources": [
+        { "type": "demo", "label": "示範描述", "url": null, "verifiedAt": null, "note": null }
+      ]
+    },
+    {
+      "id": "place-songdo-cablecar",
+      "kind": "activity",
+      "name": { "zh": "松島海上纜車", "ko": "송도해상케이블카", "en": "Songdo Marine Cable Car" },
+      "areaId": "area-songdo",
+      "address": { "ko": "부산광역시 서구 송도해변로 171", "zh": null, "en": null },
+      "precision": "exact",
+      "coordinates": null,
+      "mapLinks": { "naver": null, "kakao": null, "google": null },
+      "images": [],
+      "hours": null,
+      "notes": "票價與營運時間未核對。",
+      "sources": [
+        { "type": "unverified", "label": "地址憑記憶填入，尚未核對", "url": null, "verifiedAt": null, "note": null }
+      ]
+    },
+    {
+      "id": "place-yongdusan",
+      "kind": "sight",
+      "name": { "zh": "龍頭山公園・釜山塔", "ko": "용두산공원", "en": "Yongdusan Park" },
+      "areaId": "area-nampo",
+      "address": { "ko": "부산광역시 중구 용두산길 37-55", "zh": null, "en": null },
+      "precision": "exact",
+      "coordinates": null,
+      "mapLinks": { "naver": null, "kakao": null, "google": null },
+      "images": [],
+      "hours": null,
+      "notes": null,
+      "sources": [
+        { "type": "unverified", "label": "地址憑記憶填入，尚未核對", "url": null, "verifiedAt": null, "note": null }
+      ]
+    },
+    {
+      "id": "place-demo-cafe-gwangalli",
+      "kind": "cafe",
+      "name": { "zh": "示範咖啡廳：廣安里海景咖啡", "ko": "광안리 오션뷰 카페 (示範)", "en": null },
+      "areaId": "area-gwangalli",
+      "address": { "ko": null, "zh": null, "en": null },
+      "precision": "area-only",
+      "coordinates": null,
+      "mapLinks": { "naver": null, "kakao": null, "google": null },
+      "images": [],
+      "hours": null,
+      "notes": "示範：實際店家待挑選。",
+      "sources": [
+        { "type": "demo", "label": "示範咖啡廳", "url": null, "verifiedAt": null, "note": null }
+      ]
+    },
+    {
+      "id": "place-shinsegae-centum",
+      "kind": "shop",
+      "name": { "zh": "新世界百貨 Centum City", "ko": "신세계백화점 센텀시티점", "en": "Shinsegae Centum City" },
+      "areaId": "area-haeundae",
+      "address": { "ko": "부산광역시 해운대구 센텀남대로 35", "zh": null, "en": null },
+      "precision": "exact",
+      "coordinates": null,
+      "mapLinks": { "naver": null, "kakao": null, "google": null },
+      "images": [],
+      "hours": null,
+      "notes": "室內；含 Spa Land（營業時間與票價未核對）。",
+      "sources": [
+        { "type": "unverified", "label": "地址憑記憶填入，尚未核對", "url": null, "verifiedAt": null, "note": null }
+      ]
+    },
+    {
+      "id": "place-busan-museum-art",
+      "kind": "sight",
+      "name": { "zh": "釜山市立美術館", "ko": "부산광역시립미술관", "en": "Busan Museum of Art" },
+      "areaId": "area-haeundae",
+      "address": { "ko": "부산광역시 해운대구 APEC로 58", "zh": null, "en": null },
+      "precision": "exact",
+      "coordinates": null,
+      "mapLinks": { "naver": null, "kakao": null, "google": null },
+      "images": [],
+      "hours": null,
+      "notes": "休館日與開放時間未核對。",
+      "sources": [
+        { "type": "unverified", "label": "地址憑記憶填入，尚未核對", "url": null, "verifiedAt": null, "note": null }
+      ]
+    },
+    {
+      "id": "place-lotte-gwangbok",
+      "kind": "shop",
+      "name": { "zh": "樂天百貨 光復店", "ko": "롯데백화점 광복점", "en": "Lotte Department Store Gwangbok" },
+      "areaId": "area-nampo",
+      "address": { "ko": "부산광역시 중구 중앙대로 2", "zh": null, "en": null },
+      "precision": "exact",
+      "coordinates": null,
+      "mapLinks": { "naver": null, "kakao": null, "google": null },
+      "images": [],
+      "hours": null,
+      "notes": null,
+      "sources": [
+        { "type": "unverified", "label": "地址憑記憶填入，尚未核對", "url": null, "verifiedAt": null, "note": null }
+      ]
+    },
+    {
+      "id": "place-haeundae-market",
+      "kind": "food",
+      "name": { "zh": "海雲台市場", "ko": "해운대시장", "en": "Haeundae Market" },
+      "areaId": "area-haeundae",
+      "address": { "ko": "부산광역시 해운대구 구남로41번길 일대", "zh": null, "en": null },
+      "precision": "approximate",
+      "coordinates": null,
+      "mapLinks": { "naver": null, "kakao": null, "google": null },
+      "images": [],
+      "hours": null,
+      "notes": null,
+      "sources": [
+        { "type": "demo", "label": "示範描述", "url": null, "verifiedAt": null, "note": null }
+      ]
+    },
+    {
+      "id": "place-dalmaji",
+      "kind": "sight",
+      "name": { "zh": "迎月嶺", "ko": "달맞이길", "en": "Dalmaji-gil" },
+      "areaId": "area-haeundae",
+      "address": { "ko": null, "zh": null, "en": null },
+      "precision": "area-only",
+      "coordinates": null,
+      "mapLinks": { "naver": null, "kakao": null, "google": null },
+      "images": [],
+      "hours": null,
+      "notes": "山坡道路，雨天不建議。",
+      "sources": [
+        { "type": "demo", "label": "示範描述", "url": null, "verifiedAt": null, "note": null }
+      ]
+    }
+  ],
+  "days": [
+    {
+      "id": "day-1",
+      "dayNumber": 1,
+      "date": "2026-10-16",
+      "isDemoDate": true,
+      "title": "抵達・廣安里",
+      "areaIds": ["area-gimhae", "area-gwangalli"],
+      "summary": "下午抵達，放行李後到廣安里看橋與晚餐。今天不排滿，以放鬆為主。",
+      "reminders": ["示範日期：正式日期待確認", "抵達後先買交通卡（示範提醒）"],
+      "sequence": [
+        { "kind": "event", "id": "ev-d1-arrival" },
+        { "kind": "transit", "id": "tr-d1-airport-lodging" },
+        { "kind": "event", "id": "ev-d1-checkin" },
+        { "kind": "transit", "id": "tr-d1-walk-beach" },
+        { "kind": "event", "id": "ev-d1-gwangalli" },
+        { "kind": "event", "id": "ev-d1-dinner" },
+        { "kind": "event", "id": "ev-d1-night" }
+      ]
+    },
+    {
+      "id": "day-2",
+      "dayNumber": 2,
+      "date": "2026-10-17",
+      "isDemoDate": true,
+      "title": "海雲台・青沙浦・西面",
+      "areaIds": ["area-haeundae", "area-seomyeon", "area-jeonpo"],
+      "summary": "早上海雲台，中午天空膠囊列車到青沙浦，晚上西面吃湯飯、田浦喝咖啡。",
+      "reminders": ["末班地鐵時間未核對，晚上注意時間"],
+      "sequence": [
+        { "kind": "event", "id": "ev-d2-breakfast" },
+        { "kind": "transit", "id": "tr-d2-to-haeundae" },
+        { "kind": "event", "id": "ev-d2-haeundae" },
+        { "kind": "transit", "id": "tr-d2-to-mipo" },
+        { "kind": "event", "id": "ev-d2-skycapsule" },
+        { "kind": "event", "id": "ev-d2-cheongsapo" },
+        { "kind": "transit", "id": "tr-d2-back" },
+        { "kind": "event", "id": "ev-d2-free" },
+        { "kind": "transit", "id": "tr-d2-to-seomyeon" },
+        { "kind": "event", "id": "ev-d2-dinner" },
+        { "kind": "event", "id": "ev-d2-jeonpo" },
+        { "kind": "transit", "id": "tr-d2-home" }
+      ]
+    },
+    {
+      "id": "day-3",
+      "dayNumber": 3,
+      "date": "2026-10-18",
+      "isDemoDate": true,
+      "title": "甘川・南浦・返程",
+      "areaIds": ["area-gamcheon", "area-nampo", "area-gimhae"],
+      "summary": "退房後去甘川文化村，下午南浦洞，傍晚前往機場。",
+      "reminders": ["18:30 前抵達機場（示範航班 20:30，報到規定待確認）"],
+      "sequence": [
+        { "kind": "event", "id": "ev-d3-checkout" },
+        { "kind": "transit", "id": "tr-d3-to-gamcheon" },
+        { "kind": "event", "id": "ev-d3-gamcheon" },
+        { "kind": "transit", "id": "tr-d3-to-jagalchi" },
+        { "kind": "event", "id": "ev-d3-jagalchi" },
+        { "kind": "event", "id": "ev-d3-biff" },
+        { "kind": "transit", "id": "tr-d3-to-airport" },
+        { "kind": "event", "id": "ev-d3-departure" }
+      ]
+    }
+  ],
+  "events": [
+    {
+      "id": "ev-d1-arrival",
+      "dayId": "day-1",
+      "type": "transport",
+      "placeId": "place-gimhae-airport",
+      "title": "抵達金海機場",
+      "start": { "time": "13:20" },
+      "end": null,
+      "arriveBy": null,
+      "summary": "示範抵達時間。入境、領行李、買交通卡。",
+      "notes": "航班資訊待使用者提供；這裡的時間只是示範。",
+      "tags": [],
+      "cost": null,
+      "reservation": null,
+      "guideIds": ["guide-transit-card"],
+      "toolLinks": [],
+      "sources": [{ "type": "demo", "label": "示範航班", "url": null, "verifiedAt": null, "note": null }]
+    },
+    {
+      "id": "ev-d1-checkin",
+      "dayId": "day-1",
+      "type": "lodging",
+      "placeId": "place-lodging-demo",
+      "title": "住宿 Check-in",
+      "start": { "time": "15:30" },
+      "end": null,
+      "arriveBy": null,
+      "summary": "示範時間；放行李、換輕裝。",
+      "notes": "入住時間與規則待住宿資料確認。",
+      "tags": [],
+      "cost": null,
+      "reservation": null,
+      "guideIds": [],
+      "toolLinks": ["lodging"],
+      "sources": [{ "type": "demo", "label": "示範住宿", "url": null, "verifiedAt": null, "note": null }]
+    },
+    {
+      "id": "ev-d1-gwangalli",
+      "dayId": "day-1",
+      "type": "sight",
+      "placeId": "place-gwangalli-beach",
+      "title": null,
+      "start": { "time": "16:30" },
+      "end": { "time": "18:00" },
+      "arriveBy": null,
+      "summary": "沙灘散步、看廣安大橋，等日落。",
+      "notes": "沿海岸步道走到底再折返約 40 分鐘（估計）。",
+      "tags": [],
+      "cost": { "amount": 0, "currency": "KRW", "note": null },
+      "reservation": null,
+      "guideIds": ["guide-gwangalli-night"],
+      "toolLinks": ["address-large"],
+      "sources": [{ "type": "demo", "label": "示範行程", "url": null, "verifiedAt": null, "note": null }]
+    },
+    {
+      "id": "ev-d1-dinner",
+      "dayId": "day-1",
+      "type": "meal",
+      "placeId": null,
+      "title": "晚餐：廣安里一帶（店家待定）",
+      "start": null,
+      "end": null,
+      "arriveBy": null,
+      "summary": "店家未定，可從備案挑選；時間依日落與體力決定。",
+      "notes": null,
+      "tags": ["待確認"],
+      "cost": null,
+      "reservation": null,
+      "guideIds": [],
+      "toolLinks": [],
+      "sources": [{ "type": "demo", "label": "示範行程", "url": null, "verifiedAt": null, "note": null }]
+    },
+    {
+      "id": "ev-d1-night",
+      "dayId": "day-1",
+      "type": "sight",
+      "placeId": "place-gwangalli-beach",
+      "title": "廣安大橋夜景",
+      "start": { "time": "20:00" },
+      "end": null,
+      "arriveBy": null,
+      "summary": "橋上燈光；燈光秀時段未核對，勿依賴。",
+      "notes": null,
+      "tags": [],
+      "cost": { "amount": 0, "currency": "KRW", "note": null },
+      "reservation": null,
+      "guideIds": ["guide-gwangalli-night"],
+      "toolLinks": [],
+      "sources": [{ "type": "demo", "label": "示範行程", "url": null, "verifiedAt": null, "note": null }]
+    },
+    {
+      "id": "ev-d2-breakfast",
+      "dayId": "day-2",
+      "type": "meal",
+      "placeId": null,
+      "title": "早餐：住宿附近",
+      "start": { "time": "08:30" },
+      "end": { "time": "09:10" },
+      "arriveBy": null,
+      "summary": "簡單早餐，09:15 前出發。",
+      "notes": null,
+      "tags": [],
+      "cost": null,
+      "reservation": null,
+      "guideIds": [],
+      "toolLinks": [],
+      "sources": [{ "type": "demo", "label": "示範行程", "url": null, "verifiedAt": null, "note": null }]
+    },
+    {
+      "id": "ev-d2-haeundae",
+      "dayId": "day-2",
+      "type": "sight",
+      "placeId": "place-haeundae-beach",
+      "title": null,
+      "start": { "time": "10:00" },
+      "end": { "time": "11:15" },
+      "arriveBy": null,
+      "summary": "沙灘散步，往尾浦方向走。",
+      "notes": null,
+      "tags": [],
+      "cost": { "amount": 0, "currency": "KRW", "note": null },
+      "reservation": null,
+      "guideIds": [],
+      "toolLinks": ["address-large"],
+      "sources": [{ "type": "demo", "label": "示範行程", "url": null, "verifiedAt": null, "note": null }]
+    },
+    {
+      "id": "ev-d2-skycapsule",
+      "dayId": "day-2",
+      "type": "activity",
+      "placeId": "place-blueline-mipo",
+      "title": "海雲台藍線公園 天空膠囊列車（尾浦站 → 青沙浦站）",
+      "start": { "time": "12:00" },
+      "end": { "time": "12:30" },
+      "arriveBy": { "time": "11:40" },
+      "summary": "示範場次。實際時段、票券與車廂分組都尚未確認。",
+      "notes": "熱門時段容易客滿；若預約不成，改搭海岸列車或步行迎月嶺。",
+      "tags": ["需預約"],
+      "cost": null,
+      "reservation": {
+        "status": "pending",
+        "provider": "海雲台藍線公園（預約管道待確認）",
+        "sessionTime": { "time": "12:00" },
+        "arriveBy": { "time": "11:40" },
+        "arrivalRule": "示範：建議提前 20 分鐘取票；實際規定待官方核對。",
+        "meetingPoint": { "placeId": "place-blueline-mipo", "text": "尾浦站售票處前（示範）" },
+        "groups": null,
+        "publicNotes": "尚未購票；場次與分組確認後再更新。"
+      },
+      "guideIds": ["guide-blueline"],
+      "toolLinks": ["address-large"],
+      "sources": [
+        { "type": "unverified", "label": "海雲台藍線公園官方網站", "url": "https://www.bluelinepark.com/", "verifiedAt": null, "note": "網址與時刻皆未核對" }
+      ]
+    },
+    {
+      "id": "ev-d2-cheongsapo",
+      "dayId": "day-2",
+      "type": "sight",
+      "placeId": "place-cheongsapo",
+      "title": null,
+      "start": { "time": "12:30" },
+      "end": { "time": "14:00" },
+      "arriveBy": null,
+      "summary": "燈塔步道，午餐店家待定。",
+      "notes": null,
+      "tags": [],
+      "cost": null,
+      "reservation": null,
+      "guideIds": [],
+      "toolLinks": [],
+      "sources": [{ "type": "demo", "label": "示範行程", "url": null, "verifiedAt": null, "note": null }]
+    },
+    {
+      "id": "ev-d2-free",
+      "dayId": "day-2",
+      "type": "free",
+      "placeId": null,
+      "title": "自由活動：海雲台一帶",
+      "start": { "time": "14:30" },
+      "end": { "time": "17:00" },
+      "arriveBy": null,
+      "summary": "可選新世界 Centum City（室內）或海雲台市場，見備案。",
+      "notes": null,
+      "tags": [],
+      "cost": null,
+      "reservation": null,
+      "guideIds": [],
+      "toolLinks": [],
+      "sources": [{ "type": "demo", "label": "示範行程", "url": null, "verifiedAt": null, "note": null }]
+    },
+    {
+      "id": "ev-d2-dinner",
+      "dayId": "day-2",
+      "type": "meal",
+      "placeId": "place-demo-gukbap",
+      "title": "晚餐：豬肉湯飯（示範餐廳）",
+      "start": { "time": "18:00" },
+      "end": null,
+      "arriveBy": null,
+      "summary": "示範餐廳；實際店家與地址待確認。",
+      "notes": null,
+      "tags": ["地址待確認"],
+      "cost": null,
+      "reservation": { "status": "unknown", "provider": null, "sessionTime": null, "arriveBy": null, "arrivalRule": null, "meetingPoint": { "placeId": null, "text": null }, "groups": null, "publicNotes": "是否需要訂位未知。" },
+      "guideIds": [],
+      "toolLinks": [],
+      "sources": [{ "type": "demo", "label": "示範餐廳", "url": null, "verifiedAt": null, "note": null }]
+    },
+    {
+      "id": "ev-d2-jeonpo",
+      "dayId": "day-2",
+      "type": "cafe",
+      "placeId": "place-jeonpo-cafe-street",
+      "title": null,
+      "start": { "time": "19:30" },
+      "end": { "time": "23:15" },
+      "arriveBy": null,
+      "summary": "散步、挑一間咖啡廳；有力氣再逛西面。",
+      "notes": null,
+      "tags": [],
+      "cost": null,
+      "reservation": null,
+      "guideIds": [],
+      "toolLinks": [],
+      "sources": [{ "type": "demo", "label": "示範行程", "url": null, "verifiedAt": null, "note": null }]
+    },
+    {
+      "id": "ev-d3-checkout",
+      "dayId": "day-3",
+      "type": "lodging",
+      "placeId": "place-lodging-demo",
+      "title": "退房、寄放行李",
+      "start": { "time": "09:30" },
+      "end": null,
+      "arriveBy": null,
+      "summary": "示範：退房時間與寄放規則待確認。",
+      "notes": null,
+      "tags": [],
+      "cost": null,
+      "reservation": null,
+      "guideIds": [],
+      "toolLinks": ["lodging"],
+      "sources": [{ "type": "demo", "label": "示範住宿", "url": null, "verifiedAt": null, "note": null }]
+    },
+    {
+      "id": "ev-d3-gamcheon",
+      "dayId": "day-3",
+      "type": "sight",
+      "placeId": "place-gamcheon",
+      "title": null,
+      "start": { "time": "11:00" },
+      "end": { "time": "13:00" },
+      "arriveBy": null,
+      "summary": "階梯多，穿好走的鞋；地圖蓋章路線。",
+      "notes": null,
+      "tags": [],
+      "cost": null,
+      "reservation": null,
+      "guideIds": ["guide-gamcheon"],
+      "toolLinks": ["address-large"],
+      "sources": [{ "type": "demo", "label": "示範行程", "url": null, "verifiedAt": null, "note": null }]
+    },
+    {
+      "id": "ev-d3-jagalchi",
+      "dayId": "day-3",
+      "type": "meal",
+      "placeId": "place-jagalchi",
+      "title": "札嘎其市場 午餐",
+      "start": { "time": "13:30" },
+      "end": { "time": "14:45" },
+      "arriveBy": null,
+      "summary": "二樓代客料理；價格未核對。",
+      "notes": null,
+      "tags": [],
+      "cost": null,
+      "reservation": null,
+      "guideIds": [],
+      "toolLinks": ["address-large"],
+      "sources": [{ "type": "demo", "label": "示範行程", "url": null, "verifiedAt": null, "note": null }]
+    },
+    {
+      "id": "ev-d3-biff",
+      "dayId": "day-3",
+      "type": "sight",
+      "placeId": "place-biff",
+      "title": null,
+      "start": { "time": "15:00" },
+      "end": { "time": "16:30" },
+      "arriveBy": null,
+      "summary": "逛街、買伴手禮。",
+      "notes": null,
+      "tags": [],
+      "cost": null,
+      "reservation": null,
+      "guideIds": [],
+      "toolLinks": [],
+      "sources": [{ "type": "demo", "label": "示範行程", "url": null, "verifiedAt": null, "note": null }]
+    },
+    {
+      "id": "ev-d3-departure",
+      "dayId": "day-3",
+      "type": "transport",
+      "placeId": "place-gimhae-airport",
+      "title": "金海機場 出發",
+      "start": { "time": "20:30" },
+      "end": null,
+      "arriveBy": { "time": "18:30" },
+      "summary": "示範航班時間；報到櫃台與截止時間待確認。",
+      "notes": null,
+      "tags": [],
+      "cost": null,
+      "reservation": null,
+      "guideIds": [],
+      "toolLinks": [],
+      "sources": [{ "type": "demo", "label": "示範航班", "url": null, "verifiedAt": null, "note": null }]
+    }
+  ],
+  "transits": [
+    {
+      "id": "tr-d1-airport-lodging",
+      "dayId": "day-1",
+      "from": { "placeId": "place-gimhae-airport", "text": null },
+      "to": { "placeId": "place-lodging-demo", "text": null },
+      "mode": "light-rail",
+      "label": "金海輕軌 → 沙上站轉地鐵 2 號線",
+      "depart": null,
+      "arrive": null,
+      "durationMinutes": 60,
+      "isEstimate": true,
+      "bufferMinutes": 20,
+      "cost": null,
+      "notes": "示範估計；實際依住宿位置調整。",
+      "sources": [{ "type": "demo", "label": "示範估計", "url": null, "verifiedAt": null, "note": null }]
+    },
+    {
+      "id": "tr-d1-walk-beach",
+      "dayId": "day-1",
+      "from": { "placeId": "place-lodging-demo", "text": null },
+      "to": { "placeId": "place-gwangalli-beach", "text": null },
+      "mode": "walk",
+      "label": null,
+      "depart": null,
+      "arrive": null,
+      "durationMinutes": 10,
+      "isEstimate": true,
+      "bufferMinutes": null,
+      "cost": null,
+      "notes": null,
+      "sources": [{ "type": "demo", "label": "示範估計", "url": null, "verifiedAt": null, "note": null }]
+    },
+    {
+      "id": "tr-d2-to-haeundae",
+      "dayId": "day-2",
+      "from": { "placeId": "place-lodging-demo", "text": null },
+      "to": { "placeId": "place-haeundae-beach", "text": null },
+      "mode": "metro",
+      "label": "地鐵 2 號線 廣安站 → 海雲台站",
+      "depart": { "time": "09:15" },
+      "arrive": { "time": "09:45" },
+      "durationMinutes": 30,
+      "isEstimate": true,
+      "bufferMinutes": 15,
+      "cost": null,
+      "notes": null,
+      "sources": [{ "type": "demo", "label": "示範估計", "url": null, "verifiedAt": null, "note": null }]
+    },
+    {
+      "id": "tr-d2-to-mipo",
+      "dayId": "day-2",
+      "from": { "placeId": "place-haeundae-beach", "text": null },
+      "to": { "placeId": "place-blueline-mipo", "text": null },
+      "mode": "walk",
+      "label": "沿海岸往尾浦",
+      "depart": null,
+      "arrive": null,
+      "durationMinutes": 20,
+      "isEstimate": true,
+      "bufferMinutes": 10,
+      "cost": null,
+      "notes": null,
+      "sources": [{ "type": "demo", "label": "示範估計", "url": null, "verifiedAt": null, "note": null }]
+    },
+    {
+      "id": "tr-d2-back",
+      "dayId": "day-2",
+      "from": { "placeId": "place-cheongsapo", "text": null },
+      "to": { "placeId": "place-haeundae-beach", "text": null },
+      "mode": "other",
+      "label": "海岸列車或步行迎月嶺（待決定）",
+      "depart": null,
+      "arrive": null,
+      "durationMinutes": null,
+      "isEstimate": true,
+      "bufferMinutes": null,
+      "cost": null,
+      "notes": "海岸列車班次與票價未核對。",
+      "sources": [{ "type": "demo", "label": "示範", "url": null, "verifiedAt": null, "note": null }]
+    },
+    {
+      "id": "tr-d2-to-seomyeon",
+      "dayId": "day-2",
+      "from": { "placeId": "place-haeundae-beach", "text": null },
+      "to": { "placeId": null, "text": "西面站" },
+      "mode": "metro",
+      "label": "地鐵 2 號線 → 西面站",
+      "depart": { "time": "17:00" },
+      "arrive": { "time": "17:45" },
+      "durationMinutes": 40,
+      "isEstimate": true,
+      "bufferMinutes": 10,
+      "cost": null,
+      "notes": null,
+      "sources": [{ "type": "demo", "label": "示範估計", "url": null, "verifiedAt": null, "note": null }]
+    },
+    {
+      "id": "tr-d2-home",
+      "dayId": "day-2",
+      "from": { "placeId": null, "text": "西面站" },
+      "to": { "placeId": "place-lodging-demo", "text": null },
+      "mode": "metro",
+      "label": "地鐵 2 號線 → 廣安站",
+      "depart": { "time": "23:30" },
+      "arrive": { "date": "2026-10-18", "time": "00:05" },
+      "durationMinutes": 25,
+      "isEstimate": true,
+      "bufferMinutes": null,
+      "cost": null,
+      "notes": "末班車時間未核對；此段用來示範跨日顯示。",
+      "sources": [{ "type": "demo", "label": "示範估計", "url": null, "verifiedAt": null, "note": null }]
+    },
+    {
+      "id": "tr-d3-to-gamcheon",
+      "dayId": "day-3",
+      "from": { "placeId": "place-lodging-demo", "text": null },
+      "to": { "placeId": "place-gamcheon", "text": null },
+      "mode": "metro",
+      "label": "地鐵 1 號線 土城站 → 公車或計程車上山",
+      "depart": null,
+      "arrive": null,
+      "durationMinutes": 60,
+      "isEstimate": true,
+      "bufferMinutes": 15,
+      "cost": null,
+      "notes": "最後一段上山建議計程車（估計 10 分）。",
+      "sources": [{ "type": "demo", "label": "示範估計", "url": null, "verifiedAt": null, "note": null }]
+    },
+    {
+      "id": "tr-d3-to-jagalchi",
+      "dayId": "day-3",
+      "from": { "placeId": "place-gamcheon", "text": null },
+      "to": { "placeId": "place-jagalchi", "text": null },
+      "mode": "taxi",
+      "label": null,
+      "depart": null,
+      "arrive": null,
+      "durationMinutes": 15,
+      "isEstimate": true,
+      "bufferMinutes": null,
+      "cost": null,
+      "notes": null,
+      "sources": [{ "type": "demo", "label": "示範估計", "url": null, "verifiedAt": null, "note": null }]
+    },
+    {
+      "id": "tr-d3-to-airport",
+      "dayId": "day-3",
+      "from": { "placeId": "place-biff", "text": null },
+      "to": { "placeId": "place-gimhae-airport", "text": null },
+      "mode": "metro",
+      "label": "地鐵 1 號線 → 沙上站 → 金海輕軌",
+      "depart": { "time": "16:45" },
+      "arrive": { "time": "18:00" },
+      "durationMinutes": 60,
+      "isEstimate": true,
+      "bufferMinutes": 30,
+      "cost": null,
+      "notes": "示範班機 20:30；報到截止時間待航空公司確認。",
+      "sources": [{ "type": "demo", "label": "示範估計", "url": null, "verifiedAt": null, "note": null }]
+    }
+  ],
+  "backups": [
+    {
+      "id": "bk-shinsegae",
+      "placeId": "place-shinsegae-centum",
+      "category": "indoor",
+      "suitableFor": "下雨或太熱時的室內備案；可待 2–3 小時。",
+      "rainOk": true,
+      "notes": "Spa Land 營業時間與票價未核對。",
+      "sources": [{ "type": "demo", "label": "示範備案", "url": null, "verifiedAt": null, "note": null }]
+    },
+    {
+      "id": "bk-busan-museum-art",
+      "placeId": "place-busan-museum-art",
+      "category": "indoor",
+      "suitableFor": "安靜的室內選項；休館日待核對。",
+      "rainOk": true,
+      "notes": null,
+      "sources": [{ "type": "demo", "label": "示範備案", "url": null, "verifiedAt": null, "note": null }]
+    },
+    {
+      "id": "bk-lotte-gwangbok",
+      "placeId": "place-lotte-gwangbok",
+      "category": "indoor",
+      "suitableFor": "南浦洞下雨時可躲；頂樓展望（開放時間未核對）。",
+      "rainOk": true,
+      "notes": null,
+      "sources": [{ "type": "demo", "label": "示範備案", "url": null, "verifiedAt": null, "note": null }]
+    },
+    {
+      "id": "bk-songdo-cablecar",
+      "placeId": "place-songdo-cablecar",
+      "category": "sight",
+      "suitableFor": "南浦行程多出 1.5 小時以上時可加。",
+      "rainOk": null,
+      "notes": null,
+      "sources": [{ "type": "demo", "label": "示範備案", "url": null, "verifiedAt": null, "note": null }]
+    },
+    {
+      "id": "bk-yongdusan",
+      "placeId": "place-yongdusan",
+      "category": "sight",
+      "suitableFor": "離 BIFF 廣場近，可順路。",
+      "rainOk": null,
+      "notes": null,
+      "sources": [{ "type": "demo", "label": "示範備案", "url": null, "verifiedAt": null, "note": null }]
+    },
+    {
+      "id": "bk-haeundae-market",
+      "placeId": "place-haeundae-market",
+      "category": "food",
+      "suitableFor": "海雲台想吃小吃時；自由活動時段可用。",
+      "rainOk": null,
+      "notes": null,
+      "sources": [{ "type": "demo", "label": "示範備案", "url": null, "verifiedAt": null, "note": null }]
+    },
+    {
+      "id": "bk-demo-cafe-gwangalli",
+      "placeId": "place-demo-cafe-gwangalli",
+      "category": "cafe",
+      "suitableFor": "Day 1 傍晚想坐下來看橋時。",
+      "rainOk": true,
+      "notes": "示範：實際店家待挑選。",
+      "sources": [{ "type": "demo", "label": "示範備案", "url": null, "verifiedAt": null, "note": null }]
+    },
+    {
+      "id": "bk-dalmaji",
+      "placeId": "place-dalmaji",
+      "category": "sight",
+      "suitableFor": "天空膠囊列車沒訂到時的替代散步路線。",
+      "rainOk": false,
+      "notes": null,
+      "sources": [{ "type": "demo", "label": "示範備案", "url": null, "verifiedAt": null, "note": null }]
+    }
+  ],
+  "guides": [
+    {
+      "id": "guide-gwangalli-night",
+      "title": "廣安大橋燈光",
+      "category": "area",
+      "body": "橋上燈光通常在日落後亮起；燈光秀或無人機表演的時段未核對，不要為此排定時間。\n\n觀賞位置：沙灘中段面向大橋最完整。示範內容。",
+      "relatedPlaceIds": ["place-gwangalli-beach"],
+      "sources": [{ "type": "demo", "label": "示範攻略", "url": null, "verifiedAt": null, "note": null }]
+    },
+    {
+      "id": "guide-blueline",
+      "title": "天空膠囊列車：預約與集合",
+      "category": "reservation",
+      "body": "熱門時段建議事先線上預約；車廂分組人數與取票規則以官方公告為準（尚未核對）。\n\n集合：尾浦站售票處。預約不成時，可改搭海岸列車或沿迎月嶺步行到青沙浦。",
+      "relatedPlaceIds": ["place-blueline-mipo", "place-cheongsapo"],
+      "sources": [
+        { "type": "unverified", "label": "海雲台藍線公園官方網站", "url": "https://www.bluelinepark.com/", "verifiedAt": null, "note": "尚未核對" }
+      ]
+    },
+    {
+      "id": "guide-gamcheon",
+      "title": "甘川文化村小提醒",
+      "category": "tips",
+      "body": "入口處可購買地圖蓋章路線（價格未核對）。村內階梯多，避免拖行李。\n\n離開時往下走到大馬路再叫車比較容易（示範經驗，未核對）。",
+      "relatedPlaceIds": ["place-gamcheon"],
+      "sources": [{ "type": "demo", "label": "示範攻略", "url": null, "verifiedAt": null, "note": null }]
+    },
+    {
+      "id": "guide-transit-card",
+      "title": "交通卡",
+      "category": "transport",
+      "body": "機場與便利商店可購買交通卡（示範說明）。地鐵、公車、輕軌皆可使用；儲值方式與押金待核對。",
+      "relatedPlaceIds": ["place-gimhae-airport"],
+      "sources": [{ "type": "demo", "label": "示範攻略", "url": null, "verifiedAt": null, "note": null }]
+    }
+  ],
+  "tools": {
+    "airportTransit": [
+      {
+        "id": "at-lightrail",
+        "mode": "light-rail",
+        "title": "輕軌 + 地鐵",
+        "summary": "金海輕軌 → 沙上站轉地鐵 2 號線；往廣安里／海雲台方向約 1 小時（估計）。",
+        "durationMinutes": 60,
+        "isEstimate": true,
+        "cost": null,
+        "link": null,
+        "sources": [{ "type": "demo", "label": "示範估計", "url": null, "verifiedAt": null, "note": null }]
+      },
+      {
+        "id": "at-taxi",
+        "mode": "taxi",
+        "title": "計程車",
+        "summary": "至廣安里／海雲台約 40–60 分（估計，視路況）。",
+        "durationMinutes": 50,
+        "isEstimate": true,
+        "cost": null,
+        "link": null,
+        "sources": [{ "type": "demo", "label": "示範估計", "url": null, "verifiedAt": null, "note": null }]
+      },
+      {
+        "id": "at-bus",
+        "mode": "airport-bus",
+        "title": "機場巴士",
+        "summary": "路線與班次待確認。",
+        "durationMinutes": null,
+        "isEstimate": true,
+        "cost": null,
+        "link": null,
+        "sources": [{ "type": "demo", "label": "示範", "url": null, "verifiedAt": null, "note": null }]
+      }
+    ],
+    "officialLinks": [
+      {
+        "label": "釜山地鐵 Humetro",
+        "url": "https://www.humetro.busan.kr/",
+        "note": "路線圖與票價；網址未核對。",
+        "source": { "type": "unverified", "label": "釜山交通公社", "url": "https://www.humetro.busan.kr/", "verifiedAt": null, "note": null }
+      },
+      {
+        "label": "金海國際機場",
+        "url": "https://www.airport.co.kr/gimhae/index.do",
+        "note": "航班與交通資訊；網址未核對。",
+        "source": { "type": "unverified", "label": "韓國機場公社", "url": "https://www.airport.co.kr/gimhae/index.do", "verifiedAt": null, "note": null }
+      }
+    ]
+  }
+}

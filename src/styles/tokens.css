@@ -1,0 +1,100 @@
+/*
+ * Design tokens — Busan Coastal Minimal（v2：沙灘底 + 海藍 + 日出珊瑚）
+ * 這裡是唯一的顏色／字級／間距／圓角／陰影／動態時間來源；元件 CSS 只引用 var()。
+ * 修改前請讀 docs/DESIGN_SPEC.md 的「不得任意改動」清單。
+ *
+ * 配色邏輯：頁面是「淺沙色」而不是白或灰，卡片是白色像浪頭；海藍只給操作與節點；
+ * 珊瑚色只給「現在／接下來」與背景日出光暈，整頁只有這一個暖色。
+ */
+:root {
+  color-scheme: light;
+
+  /* --- 顏色 --- */
+  --color-bg: #f8f5ef;            /* 淺沙色頁面底 */
+  --color-bg-rgb: 248, 245, 239;  /* 給半透明 sticky 列使用 */
+  --color-surface: #ffffff;       /* 卡片、對話框 */
+  --color-surface-muted: #f3f1eb; /* 交通段落、次要區塊（沙色更深一階） */
+  --color-primary: #1d5fb0;       /* 海藍：選取日期、主要操作、時間軸節點（白底 6.3:1） */
+  --color-primary-strong: #164a8c;/* 按下／hover、淡底上的文字（7.4:1） */
+  --color-primary-soft: #e3ecf8;  /* 海藍淡底：提醒區、標籤 */
+  --color-accent: #e07a57;        /* 珊瑚（裝飾）：接下來節點、背景光暈 */
+  --color-accent-text: #b8411f;   /* 珊瑚（文字）：接下來標示（白底 5.5:1） */
+  --color-accent-soft: #fbe9e0;
+  --color-text: #1b2838;          /* 主文字：深海藍墨色（14.9:1） */
+  --color-text-secondary: #5b6879;/* 次要文字（5.7:1；沙色底 5.0:1） */
+  --color-border: #e3e0d8;        /* 沙色系細邊框 */
+  --color-border-strong: #cbc8be;
+  --color-on-primary: #ffffff;
+
+  /* 狀態色：只用於文字＋淡底的小標籤，不做大面積 */
+  --color-warn-text: #9a5b0a;     /* 預約待確認、待確認（soft 上 4.8:1） */
+  --color-warn-soft: #fbf0dd;
+  --color-ok-text: #1f6b3a;       /* 預約已確認（soft 上 5.6:1） */
+  --color-ok-soft: #e3f2e7;
+  --color-danger-text: #b3261e;   /* 錯誤（soft 上 5.6:1） */
+  --color-danger-soft: #fbe9e7;
+  --color-neutral-text: #5b6879;  /* unknown、示範標籤（soft 上 4.8:1） */
+  --color-neutral-soft: #eeede8;
+
+  /* 插畫與背景海面 */
+  --color-ink: #1b2838;
+  --color-sea: #1d5fb0;
+  --color-sea-light: #7fa9dd;
+  --sea-wave-opacity: 0.12;       /* 背景浪帶最深一層的不透明度；調亮暗都改這裡 */
+  --sea-glow-opacity: 0.16;       /* 右上日出光暈 */
+
+  /* --- 字體 --- */
+  --font-sans:
+    -apple-system, BlinkMacSystemFont, 'PingFang TC', 'Noto Sans TC', 'Noto Sans CJK TC',
+    'Apple SD Gothic Neo', 'Noto Sans KR', 'Segoe UI', Roboto, 'Helvetica Neue', Arial,
+    'Microsoft JhengHei', sans-serif;
+  --font-mono: ui-monospace, SFMono-Regular, Menlo, Consolas, monospace;
+
+  /* 字級：正文 16、次要 13–14；關鍵時間不小於 15 */
+  --text-xs: 12px;   /* 僅 eyebrow／版本號 */
+  --text-sm: 13px;
+  --text-md: 14px;
+  --text-base: 16px;
+  --text-lg: 18px;
+  --text-xl: 20px;
+  --text-2xl: 24px;
+  --text-address: 28px; /* 大字地址模式 */
+  --leading-tight: 1.25;
+  --leading-normal: 1.5;
+  --weight-regular: 400;
+  --weight-medium: 500;
+  --weight-semibold: 600;
+  --weight-bold: 700;
+
+  /* --- 間距（4pt 系統） --- */
+  --space-1: 4px;
+  --space-2: 8px;
+  --space-3: 12px;
+  --space-4: 16px;
+  --space-5: 20px;
+  --space-6: 24px;
+  --space-8: 32px;
+
+  /* --- 圓角／邊框／陰影 --- */
+  --radius-sm: 6px;
+  --radius-md: 10px;
+  --radius-lg: 14px;
+  --radius-pill: 999px;
+  --border-width: 1px;
+  --shadow-card: 0 1px 2px rgba(27, 40, 56, 0.06);
+  --shadow-raised: 0 4px 14px rgba(27, 40, 56, 0.14);
+
+  /* --- 尺寸 --- */
+  --tap-min: 44px;
+  --content-max: 640px;
+  --bottom-nav-height: 56px;
+  --safe-bottom: env(safe-area-inset-bottom, 0px);
+  --safe-top: env(safe-area-inset-top, 0px);
+
+  /* --- 動態時間 --- */
+  --motion-fast: 120ms;
+  --motion-base: 180ms;
+  --motion-ease: cubic-bezier(0.2, 0, 0, 1);
+  --wave-cycle: 28s;   /* 背景浪帶一個完整循環（三層分別 ×1、×1.35、×1.7） */
+  --gull-duration: 7s; /* 海鷗橫越整個畫面，一次 */
+}

@@ -1,0 +1,11 @@
+node_modules
+dist
+dist-ssr
+*.local
+.env
+.env.*
+!.env.example
+.DS_Store
+Thumbs.db
+# 由 scripts/screenshots.mjs 產生的暫存輸出（正式基準截圖放在 docs/screenshots）
+tmp/

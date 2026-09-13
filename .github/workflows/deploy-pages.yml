@@ -1,0 +1,56 @@
+# GitHub Pages 部署（project site）。
+# 刻意只保留手動觸發（workflow_dispatch），避免推上 repo 就自動公開；
+# 確認資料可公開後，再把下方的 push 觸發解除註解。
+#
+# 前提：repo Settings → Pages → Source 選「GitHub Actions」。
+# base path 直接用 repo 名稱推得，不需要在程式碼寫死。
+name: Deploy to GitHub Pages
+
+on:
+  workflow_dispatch:
+  # push:
+  #   branches: [main]
+
+permissions:
+  contents: read
+  pages: write
+  id-token: write
+
+concurrency:
+  group: pages
+  cancel-in-progress: true
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-node@v4
+        with:
+          node-version: 22
+          cache: npm
+      - run: npm ci
+      - run: npm run typecheck
+      - run: npm run lint
+      - run: npm test
+      - run: npm run validate:data
+      - name: Build
+        env:
+          # user site（<user>.github.io）改成 "/"
+          VITE_BASE_PATH: /${{ github.event.repository.name }}/
+          # 正式資料就緒前維持 demo；切成 production 前需先放入 public/data/trip.json
+          VITE_DATA_MODE: demo
+        run: npm run build
+      - uses: actions/upload-pages-artifact@v3
+        with:
+          path: dist
+
+  deploy:
+    needs: build
+    runs-on: ubuntu-latest
+    environment:
+      name: github-pages
+      url: ${{ steps.deployment.outputs.page_url }}
+    steps:
+      - id: deployment
+        uses: actions/deploy-pages@v4

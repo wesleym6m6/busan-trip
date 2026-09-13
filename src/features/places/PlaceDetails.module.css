@@ -1,0 +1,78 @@
+/* 地點詳細資訊（事件卡與備案卡共用） */
+.wrap {
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-3);
+}
+
+.block {
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-1);
+}
+
+.label {
+  font-size: var(--text-sm);
+  font-weight: var(--weight-semibold);
+  color: var(--color-text-secondary);
+}
+
+.nameKo {
+  font-size: var(--text-base);
+  font-weight: var(--weight-medium);
+}
+
+.nameEn {
+  font-size: var(--text-sm);
+  color: var(--color-text-secondary);
+}
+
+.address {
+  font-size: var(--text-base);
+  user-select: text;
+  -webkit-user-select: text;
+}
+
+.actions {
+  display: flex;
+  flex-wrap: wrap;
+  gap: var(--space-2);
+  margin-top: var(--space-1);
+}
+
+.text {
+  font-size: var(--text-md);
+  white-space: pre-line;
+}
+
+.muted {
+  font-size: var(--text-md);
+  color: var(--color-text-secondary);
+}
+
+.image {
+  border-radius: var(--radius-md);
+  border: var(--border-width) solid var(--color-border);
+  width: 100%;
+  height: auto;
+  background: var(--color-surface-muted);
+}
+
+.caption {
+  font-size: var(--text-sm);
+  color: var(--color-text-secondary);
+}
+
+.sources {
+  font-size: var(--text-sm);
+  color: var(--color-text-secondary);
+  display: flex;
+  flex-direction: column;
+  gap: 2px;
+}
+
+.tagRow {
+  display: flex;
+  flex-wrap: wrap;
+  gap: var(--space-1);
+}

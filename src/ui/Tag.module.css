@@ -1,0 +1,44 @@
+/* 小標籤：文字＋淡底，13px。克制使用，不做成彩色海洋。 */
+.tag {
+  display: inline-flex;
+  align-items: center;
+  gap: 4px;
+  padding: 2px 8px;
+  border-radius: var(--radius-sm);
+  font-size: var(--text-sm);
+  font-weight: var(--weight-medium);
+  line-height: 1.4;
+  white-space: nowrap;
+}
+
+.neutral {
+  color: var(--color-neutral-text);
+  background: var(--color-neutral-soft);
+}
+
+.primary {
+  /* 淡底上用 primary-strong 才過 AA（primary 本身只有 4.46:1） */
+  color: var(--color-primary-strong);
+  background: var(--color-primary-soft);
+}
+
+.warn {
+  color: var(--color-warn-text);
+  background: var(--color-warn-soft);
+}
+
+.ok {
+  color: var(--color-ok-text);
+  background: var(--color-ok-soft);
+}
+
+.danger {
+  color: var(--color-danger-text);
+  background: var(--color-danger-soft);
+}
+
+.outline {
+  color: var(--color-text-secondary);
+  background: transparent;
+  border: var(--border-width) solid var(--color-border);
+}
