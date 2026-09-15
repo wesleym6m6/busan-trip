@@ -34,3 +34,5 @@ GitHub 保留 `backup/header-before-20260916` 標記。使用者的 BuShan-Claud
 - 未實測真實 iPhone Safari、低階手機續航、所有 GPU 的兼容性；WebGL 不可用時保留靜態圖。側錄短片取樣約 7fps，不代表網站實際更新頻率。
 
 頁首高度、原圖裁切、日期列、下方文字與四分頁未改動。
+
+正式發布後已再次以 transform 版本檢查完整飛行，三個 id 持續至各自離開畫面才移除，最終為 0；紀錄見 `screenshots/header-motion-20260916/live-flight-check.json`。

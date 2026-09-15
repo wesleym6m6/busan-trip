@@ -1,4 +1,18 @@
-# 試用站發布與動畫驗收
+# 發布紀錄
+
+## 2026-09-16 最新：碎浪與獨立海鷗
+
+正式網址：https://wesleym6m6.github.io/busan-trip/
+
+部署來源：`253bb43a5a04ebc25903acd3bdfdf33b8b9f92e8`。
+[GitHub Actions](https://github.com/wesleym6m6/busan-trip/actions/runs/34994654332) 建置與部署均 success，40 tests 通過。
+
+正式站已確認 WebGL 海面正在播放、原圖與新海鷗素材完整載入。連續切三日的三個獨立 id 在途中均保留，左右飛出後各自移除，最後數量為 0；過程見 `screenshots/header-motion-20260916/live-flight-check.json`。正式站未記錄 console error/warn。
+
+技術選擇、素材、限制與備份見 [HEADER_MOTION.md](HEADER_MOTION.md)。原定案版保留在 `backup/header-before-20260916`，其他畫面與行程未改。真實手機 Safari 仍未實測。
+
+## 2026-09-15 初次發布（歷史紀錄）
+
 
 2026-09-15，使用者要求提供家人可試用的連結，授權發布現有定案版。
 
