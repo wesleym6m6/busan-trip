@@ -1,0 +1,71 @@
+{
+  "note": "JPEG screenshot samples; rock edges can show compression differences from adjacent moving foam. These samples check interiors, not the entire silhouette.",
+  "regions": {
+    "sky_bridge": {
+      "bounds": [
+        0,
+        0,
+        992,
+        213
+      ],
+      "mean_abs_channel": 0.0,
+      "max_channel": 0,
+      "pixels_changed_gt12_percent": 0.0
+    },
+    "yellow_canopy_interior": {
+      "bounds": [
+        44,
+        242,
+        64,
+        256
+      ],
+      "mean_abs_channel": 0.0,
+      "max_channel": 0,
+      "pixels_changed_gt12_percent": 0.0
+    },
+    "rock_main_interior": {
+      "bounds": [
+        870,
+        290,
+        911,
+        303
+      ],
+      "mean_abs_channel": 0.0,
+      "max_channel": 0,
+      "pixels_changed_gt12_percent": 0.0
+    },
+    "rock_front_interior": {
+      "bounds": [
+        893,
+        321,
+        910,
+        327
+      ],
+      "mean_abs_channel": 0.5948,
+      "max_channel": 2,
+      "pixels_changed_gt12_percent": 0.0
+    },
+    "dry_sand": {
+      "bounds": [
+        100,
+        352,
+        190,
+        380
+      ],
+      "mean_abs_channel": 0.0,
+      "max_channel": 0,
+      "pixels_changed_gt12_percent": 0.0
+    },
+    "surf": {
+      "bounds": [
+        185,
+        265,
+        750,
+        359
+      ],
+      "mean_abs_channel": 30.6076,
+      "max_channel": 249,
+      "pixels_changed_gt12_percent": 72.22
+    }
+  }
+}

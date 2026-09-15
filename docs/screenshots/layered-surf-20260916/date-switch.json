@@ -1,0 +1,47 @@
+[
+  {
+    "flights": [
+      {
+        "direction": "left",
+        "id": "1",
+        "x": 459.9104614257813
+      }
+    ],
+    "sea": "true"
+  },
+  {
+    "flights": [
+      {
+        "direction": "left",
+        "id": "1",
+        "x": 433.0088195800781
+      },
+      {
+        "direction": "right",
+        "id": "2",
+        "x": -64.68235778808594
+      }
+    ],
+    "sea": "true"
+  },
+  {
+    "flights": [
+      {
+        "direction": "left",
+        "id": "1",
+        "x": 406.1071472167969
+      },
+      {
+        "direction": "right",
+        "id": "2",
+        "x": -33.473533630371094
+      },
+      {
+        "direction": "left",
+        "id": "3",
+        "x": 457.1617431640625
+      }
+    ],
+    "sea": "true"
+  }
+]

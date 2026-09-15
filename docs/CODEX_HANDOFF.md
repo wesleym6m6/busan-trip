@@ -8,4 +8,4 @@
 
 2026-09-15 已依使用者要求發布 GitHub Pages：https://wesleym6m6.github.io/busan-trip/ 。發布紀錄與動畫限制見 DEPLOYMENT.md。後續 push 不會自動部署；需手動執行 workflow。尚未做真實手機 Safari、螢幕閱讀器、整站離線啟動或旅途中實際日期的全面驗收。
 
-2026-09-16 使用者授權頁首動態升級。海面使用原圖紋理遮罩、海鷗改為獨立個體與三姿態素材；其他版面/資料保留。最新驗收與還原依據見 [HEADER_MOTION.md](HEADER_MOTION.md)。
+2026-09-16 使用者授權頁首動態升級。使用者已滿意海鷗，其獨立個體與三姿態素材保留；後續回饋拒絕海面局部扭曲，現改為海面底圖＋分層碎浪＋固定前景。其他版面/資料保留。最新驗收與還原依據見 [HEADER_MOTION.md](HEADER_MOTION.md)。

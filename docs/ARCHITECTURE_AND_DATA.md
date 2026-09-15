@@ -38,4 +38,4 @@ GitHub Pages 維持 workflow_dispatch 手動部署；已依後續使用者要求
 
 ## 6. 2026-09-16 頁首
 
-view.tsx → CoastalHeader（獨立海鷗陣列、素材載入、可見性）→ SeaCanvas / seaRenderer（原圖水域的 WebGL 動態）。ApprovedTrip 僅傳入切日序號與減少動態偏好；不再使用單一 showGull 或共用結束計時器。詳見 HEADER_MOTION.md。
+view.tsx → CoastalHeader（獨立海鷗陣列、素材載入、可見性）→ SeaCanvas / seaRenderer / surfMotion（固定前景、生成海面底圖與原圖碎浪的 WebGL 分層合成）。ApprovedTrip 僅傳入切日序號與減少動態偏好；不再使用單一 showGull 或共用結束計時器。詳見 HEADER_MOTION.md。

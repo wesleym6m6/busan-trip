@@ -7,6 +7,7 @@ export class SeaCanvas extends Component<{ paused: boolean; reduced: boolean }, 
   private canvas = createRef<HTMLCanvasElement>();
   private renderer: SeaRenderer | null = null;
   private source?: HTMLImageElement;
+  private underpaint?: HTMLImageElement;
   private frame?: number;
   private lastTime?: number;
   private seconds = 0;
@@ -17,8 +18,12 @@ export class SeaCanvas extends Component<{ paused: boolean; reduced: boolean }, 
     this.canvas.current?.addEventListener('webglcontextlost', this.contextLost);
     this.canvas.current?.addEventListener('webglcontextrestored', this.initialize);
     this.source = new Image();
-    this.source.onload = () => { if (generation === this.generation) this.initialize(); };
+    this.underpaint = new Image();
+    const loaded = () => { if (generation === this.generation) this.initialize(); };
+    this.source.onload = loaded;
+    this.underpaint.onload = loaded;
     this.source.src = assetUrl('uploads/busan-coast.png');
+    this.underpaint.src = assetUrl('uploads/busan-sea-underpaint.png');
     if (typeof ResizeObserver !== 'undefined') {
       this.resize = new ResizeObserver(() => this.renderer?.draw(this.seconds));
       this.resize.observe(this.canvas.current!);
@@ -32,6 +37,7 @@ export class SeaCanvas extends Component<{ paused: boolean; reduced: boolean }, 
     this.canvas.current?.removeEventListener('webglcontextlost', this.contextLost);
     this.canvas.current?.removeEventListener('webglcontextrestored', this.initialize);
     if (this.source) this.source.onload = null;
+    if (this.underpaint) this.underpaint.onload = null;
     cancelAnimationFrame(this.frame ?? 0); this.resize?.disconnect(); this.renderer?.dispose();
   }
   private contextLost = (event: Event) => {
@@ -39,9 +45,9 @@ export class SeaCanvas extends Component<{ paused: boolean; reduced: boolean }, 
     this.renderer?.dispose(); this.renderer = null; this.setState({ready:false});
   };
   private initialize = () => {
-    if (!this.canvas.current || !this.source) return;
+    if (!this.canvas.current || !this.source?.complete || !this.source.naturalWidth || !this.underpaint?.complete || !this.underpaint.naturalWidth) return;
     this.renderer?.dispose();
-    this.renderer = createSeaRenderer(this.canvas.current, this.source);
+    this.renderer = createSeaRenderer(this.canvas.current, this.source, this.underpaint);
     this.setState({ready: !!this.renderer});
     this.renderer?.draw(this.seconds);
     this.schedule();
@@ -63,7 +69,7 @@ export class SeaCanvas extends Component<{ paused: boolean; reduced: boolean }, 
   };
   render() {
     return <canvas ref={this.canvas} className="sea-canvas" aria-hidden="true"
-      data-renderer={this.state.ready ? 'webgl' : 'static'}
+      data-renderer={this.state.ready ? 'layered-surf' : 'static'}
       data-playing={this.state.ready && !this.props.paused && !this.props.reduced}
       style={{opacity: this.state.ready && !this.props.reduced ? 1 : 0}} />;
   }
