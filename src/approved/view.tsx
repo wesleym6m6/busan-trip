@@ -1,3 +1,4 @@
+import { CoastalHeader } from './CoastalHeader';
 import { Fragment, type CSSProperties, type ReactNode } from 'react';
 import type { ApprovedTrip } from './ApprovedTrip';
 import { assetUrl } from './assets';
@@ -7,24 +8,7 @@ export function renderApprovedView(v: ReturnType<ApprovedTrip['renderVals']>): R
  return <>
 <div data-reduce-motion={v.reduceMotion} style={({"fontFamily": "'Noto Sans TC','Manrope',-apple-system,BlinkMacSystemFont,'PingFang TC','Apple SD Gothic Neo','Noto Sans KR','Segoe UI',Roboto,sans-serif", "color": "#183848", "background": "#F7FBFC", "minHeight": "100dvh", "position": "relative"} as CSSProperties)}>
 <header style={({"paddingTop": "env(safe-area-inset-top)"} as CSSProperties)}>
-<div ref={v.setHeaderRef} style={({"position": "relative", "height": "92px", "overflow": "hidden", "background": "#DCEEF2"} as CSSProperties)}>
-<img src={assetUrl("uploads/busan-coast.png")} alt={"廣安大橋與海灘"} width={"1983"} height={"793"} style={({"position": "absolute", "inset": "0", "width": "100%", "height": "100%", "objectFit": "cover", "objectPosition": "50% 62%"} as CSSProperties)}/>
-<div className={"om-foam"} aria-hidden={"true"} style={({"position": "absolute", "left": "0", "bottom": "0", "width": "30%", "height": "48%", "pointerEvents": "none", "animationPlayState": v.wavePlayState} as CSSProperties)}>
-<svg viewBox={"0 0 100 48"} preserveAspectRatio={"none"} style={({"width": "100%", "height": "100%", "display": "block"} as CSSProperties)}>
-<path d={"M0,14 Q10,6 20,13 T40,10 Q50,17 58,12 L58,48 L0,48 Z"} fill={"#fff"} style={({"filter": "blur(.6px)", "animation": "foam-breathe-a 9s ease-in-out infinite", "animationPlayState": v.wavePlayState} as CSSProperties)}></path>
-<path d={"M0,20 Q9,14 18,19 T36,17 Q46,22 54,18 L54,48 L0,48 Z"} fill={"#fff"} style={({"filter": "blur(.8px)", "animation": "foam-breathe-b 11.5s ease-in-out infinite -4s", "animationPlayState": v.wavePlayState} as CSSProperties)}></path>
-</svg>
-</div>
-<div className={"om-foam"} aria-hidden={"true"} style={({"position": "absolute", "right": "0", "bottom": "0", "width": "18%", "height": "40%", "pointerEvents": "none", "animationPlayState": v.wavePlayState} as CSSProperties)}>
-<svg viewBox={"0 0 60 40"} preserveAspectRatio={"none"} style={({"width": "100%", "height": "100%", "display": "block"} as CSSProperties)}>
-<path d={"M60,16 Q50,8 40,14 T20,11 Q10,17 0,13 L0,40 L60,40 Z"} fill={"#fff"} style={({"filter": "blur(.6px)", "animation": "foam-breathe-a 10.5s ease-in-out infinite -2s", "animationPlayState": v.wavePlayState} as CSSProperties)}></path>
-<path d={"M60,22 Q52,17 42,21 T22,19 Q12,23 2,20 L2,40 L60,40 Z"} fill={"#fff"} style={({"filter": "blur(.8px)", "animation": "foam-breathe-b 13s ease-in-out infinite -6s", "animationPlayState": v.wavePlayState} as CSSProperties)}></path>
-</svg>
-</div>
-{!!(v.showGull) && <>
-<img className={"om-gull"} src={assetUrl("uploads/seagull.png")} alt={""} aria-hidden={"true"} width={"56"} height={"41"} style={({"position": "absolute", "top": "12px", "left": "0", "width": "56px", "height": "41px", "pointerEvents": "none", "animation": "gull-pass 1.6s ease-in-out 1 forwards"} as CSSProperties)}/>
- </>}
-</div>
+<CoastalHeader launchId={v.gullLaunch} reduced={v.reduceMotion === 'true'} />
 <div style={({"padding": "7px 16px", "background": "#F7FBFC", "borderBottom": "1px solid #D6E3E8", "display": "flex", "justifyContent": "space-between", "alignItems": "baseline"} as CSSProperties)}>
 <span style={({"fontWeight": 700, "fontSize": "14px", "color": "#183848"} as CSSProperties)}>{v.tripName}</span>
 <span style={({"fontSize": "11px", "color": "#5B7280", "fontFamily": "'Manrope',sans-serif"} as CSSProperties)}>{v.dateRange}</span>

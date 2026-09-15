@@ -35,3 +35,7 @@ React 19 + TypeScript + Vite；純靜態網站。`ApprovedTrip` 保存原匯出�
 `LegacyApp`、原 `app/`、`features/`、`ui/`、`styles/`、原 TripDataFileSchema 和 demo fixture 保留供歷史參考/測試；主入口不使用它們，也不依賴 VITE_DATA_MODE。不能改回 demo 當作正式資料 fallback。
 
 GitHub Pages 維持 workflow_dispatch 手動部署；已依後續使用者要求啟用 Pages，詳見 DEPLOYMENT.md。正式建置只需 VITE_BASE_PATH，內容直接打包進網站，沒有後端或帳號。
+
+## 6. 2026-09-16 頁首
+
+view.tsx → CoastalHeader（獨立海鷗陣列、素材載入、可見性）→ SeaCanvas / seaRenderer（原圖水域的 WebGL 動態）。ApprovedTrip 僅傳入切日序號與減少動態偏好；不再使用單一 showGull 或共用結束計時器。詳見 HEADER_MOTION.md。

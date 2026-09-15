@@ -1,0 +1,248 @@
+[
+  {
+    "frame": 0,
+    "ms": 136,
+    "flights": [
+      {
+        "direction": "left",
+        "id": "3",
+        "size": 36,
+        "x": 386.90625
+      },
+      {
+        "direction": "right",
+        "id": "4",
+        "size": 65,
+        "x": -29.671875
+      },
+      {
+        "direction": "left",
+        "id": "5",
+        "size": 43,
+        "x": 433.234375
+      }
+    ]
+  },
+  {
+    "frame": 5,
+    "ms": 705,
+    "flights": [
+      {
+        "direction": "left",
+        "id": "3",
+        "size": 36,
+        "x": 343.8984375
+      },
+      {
+        "direction": "right",
+        "id": "4",
+        "size": 65,
+        "x": 17.6875
+      },
+      {
+        "direction": "left",
+        "id": "5",
+        "size": 43,
+        "x": 391.5234375
+      }
+    ]
+  },
+  {
+    "frame": 10,
+    "ms": 1286,
+    "flights": [
+      {
+        "direction": "left",
+        "id": "3",
+        "size": 36,
+        "x": 297.1015625
+      },
+      {
+        "direction": "right",
+        "id": "4",
+        "size": 65,
+        "x": 69.2265625
+      },
+      {
+        "direction": "left",
+        "id": "5",
+        "size": 43,
+        "x": 346.1328125
+      }
+    ]
+  },
+  {
+    "frame": 15,
+    "ms": 1894,
+    "flights": [
+      {
+        "direction": "left",
+        "id": "3",
+        "size": 36,
+        "x": 250.4453125
+      },
+      {
+        "direction": "right",
+        "id": "4",
+        "size": 65,
+        "x": 120.609375
+      },
+      {
+        "direction": "left",
+        "id": "5",
+        "size": 43,
+        "x": 300.8828125
+      }
+    ]
+  },
+  {
+    "frame": 20,
+    "ms": 2563,
+    "flights": [
+      {
+        "direction": "left",
+        "id": "3",
+        "size": 36,
+        "x": 202.25
+      },
+      {
+        "direction": "right",
+        "id": "4",
+        "size": 65,
+        "x": 173.6953125
+      },
+      {
+        "direction": "left",
+        "id": "5",
+        "size": 43,
+        "x": 254.140625
+      }
+    ]
+  },
+  {
+    "frame": 25,
+    "ms": 3273,
+    "flights": [
+      {
+        "direction": "left",
+        "id": "3",
+        "size": 36,
+        "x": 145.328125
+      },
+      {
+        "direction": "right",
+        "id": "4",
+        "size": 65,
+        "x": 236.3828125
+      },
+      {
+        "direction": "left",
+        "id": "5",
+        "size": 43,
+        "x": 198.9296875
+      }
+    ]
+  },
+  {
+    "frame": 30,
+    "ms": 3953,
+    "flights": [
+      {
+        "direction": "left",
+        "id": "3",
+        "size": 36,
+        "x": 96.0546875
+      },
+      {
+        "direction": "right",
+        "id": "4",
+        "size": 65,
+        "x": 290.65625
+      },
+      {
+        "direction": "left",
+        "id": "5",
+        "size": 43,
+        "x": 151.140625
+      }
+    ]
+  },
+  {
+    "frame": 35,
+    "ms": 4566,
+    "flights": [
+      {
+        "direction": "left",
+        "id": "3",
+        "size": 36,
+        "x": 50.578125
+      },
+      {
+        "direction": "right",
+        "id": "4",
+        "size": 65,
+        "x": 340.7421875
+      },
+      {
+        "direction": "left",
+        "id": "5",
+        "size": 43,
+        "x": 107.03125
+      }
+    ]
+  },
+  {
+    "frame": 40,
+    "ms": 5220,
+    "flights": [
+      {
+        "direction": "left",
+        "id": "3",
+        "size": 36,
+        "x": -0.109375
+      },
+      {
+        "direction": "right",
+        "id": "4",
+        "size": 65,
+        "x": 396.578125
+      },
+      {
+        "direction": "left",
+        "id": "5",
+        "size": 43,
+        "x": 57.859375
+      }
+    ]
+  },
+  {
+    "frame": 45,
+    "ms": 6100,
+    "flights": [
+      {
+        "direction": "left",
+        "id": "3",
+        "size": 36,
+        "x": -67.140625
+      },
+      {
+        "direction": "left",
+        "id": "5",
+        "size": 43,
+        "x": -7.1484375
+      }
+    ]
+  },
+  {
+    "frame": 50,
+    "ms": 6982,
+    "flights": [
+      {
+        "direction": "left",
+        "id": "5",
+        "size": 43,
+        "x": -70.9375
+      }
+    ]
+  }
+]

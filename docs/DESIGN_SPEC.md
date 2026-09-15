@@ -9,3 +9,5 @@
 React 移植將 `sc-if` / `sc-for` 換成條件與列表渲染；inline style 與 SVG path 沿用原件，`style-active` 轉為 CSS `:active`。不得以框架替換為由換掉 UI。
 
 此基準不等於使用者要求永久凍結行程內容。之後可依明確需求修正資料、效能或錯誤；變動不得順便重新設計。涉及畫面或體驗的必要修正需明確說明差異。
+
+2026-09-16 已依新的明確要求升級頁首動畫，規格與備份見 [HEADER_MOTION.md](HEADER_MOTION.md)。其他美術與操作基準不變。

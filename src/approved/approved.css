@@ -2,14 +2,7 @@
     *, *::before, *::after { box-sizing: border-box; }
     body { margin: 0; }
     button, input, select, textarea { font-family: inherit; color: inherit; }
-    @keyframes foam-breathe-a { 0%, 100% { opacity: .16; transform: translateY(2px); } 50% { opacity: .5; transform: translateY(-2px); } }
-    @keyframes foam-breathe-b { 0%, 100% { opacity: .1; transform: translateY(3px); } 50% { opacity: .38; transform: translateY(-1px); } }
-    @keyframes gull-pass { 0% { transform: translate(-10px, 10px); opacity: 0; } 10% { opacity: 1; } 88% { opacity: 1; } 100% { transform: translate(280px, -6px); opacity: 0; } }
     @keyframes fx-fade { from { opacity: 0; } to { opacity: 1; } }
-    @media (prefers-reduced-motion: reduce) {
-      .om-foam, .om-gull { animation: none !important; }
-    }
-    [data-reduce-motion="true"] .om-foam, [data-reduce-motion="true"] .om-gull { animation: none !important; }
     a { color: #246B8E; }
     a:hover { color: #184A61; }
 

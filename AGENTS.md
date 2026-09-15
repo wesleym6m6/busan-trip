@@ -11,6 +11,9 @@
 - 行程內容：`src/data/approved-trip.json`；契約為 `src/domain/schema.ts` 的 `ApprovedTripSchema`，語意驗證在 `validateApprovedTripData`。
 - `src/LegacyApp.tsx`、舊 features/ui/styles、demo data 與 `docs/archive/` 僅供歷史參考，不是正式網站的 UI，也不是新設計依據。
 
+
+2026-09-16 使用者另行要求並授權頁首碎浪／海鷗動畫升級，見 [HEADER_MOTION.md](docs/HEADER_MOTION.md)。最新頁首由 `CoastalHeader`、`SeaCanvas` 與 `header-motion.css` 管理；其餘定案外觀仍需保留。
+
 ## 工作規則
 
 - 文案用台灣繁體中文；韓文地名與地址保留原文。景點、時間、地址、預約不硬寫在 JSX。

@@ -2,13 +2,12 @@ import { Component as ReactComponent, type ChangeEvent, type ReactNode } from 'r
 import data from '../data/approved-trip.json';
 import { ApprovedTripSchema } from '../domain/schema';
 import { renderApprovedView } from './view';
-import { assetUrl } from './assets';
 
 type Tab = 'itinerary' | 'backups' | 'tools' | 'packing';
 type Fx = { rate: number; updatedAt: string; savedAt: number };
 interface State {
  tab: Tab; selectedDayId: string | null; expanded: Record<string, boolean>; packChecked: Record<string, boolean>;
- showGull: boolean; reduceMotion: boolean; headerVisible: boolean; hidden: boolean;
+ gullLaunch: number; reduceMotion: boolean;
  showDriverCard: boolean; prepOpen: boolean; showManualRate: boolean; krwInput: string; manualRateInput: string;
  fx: Fx | null; fxStale?: boolean; fxError?: boolean; showAllBackups: boolean;
 }
@@ -38,15 +37,9 @@ function splitTime(t: string) {
 export class ApprovedTrip extends ReactComponent<Record<string, never>, State> {
   trip = ApprovedTripSchema.parse(data);
   defaultDayId: string;
-  _io?: IntersectionObserver;
-  _gullImg?: HTMLImageElement;
-  _gullReady?: Promise<void>;
-  private disposed = false;
-  private gullTimer?: ReturnType<typeof setTimeout>;
-  private gullFrame?: number;
   render(): ReactNode { return renderApprovedView(this.renderVals()); }
 
-  state: State = { tab: 'itinerary', selectedDayId: null, expanded: {}, packChecked: {}, showGull: false, reduceMotion: false, headerVisible: true, hidden: false, showDriverCard: false, prepOpen: false, showManualRate: false, krwInput: '', manualRateInput: '', fx: null, showAllBackups: false };
+  state: State = { tab: 'itinerary', selectedDayId: null, expanded: {}, packChecked: {}, gullLaunch: 0, reduceMotion: false, showDriverCard: false, prepOpen: false, showManualRate: false, krwInput: '', manualRateInput: '', fx: null, showAllBackups: false };
 
   constructor(props: Record<string, never>) {
     super(props);
@@ -60,46 +53,14 @@ export class ApprovedTrip extends ReactComponent<Record<string, never>, State> {
   }
 
   componentDidMount() {
-    this.disposed = false;
     try {
       const savedPack = JSON.parse(localStorage.getItem('busan-pack-v1') || '{}');
       const savedReduce = localStorage.getItem('busan-reduce-motion');
       const prefersReduce = window.matchMedia && window.matchMedia('(prefers-reduced-motion: reduce)').matches;
       this.setState({ packChecked: savedPack, reduceMotion: savedReduce !== null ? savedReduce === '1' : !!prefersReduce });
     } catch { /* Storage can be unavailable in private browsing. */ }
-    this._gullImg = new Image();
-    this._gullImg.src = assetUrl('uploads/seagull.png');
-    this._gullReady = (this._gullImg.decode ? this._gullImg.decode() : Promise.resolve()).catch(() => {});
-    this.flyGull();
-    document.addEventListener('visibilitychange', this.handleVisibility);
     this.loadFx();
   }
-  componentWillUnmount() {
-    this.disposed = true;
-    clearTimeout(this.gullTimer);
-    if (this.gullFrame !== undefined) cancelAnimationFrame(this.gullFrame);
-    document.removeEventListener('visibilitychange', this.handleVisibility);
-    if (this._io) this._io.disconnect();
-    this._io = undefined;
-  }
-  handleVisibility = () => { this.setState({ hidden: document.visibilityState === 'hidden' }); };
-  setHeaderRef = (el: HTMLDivElement | null) => {
-    if (!el || this._io) return;
-    this._io = new IntersectionObserver((entries) => { this.setState({ headerVisible: !!entries[0]?.isIntersecting }); }, { threshold: 0 });
-    this._io.observe(el);
-  };
-  async flyGull() {
-    this.setState({ showGull: false });
-    if (this._gullReady) await this._gullReady;
-    if (this.disposed) return;
-    clearTimeout(this.gullTimer);
-    if (this.gullFrame !== undefined) cancelAnimationFrame(this.gullFrame);
-    this.gullFrame = requestAnimationFrame(() => {
-      this.setState({ showGull: true });
-      this.gullTimer = setTimeout(() => this.setState({ showGull: false }), 1700);
-    });
-  }
-
   async loadFx() {
     try {
       const cached = JSON.parse(localStorage.getItem('busan-fx-v1') || 'null');
@@ -123,9 +84,9 @@ export class ApprovedTrip extends ReactComponent<Record<string, never>, State> {
 
   setTab = (tab: Tab) => { this.setState({ tab }); window.scrollTo({ top: 0 }); };
   selectDay = (id: string) => {
-    this.setState({ selectedDayId: id });
+    if (id === this.state.selectedDayId) return;
+    this.setState(state => ({ selectedDayId: id, gullLaunch: state.gullLaunch + 1 }));
     try { localStorage.setItem('busan-selected-day', id); } catch { /* Storage can be unavailable in private browsing. */ }
-    this.flyGull();
   };
   goToday = () => { this.selectDay(this.defaultDayId); };
   toggleExpand = (key: string) => this.setState((s) => ({ expanded: { ...s.expanded, [key]: !s.expanded[key] } }));
@@ -147,7 +108,7 @@ export class ApprovedTrip extends ReactComponent<Record<string, never>, State> {
   onManualRateChange = (e: ChangeEvent<HTMLInputElement>) => this.setState({ manualRateInput: e.target.value });
 
   renderVals() {
-    const { tab, selectedDayId, expanded, packChecked, showGull, reduceMotion, headerVisible, hidden, showDriverCard, prepOpen, showManualRate, krwInput, manualRateInput, fx, fxStale, fxError, showAllBackups } = this.state;
+    const { tab, selectedDayId, expanded, packChecked, gullLaunch, reduceMotion, showDriverCard, prepOpen, showManualRate, krwInput, manualRateInput, fx, fxStale, fxError, showAllBackups } = this.state;
     const trip = this.trip;
     const todayKR = ymd(new Date());
 
@@ -231,8 +192,8 @@ export class ApprovedTrip extends ReactComponent<Record<string, never>, State> {
       tripName: trip.trip.name, dateRange: trip.trip.dateRange,
       days, currentDay: current, dayItems,
       showTodayButton: !!trip.days.find((d) => d.date === todayKR) && selectedDayId !== this.defaultDayId,
-      goToday: this.goToday, setHeaderRef: this.setHeaderRef,
-      showGull, wavePlayState: (reduceMotion || hidden || !headerVisible) ? 'paused' : 'running', reduceMotion: reduceMotion ? 'true' : 'false',
+      goToday: this.goToday,
+      gullLaunch, reduceMotion: reduceMotion ? 'true' : 'false',
       backupsHeading: showAllBackups ? '全部備案' : (current.dateLabel + ' 備案'),
       showAllBackupsLabel: showAllBackups ? ('只看 ' + current.dateLabel) : '查看全部',
       toggleShowAllBackups: this.toggleShowAllBackups,

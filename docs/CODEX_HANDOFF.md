@@ -7,3 +7,5 @@
 最先閱讀 AGENTS.md、DESIGN_SPEC.md、ARCHITECTURE_AND_DATA.md。驗證結果見 PORT_VERIFICATION.md。舊規格已封存至 docs/archive/pre-approved-2026-09-15，不作為新設計依據。
 
 2026-09-15 已依使用者要求發布 GitHub Pages：https://wesleym6m6.github.io/busan-trip/ 。發布紀錄與動畫限制見 DEPLOYMENT.md。後續 push 不會自動部署；需手動執行 workflow。尚未做真實手機 Safari、螢幕閱讀器、整站離線啟動或旅途中實際日期的全面驗收。
+
+2026-09-16 使用者授權頁首動態升級。海面使用原圖紋理遮罩、海鷗改為獨立個體與三姿態素材；其他版面/資料保留。最新驗收與還原依據見 [HEADER_MOTION.md](HEADER_MOTION.md)。
