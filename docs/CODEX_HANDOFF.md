@@ -6,4 +6,4 @@
 
 最先閱讀 AGENTS.md、DESIGN_SPEC.md、ARCHITECTURE_AND_DATA.md。驗證結果見 PORT_VERIFICATION.md。舊規格已封存至 docs/archive/pre-approved-2026-09-15，不作為新設計依據。
 
-目前未啟用 GitHub Pages；不要把 GitHub push 說成已公開網站。尚未做真實手機 Safari、螢幕閱讀器、整站離線啟動或旅途中實際日期的全面驗收。
+2026-09-15 已依使用者要求發布 GitHub Pages：https://wesleym6m6.github.io/busan-trip/ 。發布紀錄與動畫限制見 DEPLOYMENT.md。後續 push 不會自動部署；需手動執行 workflow。尚未做真實手機 Safari、螢幕閱讀器、整站離線啟動或旅途中實際日期的全面驗收。

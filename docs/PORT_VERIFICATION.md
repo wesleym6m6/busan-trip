@@ -25,3 +25,5 @@
 環境：Node 25.8.1，使用 `NODE_OPTIONS=--no-experimental-webstorage VITE_BASE_PATH=/busan-trip/ npm run check`；CI 使用 Node 22。Build 出現 Zod 上游 pure annotation 的非阻塞提示，建置成功。Chrome 截圖可能包含瀏覽器擴充功能的浮動圖示，不屬於網站。
 
 技術差異：移除正式頁面對 Claude support.js 的依賴；資料獨立 JSON/schema；圖片依 base path 載入；動畫 frame/timer 在 unmount 清理。其餘配色、字型、SVG、圖片、文字與操作流程沿用定案版。未重新核實旅行業者的即時資料。
+
+後續已於同日依使用者要求發布試用站。原表保留移植當時狀態；正式發布與更嚴格的動態目視評估見 [DEPLOYMENT.md](DEPLOYMENT.md)。

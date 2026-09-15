@@ -36,6 +36,8 @@ VITE_BASE_PATH=/busan-trip/ npm run preview
 
 ## 發布狀態
 
-本輪更新 GitHub 程式碼；GitHub Pages 尚未啟用（2026-09-15 查詢回傳 404）。部署 workflow 保留手動觸發。之後要發布時，在 Settings → Pages 選 GitHub Actions，再執行 Deploy to GitHub Pages。
+試用網址：**https://wesleym6m6.github.io/busan-trip/**（不需登入）。
+
+2026-09-15 已依使用者要求啟用 GitHub Pages 並成功發布；部署仍維持手動觸發。發布與動畫驗收詳見 [DEPLOYMENT.md](docs/DEPLOYMENT.md)。
 
 網站目前沒有 Service Worker；本機保存勾選或快取匯率不等於整站可離線啟動。字型使用 Google Fonts，匯率需要網路或上次成功的快取，外部地圖由 Naver 提供。
