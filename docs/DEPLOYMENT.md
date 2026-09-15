@@ -1,5 +1,15 @@
 # 發布紀錄
 
+## 2026-09-16 最新：分層碎浪，保留已滿意的海鷗
+
+正式網址：https://wesleym6m6.github.io/busan-trip/
+
+部署來源：`0b3eda376e48c7896d5872229092801aba4d3087`。 [GitHub Actions](https://github.com/wesleym6m6/busan-trip/actions/runs/35036856110) 的 build / deploy 均 success；Node 22 的 typecheck、lint、43 tests、資料驗證與 Pages 子路徑 build 全部通過。手動部署設定保持不變。
+
+正式站 Chrome 390px 已實際驗證 `data-renderer=layered-surf` / `data-playing=true`；兩張海面底圖載入後，逐幀能看見碎浪推進與泡沫變化。頁首保持 92px，無水平溢出。連續切換 10/04 與 10/05，原海鷗 id 保留至各自完整離場，最後為 0；海浪播放不中斷，console error/warn 為空。線上序列與截圖見 `screenshots/layered-surf-20260916/live-check.json`、`live-25.jpg`、`live-99.jpg`。
+
+本機另驗證 360px、四分頁、卡片展開、減少動態與離開頁首暫停。尚未實測真實 iPhone Safari 或低階手機續航。素材 prompt、技術方案、來源查詢與備份見 [HEADER_MOTION.md](HEADER_MOTION.md)。本輪修改前（含使用者已滿意的海鷗）可由 `backup/waves-before-layering-20260916` 還原。
+
 ## 2026-09-16 首版：局部扭曲碎浪與獨立海鷗（歷史紀錄）
 
 正式網址：https://wesleym6m6.github.io/busan-trip/

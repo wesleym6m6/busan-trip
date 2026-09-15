@@ -1,0 +1,77 @@
+{
+  "url": "https://wesleym6m6.github.io/busan-trip/",
+  "samples": [
+    {
+      "flights": [
+        {
+          "id": "2",
+          "x": -67.66561126708984
+        }
+      ],
+      "phase": "switch",
+      "sea": "true"
+    },
+    {
+      "flights": [
+        {
+          "id": "2",
+          "x": -35.00092697143555
+        },
+        {
+          "id": "3",
+          "x": 454.6927490234375
+        }
+      ],
+      "phase": "switch",
+      "sea": "true"
+    },
+    {
+      "flights": [
+        {
+          "id": "2",
+          "x": -20.16063117980957
+        },
+        {
+          "id": "3",
+          "x": 440.9115905761719
+        }
+      ],
+      "phase": "playing",
+      "renderer": "layered-surf",
+      "sea": "true"
+    },
+    {
+      "flights": [
+        {
+          "id": "2",
+          "x": 214.40689086914065
+        },
+        {
+          "id": "3",
+          "x": 223.0850524902344
+        }
+      ],
+      "phase": "playing",
+      "renderer": "layered-surf",
+      "sea": "true"
+    },
+    {
+      "flights": [
+        {
+          "id": "3",
+          "x": -54.02691650390625
+        }
+      ],
+      "phase": "playing",
+      "renderer": "layered-surf",
+      "sea": "true"
+    },
+    {
+      "flights": [],
+      "phase": "playing",
+      "renderer": "layered-surf",
+      "sea": "true"
+    }
+  ],
+  "errors": []
+}
