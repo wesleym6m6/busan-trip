@@ -8,7 +8,7 @@
  *
  * error 會阻止資料被使用；warning 只提示（例如來源尚未核對）。
  */
-import { TripDataFileSchema } from './schema';
+import { ApprovedTripSchema, TripDataFileSchema } from './schema';
 import type { DayPlan, SourceRef, TimePoint, TripDataFile, TripDataset } from './types';
 
 export type IssueSeverity = 'error' | 'warning';
@@ -262,4 +262,35 @@ export function validateTripData(input: unknown): ValidationResult {
       }
     });
   }
+}
+
+/** Validate the approved export shape and references before rendering/building. */
+export function validateApprovedTripData(input: unknown) {
+  const result = ApprovedTripSchema.safeParse(input);
+  if (!result.success) return { ok: false as const, issues: result.error.issues.map((i) => `${i.path.join('.')}: ${i.message}`) };
+  const data = result.data;
+  const issues: string[] = [];
+  const dayIds = new Set<string>();
+  const dates = new Set<string>();
+  const packIds = new Set<string>();
+  for (const day of data.days) {
+    if (dayIds.has(day.id)) issues.push(`Duplicate day id: ${day.id}`);
+    if (dates.has(day.date)) issues.push(`Duplicate date: ${day.date}`);
+    dayIds.add(day.id); dates.add(day.date);
+    if (day.image && !/^uploads\/[a-z0-9-]+\.png$/.test(day.image)) issues.push(`Invalid image path: ${day.image}`);
+    for (const item of day.items) {
+      if (item.placeKey && !data.places[item.placeKey]) issues.push(`Unknown place: ${item.placeKey}`);
+    }
+  }
+  for (const group of data.backupGroups) {
+    if (!dayIds.has(group.dayId)) issues.push(`Unknown backup day: ${group.dayId}`);
+  }
+  for (const category of data.packing) for (const item of category.items) {
+    if (packIds.has(item.id)) issues.push(`Duplicate packing id: ${item.id}`);
+    packIds.add(item.id);
+  }
+  const urls = [data.lodging.mapUrl, ...data.tools.address.map((a) => a.url),
+    ...data.backupGroups.flatMap((g) => g.items.flatMap((i) => [i.mainMapUrl, i.altMapUrl]))];
+  for (const url of urls) if (!url.startsWith('https://map.naver.com/p/search/')) issues.push(`Unexpected map URL: ${url}`);
+  return issues.length ? { ok: false as const, issues } : { ok: true as const, issues, data };
 }

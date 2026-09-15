@@ -3,7 +3,7 @@
   "private": true,
   "version": "0.1.0",
   "type": "module",
-  "description": "釜山旅行行程網站（Busan Coastal Minimal）— 手機優先、純靜態、可部署至 GitHub Pages",
+  "description": "釜山家庭旅行網站（2026-09-15 使用者定案版）— 手機優先、純靜態、可部署至 GitHub Pages",
   "engines": {
     "node": ">=22.12.0"
   },

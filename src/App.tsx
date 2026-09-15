@@ -1,14 +1,4 @@
-import { AppShell } from './app/AppShell';
-import { PreferencesProvider } from './app/PreferencesContext';
-import { TripDataProvider, type TripDataState } from './app/TripDataContext';
+import { ApprovedTrip } from './approved/ApprovedTrip';
 
-/** 組合 providers；initialData 供測試直接注入資料。 */
-export function App({ initialData }: { initialData?: TripDataState }) {
-  return (
-    <PreferencesProvider>
-      <TripDataProvider initial={initialData}>
-        <AppShell />
-      </TripDataProvider>
-    </PreferencesProvider>
-  );
-}
+/** User-approved 2026-09-15 design is the production entry point. */
+export function App() { return <ApprovedTrip />; }

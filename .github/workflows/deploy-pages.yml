@@ -38,8 +38,7 @@ jobs:
         env:
           # user site（<user>.github.io）改成 "/"
           VITE_BASE_PATH: /${{ github.event.repository.name }}/
-          # 正式資料就緒前維持 demo；切成 production 前需先放入 public/data/trip.json
-          VITE_DATA_MODE: demo
+          # The approved entry bundles src/data/approved-trip.json (no demo fallback).
         run: npm run build
       - uses: actions/upload-pages-artifact@v3
         with:

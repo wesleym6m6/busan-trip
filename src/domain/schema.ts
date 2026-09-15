@@ -355,3 +355,29 @@ export const AppPreferencesSchema = z.object({
   motion: z.boolean(),
   lastViewedDayId: z.nullable(NonEmptyString),
 });
+
+/** 2026-09-15 使用者定案的 Claude 匯出資料；舊版 TripDataSchema 保留給歷史模組。 */
+const ApprovedItemSchema = z.object({
+  time: z.string(), title: NonEmptyString, kind: z.enum(['event', 'transit']),
+  status: z.optional(z.enum(['booked', 'tentative', 'flexible'])),
+  steps: z.optional(z.array(z.string())), note: z.optional(z.string()), placeKey: z.optional(z.string()),
+});
+export const ApprovedTripSchema = z.object({
+  trip: z.object({ name: NonEmptyString, dateRange: NonEmptyString }),
+  days: z.array(z.object({ id: NonEmptyString, dayNumber: z.number(), date: LocalDateSchema,
+    weekday: z.string(), dateLabel: z.string(), summary: NonEmptyString, image: z.optional(z.string()),
+    items: z.array(ApprovedItemSchema), })).check(z.minLength(1)),
+  backupGroups: z.array(z.object({ dayId: NonEmptyString, label: z.string(), items: z.array(z.object({
+    main: z.string(), mainMapUrl: z.url(), backup: z.string(), altMapUrl: z.url(), note: z.string(),
+  })) })),
+  tools: z.object({
+    fixed: z.array(z.object({ label: z.string(), content: z.string(), booked: z.boolean() })),
+    transit: z.array(z.object({ leg: z.string(), mode: z.string(), budget: z.string(), pending: z.boolean() })),
+    todo: z.array(z.object({ item: z.string(), detail: z.string() })),
+    address: z.array(z.object({ label: z.string(), url: z.url() })),
+  }),
+  packing: z.array(z.object({ id: NonEmptyString, label: z.string(), items: z.array(z.object({id: NonEmptyString, label: z.string()})) })),
+  lodging: z.object({ name: z.string(), area: z.string(), notice: z.string(), kr: z.string(), crossRef: z.string(), mapUrl: z.url() }),
+  places: z.record(z.string(), z.object({label: z.string(), query: z.string()})),
+  statusMeta: z.record(z.enum(['booked', 'tentative', 'flexible']), z.object({label: z.string(), color: z.string()})),
+});

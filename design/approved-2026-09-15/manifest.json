@@ -1,0 +1,36 @@
+{
+  "approvedAt": "2026-09-15",
+  "authority": "User-approved files supplied from BuShan-Claude. Visual style, content, layout and UX finalized by user.",
+  "files": [
+    {
+      "path": "design/approved-2026-09-15/釜山家庭旅行.dc.html",
+      "sha256": "007bbb8168379c01fc922556125050356e6385c1635ac2efed7ed081ef0f5282",
+      "bytes": 57480
+    },
+    {
+      "path": "public/uploads/busan-coast.png",
+      "sha256": "e66cd59161e719447288d253fa3fc4be94eb3c063a211d9e4f6bade32770bce5",
+      "bytes": 2207760
+    },
+    {
+      "path": "public/uploads/gamcheon-village.png",
+      "sha256": "3f5f9c9842b1722ef3224bdd36507825de38179afab2e53d70e2f64f837319f7",
+      "bytes": 2294567
+    },
+    {
+      "path": "public/uploads/pork-soup.png",
+      "sha256": "3214407936de5c46523c5a410ba4022f8f5e98f6f1323727bd6d19c191aa806a",
+      "bytes": 2028658
+    },
+    {
+      "path": "public/uploads/seagull.png",
+      "sha256": "2a8ce2e907ab9dc8a628919c3e9bf9b870f31ea584fe9ec6e6acfcf3099b7817",
+      "bytes": 1242547
+    },
+    {
+      "path": "public/uploads/sky-capsule.png",
+      "sha256": "e479db3d0f48f3d63be30029d835f966436309f191a1f536d233f31e1c0cd0b2",
+      "bytes": 2388635
+    }
+  ]
+}

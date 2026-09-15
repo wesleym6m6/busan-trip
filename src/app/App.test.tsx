@@ -6,7 +6,7 @@ import { beforeEach, describe, expect, it } from 'vitest';
 import demo from '../../public/data/demo/trip.json';
 import { validateTripData } from '../domain/validate';
 import { getDataSourceConfig } from '../data/config';
-import { App } from '../App';
+import { LegacyApp as App } from '../LegacyApp';
 import type { TripDataState } from './TripDataContext';
 
 function okState(): TripDataState {

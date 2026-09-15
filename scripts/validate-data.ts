@@ -5,7 +5,11 @@
  */
 import { readFileSync, existsSync } from 'node:fs';
 import { resolve } from 'node:path';
-import { validateTripData } from '../src/domain/validate.ts';
+import { validateApprovedTripData, validateTripData } from '../src/domain/validate.ts';
+
+const approved = validateApprovedTripData(JSON.parse(readFileSync('src/data/approved-trip.json', 'utf8')));
+if (!approved.ok) { console.error(approved.issues); process.exit(1); }
+console.log('✓ src/data/approved-trip.json — approved shape and references valid');
 
 const args = process.argv.slice(2);
 const targets = args.length > 0 ? args : ['public/data/demo/trip.json', 'public/data/trip.json'].filter((p) => existsSync(p));
