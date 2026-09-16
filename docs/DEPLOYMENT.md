@@ -1,6 +1,18 @@
 # 發布紀錄
 
-## 2026-09-16 最新：依家人確認更新行程內容
+## 2026-09-16 最新：保持畫質的載入改善
+
+正式網址：https://wesleym6m6.github.io/busan-trip/
+
+部署來源：`c796ae3bbf6e63d215343a1867b9058d5c6eef2a`。[GitHub Actions](https://github.com/wesleym6m6/busan-trip/actions/runs/35114926108) build / deploy 均 success；typecheck、lint、43 tests、資料驗證與 Pages build 通過。上傳後整個 GitHub tree `250f4d4aa9452bce03b5ed3077d79a822d287cd6` 與本機測試版本完全一致。
+
+公開站 HTML、`index-B6H_mOif.js`、五張 `.lossless.webp` 與原始海鷗 PNG 全部 HTTP 200，下載位元與本機正式 build 完全相同。Chrome 正式站已確認三張 header preload、五張新圖全部正常載入、海鷗仍用 PNG、海面 `layered-surf` / `playing=true`，連續畫面可見碎浪變化。390px 核對五天與四分頁、卡片展開有內容；360px 目視無水平溢出，console error / warn 為空。連續切日出現兩個獨立海鷗 id，原飛行未因切日移除，之後各自離場。
+
+頁首圖片下載量 5,061,460 → 4,118,677 bytes（減少 18.63%）；全部使用中圖片 11,773,320 → 8,600,621 bytes（減少 26.95%）。這是下載容量改善，並非手機載入秒數的實測提升。原解析度、內容、字體、CSS 與動畫程式均未變；瀏覽器五張圖片與 15 組海浪合成零像素差異，詳見 [PERFORMANCE_20260916.md](PERFORMANCE_20260916.md)。真實手機 Safari 與先前間歇載入問題尚未實測／重現，不宣稱本次已修復該問題。
+
+修改前基準 `be6732a` 保留於本機 tag `backup/performance-before-20260916`；本機通過測試的提交 `b3dd2f7` 保留於 `backup/performance-tested-20260916`。兩個 tag 尚未推到遠端；原始 PNG 完整保留，原基準也在 GitHub commit 歷史。CLI 認證無法使用，改經既有 GitHub 登入網頁與 macOS 原生檔案選擇器提交，再以公開 fetch 核對完整 tree。未更改瀏覽器擴充功能權限或手動部署設定。
+
+## 2026-09-16 依家人確認更新行程內容（歷史紀錄）
 
 正式網址：https://wesleym6m6.github.io/busan-trip/
 
