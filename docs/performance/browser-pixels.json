@@ -1,0 +1,137 @@
+{
+  "source": "Observed in Chrome via scripts/qa/lossless.html on 2026-09-16",
+  "imageChecks": [
+    {
+      "name": "busan-coast",
+      "width": 1983,
+      "height": 793,
+      "sameDimensions": true,
+      "changedPixels": 0
+    },
+    {
+      "name": "busan-sea-underpaint",
+      "width": 1983,
+      "height": 793,
+      "sameDimensions": true,
+      "changedPixels": 0
+    },
+    {
+      "name": "gamcheon-village",
+      "width": 1536,
+      "height": 1024,
+      "sameDimensions": true,
+      "changedPixels": 0
+    },
+    {
+      "name": "sky-capsule",
+      "width": 1536,
+      "height": 1024,
+      "sameDimensions": true,
+      "changedPixels": 0
+    },
+    {
+      "name": "pork-soup",
+      "width": 1536,
+      "height": 1024,
+      "sameDimensions": true,
+      "changedPixels": 0
+    }
+  ],
+  "waveChecks": [
+    {
+      "width": 360,
+      "time": 0,
+      "changedPixels": 0
+    },
+    {
+      "width": 360,
+      "time": 1.5,
+      "changedPixels": 0
+    },
+    {
+      "width": 360,
+      "time": 3,
+      "changedPixels": 0
+    },
+    {
+      "width": 360,
+      "time": 5.5,
+      "changedPixels": 0
+    },
+    {
+      "width": 360,
+      "time": 8,
+      "changedPixels": 0
+    },
+    {
+      "width": 390,
+      "time": 0,
+      "changedPixels": 0
+    },
+    {
+      "width": 390,
+      "time": 1.5,
+      "changedPixels": 0
+    },
+    {
+      "width": 390,
+      "time": 3,
+      "changedPixels": 0
+    },
+    {
+      "width": 390,
+      "time": 5.5,
+      "changedPixels": 0
+    },
+    {
+      "width": 390,
+      "time": 8,
+      "changedPixels": 0
+    },
+    {
+      "width": 1280,
+      "time": 0,
+      "changedPixels": 0
+    },
+    {
+      "width": 1280,
+      "time": 1.5,
+      "changedPixels": 0
+    },
+    {
+      "width": 1280,
+      "time": 3,
+      "changedPixels": 0
+    },
+    {
+      "width": 1280,
+      "time": 5.5,
+      "changedPixels": 0
+    },
+    {
+      "width": 1280,
+      "time": 8,
+      "changedPixels": 0
+    }
+  ],
+  "motionChecks": [
+    {
+      "width": 360,
+      "movingPixels": 28639
+    },
+    {
+      "width": 390,
+      "movingPixels": 30836
+    },
+    {
+      "width": 1280,
+      "movingPixels": 64563
+    }
+  ],
+  "rejectedDerivative": {
+    "name": "seagull-flight-sheet.webp",
+    "fileRGBAEqual": true,
+    "browserChangedPixels": 130325,
+    "action": "Keep original PNG; do not ship derivative"
+  }
+}
