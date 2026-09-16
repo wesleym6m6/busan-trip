@@ -1,0 +1,82 @@
+[
+  {
+    "name": "busan-coast",
+    "dimensions": [
+      1983,
+      793
+    ],
+    "original": 2207760,
+    "png": 2170380,
+    "webp": 1697126,
+    "rgba_sha256": "0cd9a22fe3400200277d5eaeb59a2d706c81b1d0942bb9c9905a49ea7b73e3de",
+    "pixel_difference": 0,
+    "seconds": 30.65,
+    "png_metadata_identical": true,
+    "original_sha256": "e66cd59161e719447288d253fa3fc4be94eb3c063a211d9e4f6bade32770bce5",
+    "webp_sha256": "87c44ca7adb26a6897be7ebf7591deebf8d91bbbb00b849159a9d19201dfe758"
+  },
+  {
+    "name": "busan-sea-underpaint",
+    "dimensions": [
+      1983,
+      793
+    ],
+    "original": 2000655,
+    "png": 1962467,
+    "webp": 1568506,
+    "rgba_sha256": "d5fd18f3a72827566c89076be2698cf41529e7824303f72c9165cf0540b8abdd",
+    "pixel_difference": 0,
+    "seconds": 32.47,
+    "png_metadata_identical": true,
+    "original_sha256": "682f1adc8854711e8ea09af6167bd3ebbd2010ef1bb7eb957020b67aefcf88ca",
+    "webp_sha256": "c4fa3c5dfa58ff78ba9b84530854c29e58fb145250936370c5f1e46ed0e14a00"
+  },
+  {
+    "name": "gamcheon-village",
+    "dimensions": [
+      1536,
+      1024
+    ],
+    "original": 2294567,
+    "png": 2031853,
+    "webp": 1486260,
+    "rgba_sha256": "524c086fd42d7fc72291801e7fe153b6f084570a65c4d544330f5552d681a1e1",
+    "pixel_difference": 0,
+    "seconds": 37.33,
+    "png_metadata_identical": true,
+    "original_sha256": "3f5f9c9842b1722ef3224bdd36507825de38179afab2e53d70e2f64f837319f7",
+    "webp_sha256": "c88e35a5f80c545bf3d0d781290df7d0b22be02ae40ff4a0689cb4a9c275c2d5"
+  },
+  {
+    "name": "sky-capsule",
+    "dimensions": [
+      1536,
+      1024
+    ],
+    "original": 2388635,
+    "png": 2176182,
+    "webp": 1676084,
+    "rgba_sha256": "bf4b58fce3f92cd9f62ddc89a5302d40b025dbb2485110efa0526cd5b46ed0d9",
+    "pixel_difference": 0,
+    "seconds": 28.61,
+    "png_metadata_identical": true,
+    "original_sha256": "e479db3d0f48f3d63be30029d835f966436309f191a1f536d233f31e1c0cd0b2",
+    "webp_sha256": "d613599fc10c503e7eb84e2411df33fb14cd3766fbc39964c41bb0fba782a5c3"
+  },
+  {
+    "name": "pork-soup",
+    "dimensions": [
+      1536,
+      1024
+    ],
+    "original": 2028658,
+    "png": 1767246,
+    "webp": 1319600,
+    "rgba_sha256": "a6d5ad36344ebcea14359e40c1c15fb7ca9814238eb2fad826de4abf2d2ca713",
+    "pixel_difference": 0,
+    "seconds": 30.1,
+    "png_metadata_identical": true,
+    "original_sha256": "3214407936de5c46523c5a410ba4022f8f5e98f6f1323727bd6d19c191aa806a",
+    "webp_sha256": "ba4ea0951ad8fc78b314001d0646e4697e69cb9dc0349b4592572f4996d78988"
+  }
+]
