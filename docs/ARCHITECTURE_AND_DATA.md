@@ -30,6 +30,8 @@ React 19 + TypeScript + Vite；純靜態網站。`ApprovedTrip` 保存原匯出�
 
 空 note 代表沒有額外詳情，不製造空白展開。空 steps 不製造佔位文字。此資料是使用者定案內容，並不表示本輪重新向第三方核實了航班/營業時間/預約。
 
+2026-09-16 內容依使用者新版行程表及明確回覆更新，詳見 [CONTENT_UPDATE_20260916.md](CONTENT_UPDATE_20260916.md)。資料形狀與 UI 未變；packing 的既有 id 保留。Google 原表與私人票券資訊不進 repo；公開資料只含必要航班時間、人數與地圖搜尋詞。工具頁 fixed 的 booked=false 會顯示「未購買」，不能拿來表示訂購狀態未知；未知的展覽門票放 todo 確認。
+
 ## 5. 歷史模組與部署
 
 `LegacyApp`、原 `app/`、`features/`、`ui/`、`styles/`、原 TripDataFileSchema 和 demo fixture 保留供歷史參考/測試；主入口不使用它們，也不依賴 VITE_DATA_MODE。不能改回 demo 當作正式資料 fallback。
