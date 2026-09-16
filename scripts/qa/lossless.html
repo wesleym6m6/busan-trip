@@ -1,0 +1,7 @@
+<!doctype html>
+<html lang="zh-Hant"><head><meta charset="utf-8"><title>無損素材驗證（本機）</title>
+<style>body{font:16px system-ui;color:#183848;background:#f7fbfc;margin:20px}button{padding:12px}pre{white-space:pre-wrap}figure{display:inline-block;margin:8px}canvas{display:block}#renderers{display:flex;flex-wrap:wrap;gap:12px}</style></head>
+<body><h1>無損素材與海浪合成比較</h1><p>僅供本機 QA，不打包至正式網站。比較瀏覽器解碼後的全部像素，並比較不同時間與尺寸的 WebGL 海浪輸出。</p>
+<button id="run">驗證圖片與海浪</button><p id="status" role="status">尚未執行</p><pre id="results"></pre>
+<div id="renderers"><figure>原始 PNG<canvas id="before"></canvas></figure><figure>無損 WebP<canvas id="after"></canvas></figure></div>
+<script type="module" src="../../src/approved/qa/lossless.ts"></script></body></html>
