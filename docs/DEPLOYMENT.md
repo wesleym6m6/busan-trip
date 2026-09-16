@@ -1,6 +1,18 @@
 # 發布紀錄
 
-## 2026-09-16 最新：分層碎浪，保留已滿意的海鷗
+## 2026-09-16 最新：依家人確認更新行程內容
+
+正式網址：https://wesleym6m6.github.io/busan-trip/
+
+部署來源：`4e7cb199589c963e8cfe6528cf1cac12eaefd06d`。[GitHub Actions](https://github.com/wesleym6m6/busan-trip/actions/runs/35109313783) 的 build / deploy 均 success；Node 22 的 typecheck、lint、測試、資料驗證與 Pages 子路徑 build 通過。手動部署設定保持不變。GitHub 完整檔案樹與本機通過 43 tests 的版本一致（tree `9947c04eb8415a94c70a5899e5c32cae8f92ec34`）。
+
+正式站重新載入後，以 Chrome 390px 逐日確認五天新內容，無水平溢出；已確認 BIG5 未購買、10/5 08:00 出門、10/7 回台灣 9 人與哥哥續往大阪 1 人、接送預估 NT$3,000、李禹煥開館待確認，以及電子入境卡修正文案。膠囊與李禹煥詳情實際展開有內容，console error / warn 為空。
+
+美術、CSS、UI 與動畫程式均未變；正式站海面仍為 `data-renderer=layered-surf` / `data-playing=true`。本輪確認新版內容載入及原動畫持續執行，未重新宣稱所有動態都經過逐幀驗收。360px / 390px、26 張詳情與本機保存驗證見 [CONTENT_UPDATE_20260916.md](CONTENT_UPDATE_20260916.md)；真實 iPhone Safari 尚未實測。
+
+更新前基準為 `cf8e02b38ae679b775aa53d620adbdcb0423142a`；本機備份 tag `backup/content-before-20260916` 保留。CLI 憑證讀取失敗，因此透過既有 GitHub 登入網頁提交相同檔案，再以公開 fetch 核對完整 tree 相同；本機測試提交另保留在 `backup/content-local-verified-20260916`。兩個備份 tag 尚未推到遠端，原基準 commit 仍保留於 GitHub 歷史。
+
+## 2026-09-16 分層碎浪，保留已滿意的海鷗（歷史紀錄）
 
 正式網址：https://wesleym6m6.github.io/busan-trip/
 
