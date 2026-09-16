@@ -14,6 +14,8 @@
 
 2026-09-16 使用者另行要求並授權頁首碎浪／海鷗動畫升級，見 [HEADER_MOTION.md](docs/HEADER_MOTION.md)。最新頁首由 `CoastalHeader`、`SeaCanvas` 與 `header-motion.css` 管理；其餘定案外觀仍需保留。
 
+2026-09-16 使用者確認滿意目前版本與設計，最新分層碎浪和海鷗也已定案。後續依新的行程表維護內容，保留這版美術與操作。內容來源、使用者確認及待確認項目見 [CONTENT_UPDATE_20260916.md](docs/CONTENT_UPDATE_20260916.md)。
+
 ## 工作規則
 
 - 文案用台灣繁體中文；韓文地名與地址保留原文。景點、時間、地址、預約不硬寫在 JSX。
