@@ -9,6 +9,8 @@ React 19 + TypeScript + Vite；純靜態網站。`ApprovedTrip` 保存原匯出�
 
 原件位於 `design/approved-2026-09-15/`，manifest 記錄來源檔與 `public/uploads/` 五張 PNG 的 SHA-256。原件只留一份；PNG 以原始位元保留。`approved/assets.ts` 依 Vite BASE_URL 解決 project Pages 子路徑。
 
+2026-09-16 依使用者品質優先的要求改善載入：五張 RGB 插圖使用原尺寸、逐像素相同的 `.lossless.webp` 副本，`assetUrl` 集中映射，原始 PNG 完整保留。海鷗因瀏覽器透明像素差異保留 PNG；HTML 預載頁首三張素材。驗證與容量比較見 [PERFORMANCE_20260916.md](PERFORMANCE_20260916.md)。
+
 ## 3. 狀態與外部來源
 
 `busan-selected-day`、`busan-pack-v1`、`busan-reduce-motion` 和 `busan-fx-v1` 的 localStorage 鍵保留。新部署網域與 Claude 預覽網域的 localStorage 不共用，已勾項目不會自動跨網域搬移。
