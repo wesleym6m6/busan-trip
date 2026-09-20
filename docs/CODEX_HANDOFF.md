@@ -15,3 +15,5 @@
 2026-09-20 重新核對最新表後，整理行程文案與共用場所資料，修正時間附註並加入停留預算；再依使用者回饋改善卡片層級、間距與備案展開。李禹煥仍保留 10/6 16:00／可能休館。詳見 [CONTENT_UPDATE_20260920.md](CONTENT_UPDATE_20260920.md)、[CONTENT_SOURCES_20260920.md](CONTENT_SOURCES_20260920.md) 與 [LAYOUT_UPDATE_20260920.md](LAYOUT_UPDATE_20260920.md)。不要讀舊版 `backupGroups` 連結欄位作為目前契約。
 
 使用者隨後明確要求發布給家人查看，GitHub Pages 已成功更新。部署來源 `18630283140d2d387499fbb0054bd740c3d486ee`，正式 JS 為 `index-BRHalZz0.js`；50 tests、完整來源樹比對、公開產物位元比對與 360 / 390px 操作檢查皆通過。發布證據與限制見 [DEPLOYMENT.md](DEPLOYMENT.md)。之後的紀錄文件提交不代表網站再次部署；工作流仍需手動觸發。
+
+2026-09-20 使用者要求打包頁能自行新增分類與項目，並以容易操作為優先。新增 `PackingList`、`packingStorage` 與獨立樣式，提供連續新增、改名、移除與復原。個人資料只存在目前瀏覽器，v2 儲存仍相容讀取舊勾選；請勿把個人項目寫回公開行程 JSON。跨分頁同步與儲存前快照檢查需保留。功能操作、測試及未驗證範圍見 [PACKING_20260920.md](PACKING_20260920.md)，是否已上線以 [DEPLOYMENT.md](DEPLOYMENT.md) 最新紀錄為準。

@@ -1,5 +1,5 @@
 import { useEffect, useId, useRef, useState, type FormEvent, type MouseEvent } from 'react';
-import { loadPacking, packingCategories, savePacking, type PackingCategory, type PackingState } from './packingStorage';
+import { loadPacking, PACKING_KEY, packingCategories, savePacking, type PackingCategory, type PackingState } from './packingStorage';
 import './packing-list.css';
 
 type Editor = { kind: 'category' | 'item'; categoryId?: string; itemId?: string; value?: string };
@@ -57,6 +57,7 @@ export function PackingList({ baseCategories }: { baseCategories: PackingCategor
   const [editing, setEditing] = useState(false);
   const [editor, setEditor] = useState<Editor | null>(null);
   const [undo, setUndo] = useState<Undo | null>(null);
+  const savedSnapshot = useRef(loaded.serialized);
   const returnFocus = useRef<HTMLButtonElement | null>(null);
   const editButton = useRef<HTMLButtonElement>(null);
   const addItemButtons = useRef(new Map<string, HTMLButtonElement>());
@@ -65,10 +66,33 @@ export function PackingList({ baseCategories }: { baseCategories: PackingCategor
   const done = categories.reduce((sum, category) => sum + category.items.filter(item => model.checked[item.id]).length, 0);
   const baseIds = new Set(baseCategories.map(category => category.id));
 
+  useEffect(() => {
+    const refresh = (event: StorageEvent) => {
+      if (event.storageArea !== localStorage || (event.key !== PACKING_KEY && event.key !== null)) return;
+      const latest = loadPacking();
+      savedSnapshot.current = latest.serialized;
+      setModel(latest.model);
+      setWarning(latest.warning);
+      setUndo(null);
+    };
+    window.addEventListener('storage', refresh);
+    return () => window.removeEventListener('storage', refresh);
+  }, []);
+
   const commit = (next: PackingState, removed?: string) => {
+    const result = savePacking(next, savedSnapshot.current);
+    if (result.status === 'conflict') {
+      savedSnapshot.current = result.latest.serialized;
+      setModel(result.latest.model);
+      setWarning('清單剛在另一個分頁更新，已載入最新版，請再操作一次。');
+      setUndo(null);
+      return false;
+    }
     setUndo(removed ? { model, label: removed } : null);
     setModel(next);
-    setWarning(savePacking(next) ? '' : '這個瀏覽器目前無法儲存。新增內容與勾選暫時留在這個頁面，重新整理後可能消失。');
+    if (result.status === 'saved') savedSnapshot.current = result.serialized;
+    setWarning(result.status === 'saved' ? '' : '這個瀏覽器目前無法儲存。新增內容與勾選暫時留在這個頁面，重新整理後可能消失。');
+    return true;
   };
   const startEditor = (next: Editor, event: MouseEvent<HTMLButtonElement>) => {
     returnFocus.current = event.currentTarget;
@@ -88,11 +112,11 @@ export function PackingList({ baseCategories }: { baseCategories: PackingCategor
     if (editor.kind === 'category') {
       if (categories.some(category => category.id !== editor.categoryId && sameName(category.label, value))) return '已經有同名分類，換個名稱吧。';
       if (editor.categoryId) {
-        commit({ ...model, groups: model.groups.map(group => group.id === editor.categoryId ? { ...group, label: value } : group) });
+        if (!commit({ ...model, groups: model.groups.map(group => group.id === editor.categoryId ? { ...group, label: value } : group) })) return '清單已更新，請再按一次。';
         closeEditor();
       } else {
         const id = `custom-category-${crypto.randomUUID()}`;
-        commit({ ...model, groups: [...model.groups, { id, label: value, items: [] }] });
+        if (!commit({ ...model, groups: [...model.groups, { id, label: value, items: [] }] })) return '清單已更新，請再按一次。';
         setEditor({ kind: 'item', categoryId: id });
       }
     } else {
@@ -103,8 +127,8 @@ export function PackingList({ baseCategories }: { baseCategories: PackingCategor
       const nextGroup = { ...personalGroup, items: editor.itemId
         ? personalGroup.items.map(item => item.id === editor.itemId ? { ...item, label: value } : item)
         : [...personalGroup.items, { id: `custom-item-${crypto.randomUUID()}`, label: value }] };
-      commit({ ...model, groups: model.groups.some(group => group.id === category.id)
-        ? model.groups.map(group => group.id === category.id ? nextGroup : group) : [...model.groups, nextGroup] });
+      if (!commit({ ...model, groups: model.groups.some(group => group.id === category.id)
+        ? model.groups.map(group => group.id === category.id ? nextGroup : group) : [...model.groups, nextGroup] })) return '清單已更新，請再按一次。';
       if (editor.itemId) closeEditor();
     }
   };
@@ -115,7 +139,7 @@ export function PackingList({ baseCategories }: { baseCategories: PackingCategor
     const groups = itemId
       ? model.groups.map(group => group.id === categoryId ? { ...group, items: group.items.filter(item => item.id !== itemId) } : group)
       : model.groups.filter(group => group.id !== categoryId);
-    commit({ ...model, groups, checked }, label);
+    if (!commit({ ...model, groups, checked }, label)) return;
     setEditor(null);
     editButton.current?.focus({ preventScroll: true });
   };

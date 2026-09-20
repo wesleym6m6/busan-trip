@@ -18,14 +18,15 @@ const SavedPacking = z.object({
   return new Set(groupIds).size === groupIds.length && new Set(itemIds).size === itemIds.length;
 }));
 
-export function loadPacking(): { model: PackingState; warning: string } {
+export function loadPacking(): { model: PackingState; warning: string; serialized: string | null } {
   const model: PackingState = { version: 2, groups: [], checked: {} };
   let warning = '';
+  let serialized: string | null = null;
   try {
-    const saved = localStorage.getItem(PACKING_KEY);
-    if (saved !== null) {
-      const parsed = SavedPacking.safeParse(JSON.parse(saved));
-      if (parsed.success) return { model: parsed.data, warning };
+    serialized = localStorage.getItem(PACKING_KEY);
+    if (serialized !== null) {
+      const parsed = SavedPacking.safeParse(JSON.parse(serialized));
+      if (parsed.success) return { model: parsed.data, warning, serialized };
       warning = '打包紀錄無法讀取，暫時顯示預設清單與可讀取的舊勾選。';
     }
   } catch { warning = '打包紀錄無法讀取，暫時顯示預設清單與可讀取的舊勾選。'; }
@@ -35,12 +36,20 @@ export function loadPacking(): { model: PackingState; warning: string } {
       model.checked = Object.fromEntries(Object.entries(old).filter(([, value]) => typeof value === 'boolean'));
     }
   } catch { warning ||= '這個瀏覽器無法讀取打包紀錄，目前顯示預設清單。'; }
-  return { model, warning };
+  return { model, warning, serialized };
 }
 
-export function savePacking(model: PackingState): boolean {
-  try { localStorage.setItem(PACKING_KEY, JSON.stringify(model)); return true; }
-  catch { return false; }
+export function savePacking(model: PackingState, expected: string | null):
+  | { status: 'saved'; serialized: string }
+  | { status: 'conflict'; latest: ReturnType<typeof loadPacking> }
+  | { status: 'unavailable' } {
+  try {
+    // A storage event may still be queued when a stale tab receives a click.
+    if (localStorage.getItem(PACKING_KEY) !== expected) return { status: 'conflict', latest: loadPacking() };
+    const serialized = JSON.stringify(model);
+    localStorage.setItem(PACKING_KEY, serialized);
+    return { status: 'saved', serialized };
+  } catch { return { status: 'unavailable' }; }
 }
 
 /** Keep the shipped categories current; save only personal additions and checks. */

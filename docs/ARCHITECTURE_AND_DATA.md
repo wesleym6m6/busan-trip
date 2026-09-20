@@ -15,7 +15,9 @@ React 19 + TypeScript + Vite；純靜態網站。`ApprovedTrip` 保存原匯出�
 
 ## 3. 狀態與外部來源
 
-`busan-selected-day`、`busan-pack-v1`、`busan-reduce-motion` 和 `busan-fx-v1` 的 localStorage 鍵保留。新部署網域與 Claude 預覽網域的 localStorage 不共用，已勾項目不會自動跨網域搬移。
+`busan-selected-day`、`busan-reduce-motion` 和 `busan-fx-v1` 的 localStorage 鍵保留。打包清單改用 `busan-pack-v2` 保存個人分類、項目及勾選，首次載入仍讀取 `busan-pack-v1` 的有效布林勾選，不刪除舊鍵。新部署網域與 Claude 預覽網域的 localStorage 不共用，已勾項目不會自動跨網域搬移。
+
+`PackingList.tsx` 管理個人清單、編輯草稿與一次移除復原；`packingStorage.ts` 驗證並讀寫 `{ version: 2, groups, checked }`。只儲存個人新增內容與勾選，原清單仍由正式資料提供，既有 13 個 item ID 不變。元件在切換分頁時保留掛載，使用 `hidden` 隱藏，草稿及無法儲存時的暫存不因切換而消失。同來源分頁透過 storage event 更新；儲存前比對讀取時的原始快照，若資料已變更則載入最新版並提示重試，避免一般舊分頁操作覆蓋新內容。此檢查不是跨程序交易鎖。損壞紀錄或儲存失敗會顯示提示，沒有伺服器備份。功能與驗證見 [PACKING_20260920.md](PACKING_20260920.md)。
 
 日期按 Asia/Seoul 判斷，保留原匯出所選日期優先的行為。匯率取 `https://open.er-api.com/v6/latest/KRW`，保留 24h 快取、上次資料和手動輸入行為。未加入 Service Worker 或跨裝置同步。
 
@@ -42,7 +44,7 @@ React 19 + TypeScript + Vite；純靜態網站。`ApprovedTrip` 保存原匯出�
 
 2026-09-16 內容依使用者新版行程表及明確回覆更新，詳見 [CONTENT_UPDATE_20260916.md](CONTENT_UPDATE_20260916.md)。資料形狀與 UI 未變；packing 的既有 id 保留。Google 原表與私人票券資訊不進 repo；公開資料只含必要航班時間、人數與地圖搜尋詞。工具頁 fixed 的 booked=false 會顯示「未購買」，不能拿來表示訂購狀態未知；未知的展覽門票放 todo 確認。
 
-2026-09-20 採用上述共用場所與停留預算契約，整份靜態資料同步遷移，沒有外部 API 消費者或需遷移的持久化行程資料。既有四個 localStorage 鍵與 packing ID 不變。當次來源同步及驗證見 [CONTENT_UPDATE_20260920.md](CONTENT_UPDATE_20260920.md)。
+2026-09-20 採用上述共用場所與停留預算契約，整份靜態資料同步遷移，沒有外部 API 消費者或需遷移的持久化行程資料。該次內容更新未改 localStorage 鍵或 packing ID；後續個人打包功能的 v2 儲存契約見第 3 節。當次來源同步及驗證見 [CONTENT_UPDATE_20260920.md](CONTENT_UPDATE_20260920.md)。
 
 ## 5. 歷史模組與部署
 

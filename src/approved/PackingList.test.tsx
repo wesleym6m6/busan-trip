@@ -155,4 +155,41 @@ describe('個人打包清單', () => {
     expect(screen.getAllByRole('checkbox')).toHaveLength(13);
     expect(screen.getByRole('alert').textContent).toContain('無法讀取');
   });
+
+  it('blocks a stale tab from overwriting another tab additions before its storage event arrives', () => {
+    const first = render(<App />);
+    const second = render(<App />);
+    const a = within(first.container), b = within(second.container);
+    fireEvent.click(a.getByRole('button', { name: '打包' }));
+    fireEvent.click(a.getByRole('button', { name: '新增分類' }));
+    fireEvent.change(a.getByRole('textbox', { name: '分類名稱' }), { target: { value: '隨身包' } });
+    fireEvent.click(a.getByRole('button', { name: '建立分類' }));
+    fireEvent.change(a.getByRole('textbox', { name: '新增項目名稱' }), { target: { value: '耳塞' } });
+    fireEvent.click(a.getByRole('button', { name: '加入' }));
+    const savedByA = localStorage.getItem('busan-pack-v2');
+    fireEvent.click(b.getByRole('button', { name: '打包' }));
+    fireEvent.click(b.getByRole('checkbox', { name: '行動電源' }));
+    expect(localStorage.getItem('busan-pack-v2')).toBe(savedByA);
+    expect(b.getByRole('checkbox', { name: '耳塞' })).toBeTruthy();
+    expect(b.getByRole('alert').textContent).toContain('另一個分頁');
+    fireEvent.click(b.getByRole('checkbox', { name: '行動電源' }));
+    first.unmount(); second.unmount(); openPacking();
+    expect(screen.getByRole('checkbox', { name: '耳塞' })).toBeTruthy();
+    expect((screen.getByRole('checkbox', { name: '行動電源' }) as HTMLInputElement).checked).toBe(true);
+  });
+
+  it('receives another tab updates while preserving the text being entered', () => {
+    const first = openPacking();
+    fireEvent.click(screen.getByRole('button', { name: '新增分類' }));
+    fireEvent.change(screen.getByRole('textbox', { name: '分類名稱' }), { target: { value: '還在輸入的分類' } });
+    const external = JSON.stringify({ version: 2, groups: [{ id: 'custom-category-other', label: '相機包', items: [{ id: 'custom-item-lens', label: '鏡頭' }] }], checked: { powerbank: true } });
+    localStorage.setItem('busan-pack-v2', external);
+    fireEvent(window, new StorageEvent('storage', { key: 'busan-pack-v2', newValue: external, storageArea: localStorage }));
+    expect(screen.getByRole('checkbox', { name: '鏡頭' })).toBeTruthy();
+    expect((screen.getByRole('textbox', { name: '分類名稱' }) as HTMLInputElement).value).toBe('還在輸入的分類');
+    fireEvent.click(screen.getByRole('button', { name: '建立分類' }));
+    first.unmount(); openPacking();
+    expect(screen.getByRole('heading', { name: '相機包' })).toBeTruthy();
+    expect(screen.getByRole('heading', { name: '還在輸入的分類' })).toBeTruthy();
+  });
 });
