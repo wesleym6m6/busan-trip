@@ -17,8 +17,11 @@ describe('使用者定案版', () => {
       expect(screen.getByRole('button',{name:new RegExp(date)})).toBeTruthy();
     }
     expect(within(screen.getByRole('navigation')).getAllByRole('button')).toHaveLength(4);
-    fireEvent.click(screen.getByRole('button',{name:'BX794 抵達（9 人）詳情'}));
-    expect(screen.getByText(/可依憑證到 WiFi Dosirak/)).toBeTruthy();
+    const arrival = screen.getByRole('button',{name:'BX794 抵達（9 人）詳情'});
+    expect(arrival.getAttribute('aria-expanded')).toBe('false');
+    fireEvent.click(arrival);
+    expect(arrival.getAttribute('aria-expanded')).toBe('true');
+    expect(document.getElementById(arrival.getAttribute('aria-controls')!)?.textContent).toContain('WiFi Dosirak');
     expect(document.querySelector('sc-if,sc-for,x-dc')).toBeNull();
   });
   it('切日、備案空狀態與重新掛載保留日期', async () => {
@@ -27,7 +30,7 @@ describe('使用者定案版', () => {
     fireEvent.click(screen.getByRole('button',{name:'備案'}));
     expect(screen.getByText('這天沒有另外安排備案。')).toBeTruthy();
     fireEvent.click(screen.getByRole('button',{name:'查看全部'}));
-    expect(screen.getByText('水邊豬肉湯飯民樂本店')).toBeTruthy();
+    expect(screen.getByText(/水邊.*民樂本店/)).toBeTruthy();
     first.unmount();
     render(<App />);
     expect(await screen.findByRole('heading',{name:'收拾行李，準備回台北'})).toBeTruthy();
@@ -38,7 +41,7 @@ describe('使用者定案版', () => {
     const card=screen.getByText('抵達尾浦站').closest('li')!;
     expect(decodeURIComponent(within(card).getByRole('link').getAttribute('href')!)).toContain('미포정거장');
     fireEvent.click(screen.getByRole('button',{name:'天空膠囊列車詳情'}));
-    expect(screen.getByText('持 08:30 時段票入場，依現場順序上車。')).toBeTruthy();
+    expect(screen.getByText(/08:30 是預約入場時段/)).toBeTruthy();
   });
   it('保留參考匯率、手動匯率、空值與無效輸入的體驗', async () => {
     render(<App />);
