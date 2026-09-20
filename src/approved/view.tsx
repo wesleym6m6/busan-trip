@@ -1,9 +1,10 @@
 import { CoastalHeader } from './CoastalHeader';
+import { BackupCard, ItineraryCard } from './ContentCards';
 import { Fragment, type CSSProperties, type ReactNode } from 'react';
 import type { ApprovedTrip } from './ApprovedTrip';
 import { assetUrl } from './assets';
 
-/** Direct translation of the approved Claude template; keep layout and copy aligned with the baseline. */
+/** Approved ocean shell with the user-requested content layout refinement (2026-09-20). */
 export function renderApprovedView(v: ReturnType<ApprovedTrip['renderVals']>): ReactNode {
  return <>
 <div data-reduce-motion={v.reduceMotion} style={({"fontFamily": "'Noto Sans TC','Manrope',-apple-system,BlinkMacSystemFont,'PingFang TC','Apple SD Gothic Neo','Noto Sans KR','Segoe UI',Roboto,sans-serif", "color": "#183848", "background": "#F7FBFC", "minHeight": "100dvh", "position": "relative"} as CSSProperties)}>
@@ -29,102 +30,18 @@ export function renderApprovedView(v: ReturnType<ApprovedTrip['renderVals']>): R
 <button onClick={v.goToday} style={({"marginTop": "6px", "fontSize": "12px", "fontWeight": 700, "color": "#246B8E", "background": "transparent", "border": "0", "padding": "2px 0", "cursor": "pointer"} as CSSProperties)}>{"回到今天"}</button>
  </>}
 </div>
-<section style={({"padding": "12px 0 8px", "display": "flex", "alignItems": "center", "gap": "12px"} as CSSProperties)}>
+<section className="trip-day-heading" style={({"padding": "16px 0 10px", "display": "flex", "alignItems": "center", "gap": "12px"} as CSSProperties)}>
 {!!(v.currentDay.image) && <>
 <img src={assetUrl(v.currentDay.image)} alt={""} loading={"eager"} decoding={"async"} width={"120"} height={"80"} style={({"flex": "none", "width": "104px", "height": "70px", "objectFit": "cover", "borderRadius": "12px"} as CSSProperties)}/>
  </>}
 <div style={({"minWidth": "0"} as CSSProperties)}>
-<div style={({"fontSize": "12px", "color": "#5B7280", "fontFamily": "'Manrope',sans-serif", "fontWeight": 700} as CSSProperties)}>{v.currentDay.dateLabel}{"週"}{v.currentDay.weekday}</div>
+<div style={({"fontSize": "12px", "color": "#5B7280", "fontFamily": "'Manrope',sans-serif", "fontWeight": 700} as CSSProperties)}>{v.currentDay.dateLabel}{" 週"}{v.currentDay.weekday}</div>
 <h1 style={({"fontSize": "25px", "fontWeight": 600, "margin": "2px 0 0", "lineHeight": 1.3} as CSSProperties)}>{v.currentDay.summary}</h1>
 </div>
 </section>
+<p style={{fontSize: "12px", color: "#5B7280", margin: "0 0 10px"}}>預留時間為停留估計，排隊與交通另計。</p>
 <ul style={({"listStyle": "none", "margin": "0", "padding": "0", "display": "flex", "flexDirection": "column", "gap": "10px"} as CSSProperties)}>
-{v.dayItems.map((it, index2) => <Fragment key={index2}>
-{!!(it.isEvent) && <>
-<li style={({"background": "#FFFFFF", "border": "1px solid " + it.borderColor, "borderRadius": "16px", "boxShadow": "0 1px 2px rgba(24,56,72,.05)"} as CSSProperties)}>
-{!!(it.hasDetails) && <>
-<button onClick={it.toggle} aria-expanded={it.expanded} aria-controls={it.detailId} aria-label={it.ariaLabel} style={({"width": "100%", "display": "flex", "alignItems": "flex-start", "padding": "13px 14px", "gap": "12px", "minHeight": "44px", "background": "transparent", "border": "0", "textAlign": "left", "cursor": "pointer", "font": "inherit", "color": "inherit"} as CSSProperties)} className={"approved-press-1"}>
-{!!(it.isClockTime) && <>
-<div style={({"flex": "none", "width": "60px"} as CSSProperties)}>
-<div style={({"fontFamily": "'Manrope',sans-serif", "fontWeight": 700, "fontSize": "17px"} as CSSProperties)}>{it.timeStart}</div>
-{!!(it.timeEnd) && <>
-<div style={({"fontFamily": "'Manrope',sans-serif", "fontWeight": 500, "fontSize": "12px", "color": "#5B7280"} as CSSProperties)}>{"–"}{it.timeEnd}</div>
- </>}
-</div>
- </>}
-<div style={({"minWidth": "0", "flex": 1} as CSSProperties)}>
-{!!(it.showTimeLabel) && <>
-<div style={({"fontSize": "12px", "fontWeight": 700, "color": "#246B8E", "marginBottom": "2px"} as CSSProperties)}>{it.time}</div>
- </>}
-<div style={({"display": "flex", "alignItems": "baseline", "gap": "8px", "flexWrap": "wrap"} as CSSProperties)}>
-<div style={({"fontSize": "18px", "fontWeight": 600, "lineHeight": 1.3} as CSSProperties)}>{it.title}</div>
-{!!(it.tagLabel) && <>
-<span style={({"display": "inline-flex", "alignItems": "center", "gap": "4px", "fontSize": "11px", "fontWeight": 700, "color": it.tagColor} as CSSProperties)}><span style={({"width": "6px", "height": "6px", "borderRadius": "50%", "background": it.tagColor} as CSSProperties)}></span>{it.tagLabel}</span>
- </>}
-</div>
-{!!(it.hasSteps) && <>
-<ol style={({"listStyle": "none", "margin": "4px 0 0", "padding": "0", "display": "flex", "flexDirection": "column", "gap": "2px"} as CSSProperties)}>
-{it.stepList.map((s, index3) => <Fragment key={index3}>
-<li style={({"fontSize": "15px", "color": "#3E5A69", "lineHeight": 1.55} as CSSProperties)}>{s}</li>
-</Fragment>)}
-</ol>
- </>}
-</div>
-<span aria-hidden={"true"} style={({"flex": "none", "width": "24px", "height": "24px", "display": "flex", "alignItems": "center", "justifyContent": "center", "marginTop": "-2px"} as CSSProperties)}>
-<svg width={"18"} height={"18"} viewBox={"0 0 24 24"} fill={"none"} stroke={"#5B7280"} strokeWidth={"2"} strokeLinecap={"round"} strokeLinejoin={"round"} style={({"transform": "rotate(" + it.chevronDeg + ")", "transition": "transform 200ms"} as CSSProperties)}>
-<path d={"m6 9 6 6 6-6"}></path>
-</svg>
-</span>
-</button>
- </>}
-{!!(it.noDetails) && <>
-<div style={({"width": "100%", "display": "flex", "alignItems": "flex-start", "padding": "13px 14px", "gap": "12px", "minHeight": "44px"} as CSSProperties)}>
-{!!(it.isClockTime) && <>
-<div style={({"flex": "none", "width": "60px"} as CSSProperties)}>
-<div style={({"fontFamily": "'Manrope',sans-serif", "fontWeight": 700, "fontSize": "17px"} as CSSProperties)}>{it.timeStart}</div>
-{!!(it.timeEnd) && <>
-<div style={({"fontFamily": "'Manrope',sans-serif", "fontWeight": 500, "fontSize": "12px", "color": "#5B7280"} as CSSProperties)}>{"–"}{it.timeEnd}</div>
- </>}
-</div>
- </>}
-<div style={({"minWidth": "0", "flex": 1} as CSSProperties)}>
-{!!(it.showTimeLabel) && <>
-<div style={({"fontSize": "12px", "fontWeight": 700, "color": "#246B8E", "marginBottom": "2px"} as CSSProperties)}>{it.time}</div>
- </>}
-<div style={({"display": "flex", "alignItems": "baseline", "gap": "8px", "flexWrap": "wrap"} as CSSProperties)}>
-<div style={({"fontSize": "18px", "fontWeight": 600, "lineHeight": 1.3} as CSSProperties)}>{it.title}</div>
-{!!(it.tagLabel) && <>
-<span style={({"display": "inline-flex", "alignItems": "center", "gap": "4px", "fontSize": "11px", "fontWeight": 700, "color": it.tagColor} as CSSProperties)}><span style={({"width": "6px", "height": "6px", "borderRadius": "50%", "background": it.tagColor} as CSSProperties)}></span>{it.tagLabel}</span>
- </>}
-</div>
-{!!(it.hasSteps) && <>
-<ol style={({"listStyle": "none", "margin": "4px 0 0", "padding": "0", "display": "flex", "flexDirection": "column", "gap": "2px"} as CSSProperties)}>
-{it.stepList.map((s, index4) => <Fragment key={index4}>
-<li style={({"fontSize": "15px", "color": "#3E5A69", "lineHeight": 1.55} as CSSProperties)}>{s}</li>
-</Fragment>)}
-</ol>
- </>}
-</div>
-</div>
- </>}
-{!!(it.showMap) && <>
-<div style={({"padding": "0 14px 12px"} as CSSProperties)}>
-<a href={it.mapUrl} target={"_blank"} rel={"noopener noreferrer"} style={({"display": "inline-flex", "alignItems": "center", "gap": "6px", "fontSize": "14px", "fontWeight": 700, "color": "#246B8E", "background": "#DCEEF2", "borderRadius": "10px", "padding": "9px 14px", "textDecoration": "none", "minHeight": "44px", "boxSizing": "border-box"} as CSSProperties)} className={"approved-press-2"}>
-<svg width={"16"} height={"16"} viewBox={"0 0 24 24"} fill={"none"} stroke={"currentColor"} strokeWidth={"1.8"} strokeLinecap={"round"} strokeLinejoin={"round"}><path d={"M12 21s-6-5.4-6-11a6 6 0 0 1 12 0c0 5.6-6 11-6 11Z"}></path><circle cx={"12"} cy={"10"} r={"2.2"}></circle></svg>{"\n                    地圖搜尋\n                  "}</a>
-</div>
- </>}
-{!!(it.expanded) && <>
-<div id={it.detailId} style={({"padding": "0 14px 14px", "fontSize": "14px", "color": "#3E5A69", "lineHeight": 1.6, "borderTop": "1px solid #EEF3F5", "paddingTop": "10px", "whiteSpace": "pre-line", "animation": "fx-fade 200ms ease"} as CSSProperties)}>{it.note}</div>
- </>}
-</li>
- </>}
-{!!(it.isTransit) && <>
-<li style={({"display": "flex", "alignItems": "baseline", "gap": "8px", "padding": "2px 4px", "fontSize": "13px", "color": "#5B7280"} as CSSProperties)}>
-<span style={({"flex": "none", "fontFamily": "'Manrope',sans-serif", "fontWeight": 700, "color": "#183848"} as CSSProperties)}>{it.time}</span>
-<span style={({"flex": 1, "minWidth": "0"} as CSSProperties)}>{it.title}</span>
-</li>
- </>}
-</Fragment>)}
+{v.dayItems.map(it => <ItineraryCard key={it.key} item={it} />)}
 </ul>
  </>}
 {!!(v.isBackups) && <>
@@ -132,38 +49,16 @@ export function renderApprovedView(v: ReturnType<ApprovedTrip['renderVals']>): R
 <div style={({"display": "flex", "alignItems": "center", "gap": "12px"} as CSSProperties)}>
 <img src={assetUrl("uploads/pork-soup.png")} alt={""} loading={"lazy"} width={"200"} height={"140"} style={({"flex": "none", "width": "104px", "height": "auto", "borderRadius": "12px"} as CSSProperties)}/>
 <div style={({"flex": 1, "minWidth": "0", "display": "flex", "justifyContent": "space-between", "alignItems": "baseline", "gap": "8px"} as CSSProperties)}>
-<h2 style={({"fontSize": "14px", "fontWeight": 700, "color": "#183848", "margin": "0"} as CSSProperties)}>{v.backupsHeading}</h2>
-<button onClick={v.toggleShowAllBackups} style={({"flex": "none", "fontSize": "12px", "fontWeight": 700, "color": "#246B8E", "background": "transparent", "border": "0", "cursor": "pointer"} as CSSProperties)}>{v.showAllBackupsLabel}</button>
+<h2 style={({"fontSize": "20px", "fontWeight": 600, "color": "#183848", "margin": "0"} as CSSProperties)}>{v.backupsHeading}</h2>
+<button onClick={v.toggleShowAllBackups} style={({"minHeight": "44px", "flex": "none", "fontSize": "12px", "fontWeight": 700, "color": "#246B8E", "background": "transparent", "border": "0", "cursor": "pointer"} as CSSProperties)}>{v.showAllBackupsLabel}</button>
 </div>
 </div>
 {!!(v.hasVisibleBackups) && <>
-{v.visibleBackupGroups.map((grp, index5) => <Fragment key={index5}>
+{v.visibleBackupGroups.map(grp => <Fragment key={`${grp.dayId}-${grp.label}`}>
 <section >
 <h3 style={({"fontSize": "12px", "fontWeight": 700, "color": "#5B7280", "margin": "0 0 8px"} as CSSProperties)}>{grp.label}</h3>
 <div style={({"display": "flex", "flexDirection": "column", "gap": "10px"} as CSSProperties)}>
-{grp.items.map((b, index6) => <Fragment key={index6}>
-<div style={({"background": "#fff", "border": "1px solid #D6E3E8", "borderRadius": "16px", "padding": "14px", "boxShadow": "0 1px 2px rgba(24,56,72,.05)"} as CSSProperties)}>
-<div style={({"display": "flex", "justifyContent": "space-between", "alignItems": "flex-start", "gap": "10px"} as CSSProperties)}>
-<div style={({"minWidth": "0"} as CSSProperties)}>
-<div style={({"fontSize": "11px", "fontWeight": 700, "color": "#246B8E"} as CSSProperties)}>{"主餐廳"}</div>
-<div style={({"fontWeight": 700, "fontSize": "16px", "marginTop": "2px"} as CSSProperties)}>{b.main}</div>
-</div>
-<a href={b.mainMapUrl} target={"_blank"} rel={"noopener noreferrer"} style={({"flex": "none", "fontSize": "13px", "fontWeight": 700, "color": "#246B8E", "background": "#DCEEF2", "borderRadius": "10px", "padding": "8px 12px", "textDecoration": "none", "minHeight": "44px", "display": "flex", "alignItems": "center"} as CSSProperties)} className={"approved-press-3"}>{"地圖搜尋"}</a>
-</div>
-<div style={({"display": "flex", "justifyContent": "space-between", "alignItems": "flex-start", "gap": "10px", "marginTop": "10px", "paddingTop": "10px", "borderTop": "1px solid #EEF3F5"} as CSSProperties)}>
-<div style={({"minWidth": "0"} as CSSProperties)}>
-<div style={({"fontSize": "11px", "fontWeight": 700, "color": "#5B7280"} as CSSProperties)}>{"備選"}</div>
-<div style={({"fontSize": "14px", "marginTop": "2px"} as CSSProperties)}>{b.backup}</div>
-</div>
-{!!(b.altMapUrl) && <>
-<a href={b.altMapUrl} target={"_blank"} rel={"noopener noreferrer"} style={({"flex": "none", "fontSize": "13px", "fontWeight": 700, "color": "#5B7280", "background": "#F7FBFC", "border": "1px solid #D6E3E8", "borderRadius": "10px", "padding": "8px 12px", "textDecoration": "none", "minHeight": "44px", "display": "flex", "alignItems": "center"} as CSSProperties)} className={"approved-press-4"}>{"地圖搜尋"}</a>
- </>}
-</div>
-{!!(b.note) && <>
-<div style={({"fontSize": "13px", "color": "#5B7280", "marginTop": "8px", "lineHeight": 1.5} as CSSProperties)}>{b.note}</div>
- </>}
-</div>
-</Fragment>)}
+{grp.items.map((backup, index) => <BackupCard key={`${grp.dayId}-${index}`} backup={backup} />)}
 </div>
 </section>
 </Fragment>)}
