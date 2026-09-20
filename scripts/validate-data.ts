@@ -6,9 +6,20 @@
 import { readFileSync, existsSync } from 'node:fs';
 import { resolve } from 'node:path';
 import { validateApprovedTripData, validateTripData } from '../src/domain/validate.ts';
+import cardIllustrations from '../src/data/card-illustrations.json';
 
 const approved = validateApprovedTripData(JSON.parse(readFileSync('src/data/approved-trip.json', 'utf8')));
 if (!approved.ok) { console.error(approved.issues); process.exit(1); }
+for (const [key, art] of Object.entries(cardIllustrations)) {
+  if (!/^uploads\/(?:cards\/)?[a-z0-9-]+(?:\.lossless)?\.(?:png|webp)$/.test(art.src)
+    || !existsSync(resolve('public', art.src))
+    || !Number.isInteger(art.width) || art.width <= 0
+    || !Number.isInteger(art.height) || art.height <= 0
+    || !['cutout', 'scene'].includes(art.treatment)) {
+    console.error(`Invalid card illustration asset: ${key}`);
+    process.exit(1);
+  }
+}
 console.log('✓ src/data/approved-trip.json — approved shape and references valid');
 
 const args = process.argv.slice(2);

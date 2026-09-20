@@ -1,5 +1,6 @@
 import { useId, useState, type CSSProperties } from 'react';
 import type { ApprovedTrip } from './ApprovedTrip';
+import { CardIllustration } from './CardIllustration';
 import './content-cards.css';
 
 type View = ReturnType<ApprovedTrip['renderVals']>;
@@ -33,7 +34,10 @@ export function ItineraryCard({ item: it }: { item: Item }) {
       {it.hasDetails && <Chevron expanded={it.expanded} />}
     </span>
     <span className="trip-card-title">{it.title}</span>
-    {it.hasSteps && <span className="trip-card-steps">{it.stepList.map((step, i) => <span key={i}>{step}</span>)}</span>}
+    {(it.hasSteps || it.illustrationKey) && <span className="trip-card-summary">
+      {it.illustrationKey && <CardIllustration key={it.illustrationKey} name={it.illustrationKey} />}
+      {it.hasSteps && <span className="trip-card-steps">{it.stepList.map((step, i) => <span key={i}>{step}</span>)}</span>}
+    </span>}
   </>;
 
   return <li className="trip-card" style={{'--card-border': it.borderColor} as CSSProperties}>

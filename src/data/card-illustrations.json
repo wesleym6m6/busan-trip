@@ -1,0 +1,182 @@
+{
+  "pork-soup": {
+    "src": "uploads/pork-soup.png",
+    "width": 1536,
+    "height": 1024,
+    "treatment": "scene"
+  },
+  "sky-capsule": {
+    "src": "uploads/sky-capsule.png",
+    "width": 1536,
+    "height": 1024,
+    "treatment": "scene"
+  },
+  "coast": {
+    "src": "uploads/busan-coast.png",
+    "width": 1983,
+    "height": 793,
+    "treatment": "scene"
+  },
+  "coffee": {
+    "src": "uploads/cards/coffee.lossless.webp",
+    "width": 1254,
+    "height": 1254,
+    "treatment": "cutout"
+  },
+  "cable-car": {
+    "src": "uploads/cards/cable-car.lossless.webp",
+    "width": 1254,
+    "height": 1254,
+    "treatment": "cutout"
+  },
+  "flight": {
+    "src": "uploads/cards/flight.lossless.webp",
+    "width": 1254,
+    "height": 1254,
+    "treatment": "cutout"
+  },
+  "barbecue": {
+    "src": "uploads/cards/barbecue.lossless.webp",
+    "width": 1254,
+    "height": 1254,
+    "treatment": "cutout"
+  },
+  "shopping": {
+    "src": "uploads/cards/shopping.lossless.webp",
+    "width": 1254,
+    "height": 1254,
+    "treatment": "cutout"
+  },
+  "luggage": {
+    "src": "uploads/cards/luggage.lossless.webp",
+    "width": 1254,
+    "height": 1254,
+    "treatment": "cutout"
+  },
+  "luge": {
+    "src": "uploads/cards/luge.lossless.webp",
+    "width": 1254,
+    "height": 1254,
+    "treatment": "cutout"
+  },
+  "coastal-train": {
+    "src": "uploads/cards/coastal-train.lossless.webp",
+    "width": 1254,
+    "height": 1254,
+    "treatment": "cutout"
+  },
+  "coastal-village": {
+    "src": "uploads/cards/coastal-village.lossless.webp",
+    "width": 1254,
+    "height": 1254,
+    "treatment": "cutout"
+  },
+  "brunch": {
+    "src": "uploads/cards/brunch.lossless.webp",
+    "width": 1254,
+    "height": 1254,
+    "treatment": "cutout"
+  },
+  "daypack": {
+    "src": "uploads/cards/daypack.lossless.webp",
+    "width": 1254,
+    "height": 1254,
+    "treatment": "cutout"
+  },
+  "taxi": {
+    "src": "uploads/cards/taxi.lossless.webp",
+    "width": 1254,
+    "height": 1254,
+    "treatment": "cutout"
+  },
+  "fried-chicken": {
+    "src": "uploads/cards/fried-chicken.lossless.webp",
+    "width": 1254,
+    "height": 1254,
+    "treatment": "cutout"
+  },
+  "immersive-art": {
+    "src": "uploads/cards/immersive-art.lossless.webp",
+    "width": 1254,
+    "height": 1254,
+    "treatment": "cutout"
+  },
+  "werner-gallery": {
+    "src": "uploads/cards/werner-gallery.lossless.webp",
+    "width": 1254,
+    "height": 1254,
+    "treatment": "cutout"
+  },
+  "lee-ufan": {
+    "src": "uploads/cards/lee-ufan.lossless.webp",
+    "width": 1254,
+    "height": 1254,
+    "treatment": "cutout"
+  },
+  "jjimjilbang": {
+    "src": "uploads/cards/jjimjilbang.lossless.webp",
+    "width": 1254,
+    "height": 1254,
+    "treatment": "cutout"
+  },
+  "outlet-meal": {
+    "src": "uploads/cards/outlet-meal.lossless.webp",
+    "width": 1254,
+    "height": 1254,
+    "treatment": "cutout"
+  },
+  "gwangalli-dinner": {
+    "src": "uploads/cards/gwangalli-dinner.lossless.webp",
+    "width": 1254,
+    "height": 1254,
+    "treatment": "cutout"
+  },
+  "seomyeon-dinner": {
+    "src": "uploads/cards/seomyeon-dinner.lossless.webp",
+    "width": 1254,
+    "height": 1254,
+    "treatment": "cutout"
+  },
+  "kaymak-coffee": {
+    "src": "uploads/cards/kaymak-coffee.lossless.webp",
+    "width": 1254,
+    "height": 1254,
+    "treatment": "cutout"
+  },
+  "night-coast": {
+    "src": "uploads/cards/night-coast.lossless.webp",
+    "width": 1254,
+    "height": 1254,
+    "treatment": "cutout"
+  },
+  "drone-sky": {
+    "src": "uploads/cards/drone-sky.lossless.webp",
+    "width": 1254,
+    "height": 1254,
+    "treatment": "cutout"
+  },
+  "korean-market": {
+    "src": "uploads/cards/korean-market.lossless.webp",
+    "width": 1254,
+    "height": 1254,
+    "treatment": "cutout"
+  },
+  "long-beef-ribs": {
+    "src": "uploads/cards/long-beef-ribs.lossless.webp",
+    "width": 1254,
+    "height": 1254,
+    "treatment": "cutout"
+  },
+  "airport-checkin": {
+    "src": "uploads/cards/airport-checkin.lossless.webp",
+    "width": 1254,
+    "height": 1254,
+    "treatment": "cutout"
+  },
+  "pour-over": {
+    "src": "uploads/cards/pour-over.lossless.webp",
+    "width": 1254,
+    "height": 1254,
+    "treatment": "cutout"
+  }
+}

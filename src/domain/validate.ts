@@ -9,6 +9,7 @@
  * error 會阻止資料被使用；warning 只提示（例如來源尚未核對）。
  */
 import { ApprovedTripSchema, TripDataFileSchema } from './schema';
+import cardIllustrations from '../data/card-illustrations.json';
 import type { DayPlan, SourceRef, TimePoint, TripDataFile, TripDataset } from './types';
 
 export type IssueSeverity = 'error' | 'warning';
@@ -279,6 +280,9 @@ export function validateApprovedTripData(input: unknown) {
     dayIds.add(day.id); dates.add(day.date);
     if (day.image && !/^uploads\/[a-z0-9-]+\.png$/.test(day.image)) issues.push(`Invalid image path: ${day.image}`);
     for (const item of day.items) {
+      if (item.illustrationKey && (item.kind !== 'event' || !Object.hasOwn(cardIllustrations, item.illustrationKey))) {
+        issues.push(`Invalid illustration: ${day.id}/${item.title}`);
+      }
       if (item.placeKey && !data.places[item.placeKey]) issues.push(`Unknown place: ${item.placeKey}`);
       if (item.visitMinutes && (item.kind !== 'event' || item.visitMinutes.max < item.visitMinutes.min)) {
         issues.push(`Invalid visit budget: ${day.id}/${item.title}`);

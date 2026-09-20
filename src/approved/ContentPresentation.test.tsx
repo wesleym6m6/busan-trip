@@ -12,6 +12,25 @@ beforeEach(() => {
 afterEach(() => { cleanup(); Object.assign(data, structuredClone(original)); vi.unstubAllGlobals(); });
 
 describe('行程資訊的呈現', () => {
+  it('keeps decorative art out of the accessible name and retains details and map access if it fails', () => {
+    Object.assign(data.days[0]!.items.find(item => item.placeKey === 'water_soup')!, {illustrationKey: 'pork-soup'});
+    render(<ApprovedTrip />);
+    const heading = screen.getByRole('button', {name: '水邊最高豬肉湯飯詳情'});
+    const card = heading.closest('li')!;
+    const image = card.querySelector('img')!;
+    expect(image).not.toBeNull();
+    expect(image.getAttribute('alt')).toBe('');
+    expect(image.closest('[aria-hidden="true"]')).toBeTruthy();
+    const map = within(card).getByRole('link', {name: '水邊最高豬肉湯飯地圖搜尋'});
+    const href = map.getAttribute('href');
+    fireEvent.error(image);
+    expect(card.querySelector('img')).toBeNull();
+    fireEvent.click(heading);
+    expect(heading.getAttribute('aria-expanded')).toBe('true');
+    const details = document.getElementById(heading.getAttribute('aria-controls')!)!;
+    expect(within(details).getByRole('heading', {name: '現場資訊'})).toBeTruthy();
+    expect(map.getAttribute('href')).toBe(href);
+  });
   it('keeps deadline and timezone suffixes visible in the clock column', () => {
     localStorage.setItem('busan-selected-day', 'd5');
     render(<ApprovedTrip />);

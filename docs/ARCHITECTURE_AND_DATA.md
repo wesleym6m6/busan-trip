@@ -29,6 +29,7 @@ React 19 + TypeScript + Vite；純靜態網站。`ApprovedTrip` 保存原匯出�
 - `days`: id、日期、顯示文字、可選主題圖、依順序呈現的 items。
 - `items`: event/transit、time 顯示字串、title、可選 steps/note/placeKey/status。`steps` 是收合時也能讀到的當天行動或重要限制，`note` 是展開後的當次安排。
 - `items.visitMinutes?`: `{ min, max }` 正整數分鐘區間，僅供 event。這是停留預算，不是營業時間、預約、交通或保證候位時間；max 不得小於 min。沒有合理預算的項目可省略。
+- `items.illustrationKey?`: 引用 `src/data/card-illustrations.json` 的裝飾插圖鍵，只允許 event。圖片跟著 item 保存，不以日期索引或標題比對推測；調整行程順序仍保留正確配圖。省略時自然呈現純文字卡片。catalog 記錄公開相對路徑、原始寬高和 `cutout`／`scene` 邊緣處理；`validate:data` 另檢查檔案存在及路徑、尺寸、處理方式。
 - `backupGroups`: 所屬 dayId、標題，以及各組的 `mainPlaceKey`、`backupPlaceKey`、可選 `otherPlaceKeys` 和選擇說明 `note`。引用共用地點，不另存店名、介紹或地圖 URL。
 - `tools`: fixed 航班票券、transit 交通、todo 待辦、address 地點快查。`address` 各項僅存 `placeKey`，名稱與地圖從共用地點衍生。
 - `packing`: 類別與穩定 item id；ID 用於本機勾選保存。
@@ -39,6 +40,8 @@ React 19 + TypeScript + Vite；純靜態網站。`ApprovedTrip` 保存原匯出�
 展開內容將場所 description、details、當次 note 依序分段呈現，不先拼接成一個字串；三者皆空才不顯示展開控制。備案的 description 直接可見，details 由每間餐廳獨立展開；這項暫時狀態不持久化。空 steps 不製造佔位文字。`splitTime` 保留時刻或時段後的限制詞，像「11:00 前」「15:50 台灣時間」，不把字尾丟掉。
 
 資料驗證涵蓋日程、備案的主／備／其他選項與工具地址的引用，及停留時間正整數與前後順序。連結一律由 query 經 encodeURIComponent 組成 Naver search URL，不製造未查證的 place ID。
+
+2026-09-21 使用者確認逐卡重繪圖後，要求正式整合進卡片。`CardIllustration` 由 catalog 與 `assetUrl` 取圖，圖片為 `alt=""`／`aria-hidden` 的非必要裝飾；載入失敗直接移除，文字恢復完整空間。`ContentCards` 保留標題、時間、狀態、地圖與詳情完整寬度，只讓摘要文字在右側小圖旁自然環繞，長文接續至圖下。原圖保留於 `design/card-illustrations-2026-09-21/`（既有三張圖沿用原有來源），公開副本維持原解析度與無損 RGBA；新增圖片 lazy load，不加入裝飾動畫。
 
 來源優先順序：使用者最新行程表決定安排、預約與候選；店家／營運方資料補充場所事實；編輯推算只作停留預算或條件提醒。查證日、來源與未解衝突維護在 [CONTENT_SOURCES_20260920.md](CONTENT_SOURCES_20260920.md)。資料寫入不代表航班或所有日期敏感資訊已獲第三方保證。
 

@@ -20,7 +20,8 @@
           "steps": [
             "領行李、出關；先抵達的 9 人可辦領卡與換匯"
           ],
-          "note": "去程：桃園第二航廈 13:30 → 釜山 17:05（各地當地時間）。\nBIG5 尚未購買，領卡地點須依購買憑證。若指定 WiFi Dosirak，官網位置是國際線 1 樓 3 號出口旁，領取服務與時段仍要核對憑證。\n若要在 Moneybox 換匯，準備千元台幣鈔票。"
+          "note": "去程：桃園第二航廈 13:30 → 釜山 17:05（各地當地時間）。\nBIG5 尚未購買，領卡地點須依購買憑證。若指定 WiFi Dosirak，官網位置是國際線 1 樓 3 號出口旁，領取服務與時段仍要核對憑證。\n若要在 Moneybox 換匯，準備千元台幣鈔票。",
+          "illustrationKey": "flight"
         },
         {
           "time": "17:55",
@@ -30,7 +31,8 @@
           "steps": [
             "領完行李，與先抵達的 9 人會合"
           ],
-          "note": "去程：桃園第一航廈 14:25 → 釜山 17:55（各地當地時間）。\n兩班落地相隔 50 分鐘，全員出關後再一起前往住宿。"
+          "note": "去程：桃園第一航廈 14:25 → 釜山 17:55（各地當地時間）。\n兩班落地相隔 50 分鐘，全員出關後再一起前往住宿。",
+          "illustrationKey": "flight"
         },
         {
           "time": "全員出關後",
@@ -49,7 +51,8 @@
           "visitMinutes": {
             "min": 45,
             "max": 60
-          }
+          },
+          "illustrationKey": "pork-soup"
         },
         {
           "time": "有空再去",
@@ -58,7 +61,8 @@
           "steps": [
             "從海邊看看廣安大橋的夜景"
           ],
-          "note": "晚餐後的空檔，走到想停的地方就好。"
+          "note": "晚餐後的空檔，走到想停的地方就好。",
+          "illustrationKey": "night-coast"
         },
         {
           "time": "21:00",
@@ -68,7 +72,8 @@
           "steps": [
             "21:00 場次，出發前再看當日公告"
           ],
-          "note": "官方目前介紹每場約 12 分鐘，可在廣安里海灘一帶欣賞。10/3 的特別場次尚未確認；天候或通訊狀況可能使演出延期、取消。"
+          "note": "官方目前介紹每場約 12 分鐘，可在廣安里海灘一帶欣賞。10/3 的特別場次尚未確認；天候或通訊狀況可能使演出延期、取消。",
+          "illustrationKey": "drone-sky"
         },
         {
           "time": "看完後",
@@ -77,7 +82,8 @@
           "steps": [
             "想吃炸雞就選橋村或 60 炸雞，也可到超商補飲料"
           ],
-          "note": "適合一起帶回住宿分著吃；有需要再買。"
+          "note": "適合一起帶回住宿分著吃；有需要再買。",
+          "illustrationKey": "fried-chicken"
         }
       ]
     },
@@ -97,7 +103,8 @@
           "steps": [
             "吃早餐、帶好 BIG5，安排去松島的車"
           ],
-          "note": "目標 09:00 到松島搭纜車，08:00–09:00 這段也要留給車程；集合出發時間需提前確認。"
+          "note": "目標 09:00 到松島搭纜車，08:00–09:00 這段也要留給車程；集合出發時間需提前確認。",
+          "illustrationKey": "daypack"
         },
         {
           "time": "09:00",
@@ -111,7 +118,8 @@
           "visitMinutes": {
             "min": 75,
             "max": 90
-          }
+          },
+          "illustrationKey": "cable-car"
         },
         {
           "time": "搭完後",
@@ -131,7 +139,8 @@
           "visitMinutes": {
             "min": 75,
             "max": 90
-          }
+          },
+          "illustrationKey": "barbecue"
         },
         {
           "time": "13:00",
@@ -145,7 +154,8 @@
           "visitMinutes": {
             "min": 60,
             "max": 90
-          }
+          },
+          "illustrationKey": "shopping"
         },
         {
           "time": "逛完後",
@@ -164,7 +174,8 @@
           "visitMinutes": {
             "min": 30,
             "max": 45
-          }
+          },
+          "illustrationKey": "coastal-village"
         },
         {
           "time": "16:00",
@@ -178,7 +189,8 @@
           "visitMinutes": {
             "min": 20,
             "max": 30
-          }
+          },
+          "illustrationKey": "coffee"
         },
         {
           "time": "咖啡後",
@@ -192,7 +204,8 @@
           "visitMinutes": {
             "min": 60,
             "max": 90
-          }
+          },
+          "illustrationKey": "immersive-art"
         },
         {
           "time": "18:00",
@@ -201,7 +214,8 @@
           "steps": [
             "想喝海鮮湯選 Nasari；想吃湯飯選嚴湧帛"
           ],
-          "note": "All Sunday 留作貝果點心或輕食。餐廳特色與地圖都在備案頁；若下午看展較久，晚餐會順延。"
+          "note": "All Sunday 留作貝果點心或輕食。餐廳特色與地圖都在備案頁；若下午看展較久，晚餐會順延。",
+          "illustrationKey": "gwangalli-dinner"
         },
         {
           "time": "20:00",
@@ -226,7 +240,8 @@
           "steps": [
             "分 3＋3＋4 三組，08:00 前完成集合叫車"
           ],
-          "note": "每組確認乘車成員與票券保管人；三台車都設「尾浦站」。"
+          "note": "每組確認乘車成員與票券保管人；三台車都設「尾浦站」。",
+          "illustrationKey": "taxi"
         },
         {
           "time": "08:00",
@@ -235,7 +250,8 @@
           "steps": [
             "三台車同時往尾浦站出發"
           ],
-          "note": "08:00 出發後，到站後還需步行找入口與排隊，叫車較慢就會壓縮 08:30 的入場時間。"
+          "note": "08:00 出發後，到站後還需步行找入口與排隊，叫車較慢就會壓縮 08:30 的入場時間。",
+          "illustrationKey": "taxi"
         },
         {
           "time": "到站後",
@@ -245,7 +261,8 @@
           "steps": [
             "找天空膠囊入口，備妥 08:30 時段票"
           ],
-          "note": "到站先進入自己的預約隊伍，不把這段留給早餐或買咖啡。"
+          "note": "到站先進入自己的預約隊伍，不把這段留給早餐或買咖啡。",
+          "illustrationKey": "sky-capsule"
         },
         {
           "time": "08:30",
@@ -255,7 +272,8 @@
           "steps": [
             "尾浦 → 青沙浦，3＋3＋4 分三廂搭乘"
           ],
-          "note": "單程約 30 分鐘；08:30 是預約入場時段，實際上車仍看現場隊伍。三廂可能分開上車，下車後在青沙浦站會合。"
+          "note": "單程約 30 分鐘；08:30 是預約入場時段，實際上車仍看現場隊伍。三廂可能分開上車，下車後在青沙浦站會合。",
+          "illustrationKey": "sky-capsule"
         },
         {
           "time": "09:30",
@@ -269,7 +287,8 @@
           "visitMinutes": {
             "min": 45,
             "max": 60
-          }
+          },
+          "illustrationKey": "kaymak-coffee"
         },
         {
           "time": "11:00",
@@ -279,7 +298,8 @@
           "steps": [
             "換好票、確認往松亭班次，再到乘車處候車"
           ],
-          "note": "11:00 是預計搭乘時間，尚非已預約班次。使用 BIG5 藍色名額，換票時一起問下午松亭 → 尾浦的使用方式。\n若換到的是 2 次券，兩段直達行程已用完次數，途中下車逛 Helinox 可能要另購票。"
+          "note": "11:00 是預計搭乘時間，尚非已預約班次。使用 BIG5 藍色名額，換票時一起問下午松亭 → 尾浦的使用方式。\n若換到的是 2 次券，兩段直達行程已用完次數，途中下車逛 Helinox 可能要另購票。",
+          "illustrationKey": "coastal-train"
         },
         {
           "time": "到松亭後",
@@ -298,7 +318,8 @@
           "visitMinutes": {
             "min": 45,
             "max": 60
-          }
+          },
+          "illustrationKey": "outlet-meal"
         },
         {
           "time": "午餐前後",
@@ -312,7 +333,8 @@
           "visitMinutes": {
             "min": 60,
             "max": 90
-          }
+          },
+          "illustrationKey": "luge"
         },
         {
           "time": "15:00",
@@ -322,7 +344,8 @@
           "steps": [
             "回松亭搭往尾浦的列車；16:00 看展，候車時間要留意"
           ],
-          "note": "16:00 還要到 Grand Josun 看展；候車若比預期久，先省略中途散步與 Helinox。不是每種車票都能不限次上下車。"
+          "note": "16:00 還要到 Grand Josun 看展；候車若比預期久，先省略中途散步與 Helinox。不是每種車票都能不限次上下車。",
+          "illustrationKey": "coastal-train"
         },
         {
           "time": "16:00",
@@ -336,7 +359,8 @@
           "visitMinutes": {
             "min": 60,
             "max": 90
-          }
+          },
+          "illustrationKey": "werner-gallery"
         },
         {
           "time": "18:30",
@@ -350,7 +374,8 @@
           "visitMinutes": {
             "min": 60,
             "max": 75
-          }
+          },
+          "illustrationKey": "long-beef-ribs"
         },
         {
           "time": "晚餐後",
@@ -364,7 +389,8 @@
           "visitMinutes": {
             "min": 20,
             "max": 30
-          }
+          },
+          "illustrationKey": "korean-market"
         },
         {
           "time": "20:00",
@@ -388,7 +414,8 @@
           "steps": [
             "08:30 出發，目標 09:00 到 SPA LAND"
           ],
-          "note": "帶好 BIG5；集合上車點與交通方式出發前確認。"
+          "note": "帶好 BIG5；集合上車點與交通方式出發前確認。",
+          "illustrationKey": "daypack"
         },
         {
           "time": "09:00",
@@ -402,7 +429,8 @@
           "visitMinutes": {
             "min": 210,
             "max": 240
-          }
+          },
+          "illustrationKey": "jjimjilbang"
         },
         {
           "time": "13:00",
@@ -416,7 +444,8 @@
           "visitMinutes": {
             "min": 120,
             "max": 150
-          }
+          },
+          "illustrationKey": "shopping"
         },
         {
           "time": "16:00",
@@ -430,7 +459,8 @@
           "visitMinutes": {
             "min": 30,
             "max": 45
-          }
+          },
+          "illustrationKey": "lee-ufan"
         },
         {
           "time": "17:00",
@@ -449,7 +479,8 @@
           "visitMinutes": {
             "min": 30,
             "max": 45
-          }
+          },
+          "illustrationKey": "pour-over"
         },
         {
           "time": "晚餐",
@@ -458,7 +489,8 @@
           "steps": [
             "83 獬豸、Shake Shack、老宅邸，按胃口和候位選一家"
           ],
-          "note": "三個選項都保留。想吃烤肉看 83 獬豸或老宅邸；想換個口味可選漢堡。餐點特色與地圖在備案頁。"
+          "note": "三個選項都保留。想吃烤肉看 83 獬豸或老宅邸；想換個口味可選漢堡。餐點特色與地圖在備案頁。",
+          "illustrationKey": "seomyeon-dinner"
         },
         {
           "time": "19:00",
@@ -472,7 +504,8 @@
           "visitMinutes": {
             "min": 60,
             "max": 90
-          }
+          },
+          "illustrationKey": "shopping"
         },
         {
           "time": "21:00",
@@ -497,7 +530,8 @@
           "steps": [
             "先整理行李，再到海邊走一小段"
           ],
-          "note": "早餐和退房之間保留回住宿的時間，散步不另外繞遠。"
+          "note": "早餐和退房之間保留回住宿的時間，散步不另外繞遠。",
+          "illustrationKey": "coast"
         },
         {
           "time": "09:00",
@@ -511,7 +545,8 @@
           "visitMinutes": {
             "min": 45,
             "max": 60
-          }
+          },
+          "illustrationKey": "brunch"
         },
         {
           "time": "11:00 前",
@@ -520,7 +555,8 @@
           "steps": [
             "拿齊行李、歸還鑰匙，11:00 前完成退房"
           ],
-          "note": "11:00 是退房上限，接送集合時間尚未確認。先查抽屜、插座和冰箱，再把 9 人去機場的行李集中。"
+          "note": "11:00 是退房上限，接送集合時間尚未確認。先查抽屜、插座和冰箱，再把 9 人去機場的行李集中。",
+          "illustrationKey": "luggage"
         },
         {
           "time": "退房後",
@@ -535,7 +571,8 @@
           "steps": [
             "回台灣的 9 人先找 BX791 報到櫃台"
           ],
-          "note": "先完成報到、托運與安檢，再依登機證時間安排用餐及前往登機門。"
+          "note": "先完成報到、托運與安檢，再依登機證時間安排用餐及前往登機門。",
+          "illustrationKey": "airport-checkin"
         },
         {
           "time": "14:15",
@@ -545,7 +582,8 @@
           "steps": [
             "釜山起飛，回台灣"
           ],
-          "note": ""
+          "note": "",
+          "illustrationKey": "flight"
         },
         {
           "time": "15:50 台灣時間",
@@ -555,7 +593,8 @@
           "steps": [
             "台灣時間 15:50，桃園第二航廈"
           ],
-          "note": ""
+          "note": "",
+          "illustrationKey": "flight"
         },
         {
           "time": "哥哥續程",
@@ -564,7 +603,8 @@
           "steps": [
             "16:30 釜山 → 17:55 大阪"
           ],
-          "note": "哥哥接著走自己的旅程，與回台灣的 9 人分開行動。"
+          "note": "哥哥接著走自己的旅程，與回台灣的 9 人分開行動。",
+          "illustrationKey": "flight"
         }
       ]
     }

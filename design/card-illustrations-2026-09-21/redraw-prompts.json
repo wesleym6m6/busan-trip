@@ -1,0 +1,96 @@
+{
+  "method": "built-in image_gen",
+  "date": "2026-09-21",
+  "style": "Use case: illustration-story, companion travel illustration.\nAsset: ONE compact watercolor vignette for the right side of a Busan itinerary card, shown at 64-76 px.\nInput images 1 and 2 are STYLE REFERENCES ONLY, not subjects to reproduce. Match their refined hand-painted watercolor/gouache, dry-brush grain, layered pigment, natural imperfect edges and soft grounding wash. Maintain sea-blue / muted teal shadows, cream highlights, modest warm ochre and coral accents; adapt believable subject colors. No photorealism, 3D-render look, hard outlines or cartoon faces.\nCenter a clear compact silhouette in a square canvas, subject about 80% of canvas width, generous transparent margins. Few large readable forms, one coherent focal vignette. All objects fully inside canvas. Genuine transparent alpha outside the vignette. No paper rectangle, white sticker edge, label, badge, border, text, logo, lettering, numbers, watermark. Only include the subject and supporting details explicitly requested below.\nDo not duplicate the coffee or grill from the style references unless the subject specifically requests them. Request 1024 x 1024 PNG.",
+  "references": [
+    "/Users/pengweicheng/Documents/Codex/2026-09-17/10-4-12-49-bot-threads/outputs/busan-card-art-20260920/assets/coffee.png",
+    "/Users/pengweicheng/Documents/Codex/2026-09-17/10-4-12-49-bot-threads/outputs/busan-card-art-20260920/assets/barbecue.png"
+  ],
+  "assets": [
+    {
+      "id": "daypack",
+      "label": "輕裝準備出門",
+      "subject": "A small soft sea-blue DAYPACK with two visible shoulder straps, next to a simple smartphone showing only a plain blue map-pin shape. A cream folded handkerchief peeks out of the top. This means getting ready for a day outing, not moving accommodation. No suitcase, wheels, telescoping handle, boarding pass or passport. Only daypack and phone, compact still life."
+    },
+    {
+      "id": "taxi",
+      "label": "集合叫車",
+      "subject": "One modern Korean-style silver-white taxi sedan with a small unlettered cream roof light, blue-tinted windows, seen three-quarter front. Behind its near side sits a small upright smartphone showing a single simple map pin and route line, no text. Clear car body, four doors, ordinary family taxi. No suitcase, bus, airplane, luggage or road scenery. The taxi must dominate the composition."
+    },
+    {
+      "id": "fried-chicken",
+      "label": "韓式炸雞宵夜",
+      "subject": "An open simple cream takeaway carton containing several irregular crispy Korean fried chicken pieces, some golden and some lightly soy-glazed amber, next to one very small dish of white pickled-radish cubes. Box has a restrained blue side panel without branding. Cozy takeout for sharing back at the accommodation, no stall, no wheels, no french fries, no shopping bags, no burger."
+    },
+    {
+      "id": "immersive-art",
+      "label": "ARTE 沉浸式光影",
+      "subject": "A small open corner of an immersive media-art room: two adjoining wall planes and a short reflective floor plane painted with flowing deep-blue ocean light. One large luminous whale-shaped projected image swims across both walls; one tiny visitor silhouette stands on the floor for scale. This is LIGHT PROJECTION filling a room, NOT an aquarium tank and NOT a framed painting. Keep the whale and projected blue light legible. Edges of the room fade softly into transparent alpha. No picture frame, plinth, sculpture, physical water outside the image or actual animals in the room. Inspired by ARTE Busan marine-media experience, not a guaranteed exact scene."
+    },
+    {
+      "id": "werner-gallery",
+      "label": "Werner 展・微小人物與厚塗畫布",
+      "subject": "One modest unlettered floating-frame canvas seen at a slight three-quarter angle, whose surface has very tactile raised cream sand ridges and a sea-blue painted water band. Three tiny painted human figures on that canvas, clearly much smaller than the painted landscape, suggest miniature people inhabiting a sculptural textured painting. A small pale shadow grounds the canvas; nothing else. The motif represents the textural miniature-figure work described by Werner Bronkhorst. Create an original imaginary arrangement, not a copy of a named individual painting, no signature or title. No freestanding rock sculpture or generic blue circle."
+    },
+    {
+      "id": "lee-ufan",
+      "label": "李禹煥・自然石與鋼板",
+      "subject": "A quiet minimalist art-space vignette with ONE upright broad cool-gray steel plate and ONE irregular natural gray boulder resting on the floor in front of it, separated by a clear small gap. A small unadorned off-white wall/floor fragment and large negative space emphasize the relation of natural stone and man-made steel, inspired by the materials of Lee Ufan Relatum. The stone is rough and irregular, the steel absolutely flat and rectangular. Do not render a curved decorative sculpture, abstract circular ornament, classical statue, painting frame, bonsai, or Zen sand garden. It is an interpretive art-space symbol, not a claimed reconstruction of a particular installed work."
+    },
+    {
+      "id": "jjimjilbang",
+      "label": "韓式汗蒸休息",
+      "subject": "A compact Korean jjimjilbang relaxation still life: a neatly folded muted sea-blue sauna uniform (short-sleeve shirt and shorts), with a cream towel folded into the distinctive Korean sheep-head shape with TWO spiral rolls on its ends, resting on top. Beside it is a small shallow ceramic dish with two brown baked eggs. Clear sheep-fold towel and sauna clothing are the focal features. No Japanese wooden bathing bucket, ladle, onsen signage, bamboo, massage stones, slippers or flower. Keep the objects simple, warm and tactile, transparent background."
+    },
+    {
+      "id": "outlet-meal",
+      "label": "Outlet 午餐",
+      "subject": "One simple cream cafeteria meal tray, with a shallow blue bowl containing a modest mixed rice meal (rice and two broad patches of vegetables), a small water cup, and spoon laid on tray. A SMALL unbranded muted-blue paper shopping bag sits partly behind the tray to indicate lunch while visiting an outlet. The meal tray dominates 80% of the vignette, shopping bag is secondary. This represents an undecided food-court lunch, not a specific restaurant booking or guaranteed dish. No full restaurant facade, burger, grill or many little side dishes."
+    },
+    {
+      "id": "gwangalli-dinner",
+      "label": "廣安里晚餐・海鮮麵或湯飯",
+      "subject": "Exactly TWO modest soup dishes, side by side as equal alternatives: left a sea-blue bowl of clear Korean seafood noodle soup with a visible ribbon of noodles, three mussel shells and one shrimp; right a small dark earthenware bowl of pale pork soup with a few pork slices and green scallions. Compact balanced paired-food vignette, both bowls identifiable at small size. No rice side dishes, spoons, chopsticks, tablecloth, collage frames or text. Do not imply both meals are a fixed set; show two simple separated choices."
+    },
+    {
+      "id": "seomyeon-dinner",
+      "label": "西面晚餐・烤肉或漢堡",
+      "subject": "Exactly TWO simple alternative dinner symbols side by side: a small low circular grill with three golden Korean pork-belly pieces, and one plain classic beef hamburger with bun, lettuce and cheese. Equal visual weight, a small gap between them, no shared plate suggesting a single set menu. No fries, sauces, cups, lettuce garnish outside the burger, restaurant facade, logos or text. The two choices should be legible as Korean barbecue OR hamburger, while remaining one compact quiet watercolor vignette."
+    },
+    {
+      "id": "kaymak-coffee",
+      "label": "DIART・Kaymak 與咖啡",
+      "subject": "A small ceramic plate holding one cloudlike mound of white kaymak clotted cream with a little amber honey pooled beside it, two slices of plain rustic bread behind the cream, and ONE small sea-blue cup of black coffee. Cream and honey are prominent, coffee secondary. Not butter packets, ice cream, croissant, pancake, eggs or whipped cream in a drink. Compact three-item cafe still life, no table or ocean scenery."
+    },
+    {
+      "id": "night-coast",
+      "label": "廣安大橋夜景",
+      "subject": "A compact watercolor night seascape vignette of Gwangan Bridge, recognizable as a long double-deck suspension bridge with two main towers and sagging suspension cables, softly lit cream-white and pale gold over dark teal sea reflections. A very small dark-blue night-sky wash with one crescent moon fades into transparent edges. No daylight, beach umbrellas, drone dots, fireworks or lanterns. The lit bridge is the clear single focal point, a calm evening walk viewpoint from the shore. No full rectangular scenery panel."
+    },
+    {
+      "id": "drone-sky",
+      "label": "無人機光點編隊",
+      "subject": "Above a small distant Gwangan-style suspension bridge and a little teal sea, MANY distinct tiny blue, cream and pale-gold LED dots form ONE large five-point STAR outline floating freely in a soft muted midnight-blue sky wash. Show clearly separated airborne light points, not solid light strokes. The star shape is the main 65% visual feature; the bridge is a smaller grounding cue beneath. No strings connecting the dots, dangling lights, physical stars, fireworks trails, individual toy drones, hanging garlands or a second bridge made of dots. Transparent fading watercolor edges. This is a general illustrative drone-light formation, not a promise of the trip date show program."
+    },
+    {
+      "id": "korean-market",
+      "label": "海雲台市場小吃",
+      "subject": "A modest fixed Korean traditional-market food counter with a short muted coral awning and blue lower front. On the stainless counter are TWO large readable features: an odeng fish-cake broth pot with folded beige fish-cake skewers standing up, and a shallow pan of red tteokbokki rice cakes. One small warm pendant light hangs under the awning. No text or shop names. No wheels, food truck, Western striped carnival awning, croissant display, fries or full crowded streetscape. Compact market-counter vignette with clear Korean street-food identity."
+    },
+    {
+      "id": "long-beef-ribs",
+      "label": "韓式長骨牛肋排",
+      "subject": "Korean wo-dae-galbi grilled BEEF RIBS: two thick rectangular dark caramel-brown beef sections still attached to TWO long straight pale rib bones, resting diagonally on one small dark tabletop grill. The long bones visibly extend beyond the meat. One piece partly sliced into thick brown cubes beside the bone. Minimal garnish, no sauce bottle or side dishes. It must look like a thick long-bone beef rib presentation, not thin cross-cut LA galbi strips with small bone circles, pork belly, a curved tomahawk ribeye steak or American baby-back rack. Keep natural appetizing watercolor texture."
+    },
+    {
+      "id": "airport-checkin",
+      "label": "機場報到與托運",
+      "subject": "A compact airport check-in counter vignette: one small clean cream-and-blue airline service desk with a plain dark monitor, directly beside a short dark luggage conveyor belt holding ONE upright sea-blue suitcase. A narrow blank baggage tag is attached to the handle, with no writing or barcode. Clearly an airport check-in/bag-drop desk, not a hotel reception or suitcase in a bedroom. No employee portrait, airline logo, flight number, passport information, arrows or large terminal backdrop."
+    },
+    {
+      "id": "pour-over",
+      "label": "Strut 手沖咖啡",
+      "subject": "A compact specialty pour-over coffee setup: one cream ceramic cone dripper placed on a small clear glass server containing amber-brown coffee, with one small sea-blue ceramic tasting cup close beside it. The dripper has a simple paper filter, quiet steam. Three-quarter view, minimalist coffee-shop still life. No pastry, croissant, cream dish, eggs, sea view, brand text, kettle or extra tools. The cone dripper and coffee server should be instantly recognizable."
+    }
+  ]
+}

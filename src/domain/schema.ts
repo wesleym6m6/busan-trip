@@ -362,6 +362,7 @@ const ApprovedItemSchema = z.object({
   status: z.optional(z.enum(['booked', 'tentative', 'flexible'])),
   steps: z.optional(z.array(z.string())), note: z.optional(z.string()), placeKey: z.optional(z.string()),
   visitMinutes: z.optional(z.object({min: z.int().check(z.positive()), max: z.int().check(z.positive())})),
+  illustrationKey: z.optional(NonEmptyString),
 });
 export const ApprovedTripSchema = z.object({
   trip: z.object({ name: NonEmptyString, dateRange: NonEmptyString }),

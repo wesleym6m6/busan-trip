@@ -1,6 +1,7 @@
 import { describe, it, expect } from 'vitest';
 import data from '../data/approved-trip.json';
 import { validateApprovedTripData } from './validate';
+import { ApprovedTripSchema } from './schema';
 
 describe('approved trip data contract', () => {
   it('accepts the supplied five-day trip', () => {
@@ -35,5 +36,22 @@ describe('approved trip data contract', () => {
       Object.assign(broken.days[0]!.items[0]!, {visitMinutes});
       expect(validateApprovedTripData(broken).ok).toBe(false);
     }
+  });
+  it('rejects unknown illustration keys and illustrations on transit hints', () => {
+    const unknown = structuredClone(data);
+    Object.assign(unknown.days[0]!.items[0]!, {illustrationKey: 'missing-art'});
+    expect(validateApprovedTripData(unknown).ok).toBe(false);
+    const transit = structuredClone(data);
+    Object.assign(transit.days[0]!.items.find(item => item.kind === 'transit')!, {illustrationKey: 'taxi'});
+    expect(validateApprovedTripData(transit).ok).toBe(false);
+  });
+  it('keeps an event illustration attached when the event moves within the itinerary', () => {
+    const moved = ApprovedTripSchema.parse(data);
+    Object.assign(moved.days[0]!.items[0]!, {illustrationKey: 'flight'});
+    const event = moved.days[0]!.items.shift()!;
+    moved.days[0]!.items.push(event);
+    const result = validateApprovedTripData(moved);
+    expect(result.ok).toBe(true);
+    if (result.ok) expect(result.data.days[0]!.items.at(-1)).toMatchObject({title: 'BX794 抵達（9 人）', illustrationKey: 'flight'});
   });
 });

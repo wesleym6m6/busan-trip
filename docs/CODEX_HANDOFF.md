@@ -19,3 +19,5 @@
 2026-09-20 使用者要求打包頁能自行新增分類與項目，並以容易操作為優先。新增 `PackingList`、`packingStorage` 與獨立樣式，提供連續新增、改名、移除與復原。個人資料只存在目前瀏覽器，v2 儲存仍相容讀取舊勾選；請勿把個人項目寫回公開行程 JSON。跨分頁同步與儲存前快照檢查需保留。功能操作、測試及未驗證範圍見 [PACKING_20260920.md](PACKING_20260920.md)，是否已上線以 [DEPLOYMENT.md](DEPLOYMENT.md) 最新紀錄為準。
 
 打包功能已發布：部署來源 `42a192565d5cdcac879b191bb331f4fba6da165b`、Run `35487351453` 成功，正式 JS `index-C94WQP2l.js`。62 項測試、遠端來源樹、公開產物位元與手機尺寸操作檢查通過；舊勾選升級與新內容重載保存已在正式站驗證。後續文件提交不代表重新部署。
+
+2026-09-21 使用者已確認 `busan-card-art-20260921` 的逐卡插圖修訂，要求整合進正式卡片並優先維持閱讀。新增 `items.illustrationKey` 與 `src/data/card-illustrations.json`；40 張活動卡片各有配圖、9 筆交通提示不配圖。標題保留完整寬度，右側小圖只環繞摘要文字；詳情及地圖不縮窄。新增 `CardIllustration`，來源及無損副本紀錄在 `design/card-illustrations-2026-09-21/manifest.json`。整合與驗證見 [CARD_ILLUSTRATIONS_20260921.md](CARD_ILLUSTRATIONS_20260921.md)。本次尚未發布，是否已上線仍以 DEPLOYMENT.md 為準。

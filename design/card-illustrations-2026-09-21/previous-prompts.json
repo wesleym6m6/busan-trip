@@ -1,0 +1,85 @@
+{
+  "method": "built-in image_gen",
+  "style": "Use case: illustration-story, matching companion asset / style-transfer.\nCreate ONE isolated watercolor travel vignette for the right side of an existing Busan itinerary card.\nThe input images are STYLE REFERENCES for the existing user's illustration library. Preserve their hand-painted watercolor/gouache look: visible dry-brush grain, layered pigment washes, subtly imperfect painted edges, natural three-quarter perspective, teal and sea-blue shadows, cream highlights, muted ochre and restrained coral accents. Replace the reference subject with the single new subject below. Do not recreate an entire reference scene.\nComposition: compact balanced silhouette, clearly recognizable when displayed only 76 pixels wide. Single visual focal point, large simple forms, very few details. Centered in a square canvas, subject occupies 76-84% of width, generous empty margins, no object clipped. All supporting details stay within the same compact vignette.\nBackground: genuinely transparent alpha around the painted object, with at most a tiny soft watercolor grounding shadow. No solid paper rectangle, no colored badge, no circular frame, no white sticker outline.\nStyle must feel refined and quiet, appealing to an adult family trip. No text or lettering, logos, numbers, signage, borders, watermarks, photorealism, 3D rendering, hard black outlines, cartoon faces or confetti. No scenery filling the canvas, avoid tiny busy decorative objects. Keep the image softly colored but the main silhouette legible.\nAsset size requested: 1024 x 1024 PNG with genuine transparent background.\n",
+  "references": [
+    "/Users/pengweicheng/Documents/Codex/2026-09-17/10-4-12-49-bot-threads/work/busan-content/public/uploads/pork-soup.png",
+    "/Users/pengweicheng/Documents/Codex/2026-09-17/10-4-12-49-bot-threads/work/busan-content/public/uploads/sky-capsule.png"
+  ],
+  "assets": [
+    {
+      "id": "coffee",
+      "label": "海景咖啡",
+      "subject": "One small sea-blue ceramic cup of coffee on a cream saucer, a little coffee crema and ONE small golden pastry beside it. Three-quarter view. No tables or cafe interior, no distant sea, only the compact cup-and-pastry vignette."
+    },
+    {
+      "id": "cable-car",
+      "label": "海上纜車",
+      "subject": "One suspended enclosed sea-blue and cream aerial gondola cabin, natural three-quarter view, with a simple short cable and hanger above. A very small pale blue brushstroke of sea beneath conveys the coastal ride. It hangs from an overhead cable, it is NOT a rail train. No passengers in detail or written branding."
+    },
+    {
+      "id": "spa",
+      "label": "汗蒸放鬆",
+      "subject": "One softly folded cream bath towel with a smaller rolled towel resting on it, beside a small pale wood sauna bucket and ladle, with only two subtle curls of steam. Compact spa ritual still life, sea-blue shadows. No person, no stones, no flowers or bamboo background."
+    },
+    {
+      "id": "flight",
+      "label": "搭機出入境",
+      "subject": "One white passenger airplane with soft sea-blue underside and muted coral tail, viewed from above at a three-quarter diagonal angle, nose toward upper right. Simple wings and engines, one small watercolor cloud underneath. No airline logos, numbers, tickets, airports or luggage."
+    },
+    {
+      "id": "barbecue",
+      "label": "韓式烤肉",
+      "subject": "One small round charcoal grill holding a few thick golden-brown slices of Korean barbecue, one green lettuce leaf and a tiny understated bowl of dipping sauce close beside it. Natural three-quarter view. Compact and appetizing, no complex full table, no tall utensils, no brand identity. Convey Korean grilled meat generally rather than an exact restaurant dish."
+    },
+    {
+      "id": "shopping",
+      "label": "逛街採買",
+      "subject": "Two simple paper shopping bags, the larger in muted sea blue and the smaller in warm cream with one soft coral accent. Short natural paper handles, slight overlap, three-quarter view, quiet watercolor folds. No logos, letters, products spilling out or storefront background."
+    },
+    {
+      "id": "luggage",
+      "label": "整理行李與休息",
+      "subject": "One upright compact sea-blue hard-shell carry-on suitcase with extended handle and small wheels, a folded cream travel scarf draped neatly on its side. Three-quarter view, restrained pale ochre details. No stickers, passport, text or surrounding bedroom scene."
+    },
+    {
+      "id": "luge",
+      "label": "Luge 滑車",
+      "subject": "One low three-wheeled recreational gravity luge cart, rounded teal-and-muted-coral shell, visible black handlebar and a low seat, three-quarter front side view. A simple cream safety helmet rests in the seat to clarify scale. It is an outdoor downhill gravity cart, not a go-kart with engine. No rider or racing scene."
+    },
+    {
+      "id": "coastal-train",
+      "label": "海岸列車",
+      "subject": "One short cream coastal sightseeing train carriage with sea-blue lower body and broad dark teal windows, clearly moving ON a small segment of ground-level track. Three-quarter view, only a tiny sea-blue wash beneath. Distinct from a suspended cable car or elevated miniature sky capsule. No text, brand, station, passengers or large backdrop."
+    },
+    {
+      "id": "gallery",
+      "label": "展覽與美術空間",
+      "subject": "A small freestanding off-white gallery wall fragment bearing one invented abstract watercolor composition of a sea-blue circle and muted ochre brushstroke, beside one simple gray stone-shaped sculptural object on a low cream plinth. Compact, understated, contemporary art visit symbol. Do not imitate or reproduce a named artist or actual exhibition artwork. No frame clutter, text or people."
+    },
+    {
+      "id": "drone-show",
+      "label": "海邊無人機秀",
+      "subject": "A compact delicate formation of small sea-blue and warm amber light dots outlining a simple arch above one minimal painted fragment of a blue suspension bridge, with two soft strokes of water underneath. The light dots represent a drone light show, not fireworks. Keep the dotted formation large and simple enough to read at thumbnail size. No night-sky rectangle, explosive bursts, people or text."
+    },
+    {
+      "id": "market",
+      "label": "市場與宵夜",
+      "subject": "One small Korean street-food market stall vignette with a muted ochre-and-cream awning, sea-blue counter, and one visible tray of golden fried snacks. Only the single compact stall, no signs or text, no people, no large street scene, not a Japanese torii or shop facade. Clear broad shapes with few details."
+    },
+    {
+      "id": "coastal-village",
+      "label": "白淺灘海岸散步",
+      "subject": "A small slice of an everyday Busan hillside coastal neighborhood: three modest, weathered Korean flat-roof concrete homes clustered irregularly above a steep gray seaside cliff. Facades in faded ivory, pale blue-gray and warm gray, plain rectangular sliding windows and simple utilitarian doors. One narrow concrete coastal walkway with a blue metal safety railing follows the cliff, above a small wash of teal surf. Homes feel humble and lived-in, with one tiny rooftop water tank. Compact travel vignette, never a luxury resort. Do NOT use Mediterranean villas, Santorini architecture, cobalt paneled doors, decorative terracotta pots, Greek arches, domes, or grand stone staircases. Prioritize the humble Korean street character and blue seaside railing, keep details sparse."
+    },
+    {
+      "id": "brunch",
+      "label": "海景早午餐",
+      "subject": "One cream plate holding a simple golden slice of toast topped with a softly poached egg, a few green leaves to one side, and a small sea-blue coffee cup tucked just behind the plate. Compact watercolor still life, natural three-quarter angle. No elaborate restaurant table, utensils scattered around, words or backdrop."
+    },
+    {
+      "id": "beef-ribs",
+      "label": "韓式牛肋排",
+      "subject": "Korean grilled beef short ribs, three dark caramel-brown glossy beef strips with clearly visible short ivory rib bones on a small round charcoal tabletop grill, with one small green lettuce leaf and a tiny dipping-sauce dish. A few restrained charcoal embers and a single wisp of steam. Focus on the rib bones and rich dark beef color. No pork belly layers, no pink-and-white fat stripes, no Western barbecue sauce bottle, no text. Compact calm food illustration."
+    }
+  ]
+}
