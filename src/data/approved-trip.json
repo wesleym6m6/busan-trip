@@ -18,9 +18,9 @@
           "status": "booked",
           "kind": "event",
           "steps": [
-            "先領行李，準備 BIG5 領卡憑證"
+            "領行李、出關；先抵達的 9 人可辦領卡與換匯"
           ],
-          "note": "可依憑證到 WiFi Dosirak 領實體 BIG5，位置在國際線 1 樓 2 號出口附近。購買後依憑證確認領取櫃台。\n去程：桃園第二航廈 13:30 起飛，釜山 17:05 抵達（各地當地時間）。"
+          "note": "去程：桃園第二航廈 13:30 → 釜山 17:05（各地當地時間）。\nBIG5 尚未購買，領卡地點須依購買憑證。若指定 WiFi Dosirak，官網位置是國際線 1 樓 3 號出口旁，領取服務與時段仍要核對憑證。\n若要在 Moneybox 換匯，準備千元台幣鈔票。"
         },
         {
           "time": "17:55",
@@ -28,9 +28,9 @@
           "status": "booked",
           "kind": "event",
           "steps": [
-            "領完行李，到出關口與大家會合"
+            "領完行李，與先抵達的 9 人會合"
           ],
-          "note": "去程：桃園第一航廈 14:25 起飛，釜山 17:55 抵達（各地當地時間）。"
+          "note": "去程：桃園第一航廈 14:25 → 釜山 17:55（各地當地時間）。\n兩班落地相隔 50 分鐘，全員出關後再一起前往住宿。"
         },
         {
           "time": "全員出關後",
@@ -38,21 +38,27 @@
           "kind": "transit"
         },
         {
-          "time": "入住後",
-          "title": "水邊豬肉湯飯",
+          "time": "19:00",
+          "title": "水邊最高豬肉湯飯",
           "kind": "event",
           "placeKey": "water_soup",
           "steps": [
-            "先用 Catchtable 看候位狀況"
+            "先看 Tabling 候位，詢問 10 人能否分桌"
           ],
-          "note": "10 人可先問分桌。若等太久，備案頁有 Nasari；先吃飽再決定要不要看無人機秀。"
+          "note": "19:00 是預計用餐時間，會受出關與交通影響。原表寫 Catchtable，但民樂本店目前公告使用 Tabling；無法遠端登記時可現場取號。\n想接 21:00 無人機秀，先看叫號進度再決定是否等候；Nasari 在備案頁。",
+          "visitMinutes": {
+            "min": 45,
+            "max": 60
+          }
         },
         {
           "time": "有空再去",
           "title": "海邊走走",
           "kind": "event",
-          "steps": [],
-          "note": "吃完飯再慢慢走到海邊。"
+          "steps": [
+            "從海邊看看廣安大橋的夜景"
+          ],
+          "note": "晚餐後的空檔，走到想停的地方就好。"
         },
         {
           "time": "21:00",
@@ -60,18 +66,18 @@
           "status": "flexible",
           "kind": "event",
           "steps": [
-            "看當天公告，有餘裕再去"
+            "21:00 場次，出發前再看當日公告"
           ],
-          "note": "原表安排約 10 分鐘，實際場次以當天公告為準。"
+          "note": "官方目前介紹每場約 12 分鐘，可在廣安里海灘一帶欣賞。10/3 的特別場次尚未確認；天候或通訊狀況可能使演出延期、取消。"
         },
         {
           "time": "看完後",
           "title": "買宵夜、回住宿",
           "kind": "event",
           "steps": [
-            "超商、橋村或 60 炸雞，挑一家就好"
+            "想吃炸雞就選橋村或 60 炸雞，也可到超商補飲料"
           ],
-          "note": "如果已經累了，直接回去休息。"
+          "note": "適合一起帶回住宿分著吃；有需要再買。"
         }
       ]
     },
@@ -89,9 +95,9 @@
           "title": "起床、準備出門",
           "kind": "event",
           "steps": [
-            "吃點早餐，帶好 BIG5"
+            "吃早餐、帶好 BIG5，安排去松島的車"
           ],
-          "note": ""
+          "note": "目標 09:00 到松島搭纜車，08:00–09:00 這段也要留給車程；集合出發時間需提前確認。"
         },
         {
           "time": "09:00",
@@ -99,9 +105,13 @@
           "kind": "event",
           "placeKey": "songdo_cable",
           "steps": [
-            "到下站換票，搭到 Sky Park 再返回"
+            "到下站換票，搭至 Sky Park 散步後返回"
           ],
-          "note": "預計使用 BIG5 藍色景點額度；換票時確認車廂種類與回程候車位置。"
+          "note": "使用 BIG5 藍色名額；車廂種類與回程入口換票時確認。\n接著有 11:30 的午餐訂位，先抓好回到下站、再搭車去富平店的時間。",
+          "visitMinutes": {
+            "min": 75,
+            "max": 90
+          }
         },
         {
           "time": "搭完後",
@@ -109,14 +119,19 @@
           "kind": "transit"
         },
         {
-          "time": "11:00",
+          "time": "11:30",
           "title": "味贊王富平店",
           "kind": "event",
           "placeKey": "matjjang",
           "steps": [
-            "先詢問 10 人座位或分桌"
+            "已透過 Naver 訂位，出示訂位紀錄入座"
           ],
-          "note": "午餐後接南浦洞與樂天百貨，候位情況會影響逛街時間。"
+          "note": "10 人座位安排以訂位紀錄為準。吃完接 13:00 南浦洞、樂天百貨。",
+          "status": "booked",
+          "visitMinutes": {
+            "min": 75,
+            "max": 90
+          }
         },
         {
           "time": "13:00",
@@ -124,9 +139,13 @@
           "kind": "event",
           "placeKey": "nampo_lotte",
           "steps": [
-            "邊逛邊往光復店走"
+            "從南浦洞慢慢逛向光復店，先約好集合點"
           ],
-          "note": ""
+          "note": "15:00 還要到白淺灘，逛街時間需扣掉跨到影島的車程。",
+          "visitMinutes": {
+            "min": 60,
+            "max": 90
+          }
         },
         {
           "time": "逛完後",
@@ -139,9 +158,13 @@
           "kind": "event",
           "placeKey": "baekcheon",
           "steps": [
-            "沿海邊散步，累了就找地方坐坐"
+            "沿上方巷道看海、逛小店，階梯路段視體力再走"
           ],
-          "note": ""
+          "note": "接著 16:00 去 P.ARK，先留好集合與叫車時間。下方海岸步道是否開放需看現場公告。",
+          "visitMinutes": {
+            "min": 30,
+            "max": 45
+          }
         },
         {
           "time": "16:00",
@@ -149,9 +172,13 @@
           "kind": "event",
           "placeKey": "park_cafe",
           "steps": [
-            "喝杯咖啡，接著去 ARTE"
+            "上 4 樓喝咖啡、吃麵包；加上 ARTE 後，18:00 晚餐偏緊"
           ],
-          "note": ""
+          "note": "16:00 到 P.ARK，後面還有 ARTE 與回廣安里的車程。若維持 18:00 晚餐，咖啡需縮短；想慢慢坐，就要容許晚餐延後。",
+          "visitMinutes": {
+            "min": 20,
+            "max": 30
+          }
         },
         {
           "time": "咖啡後",
@@ -159,18 +186,22 @@
           "kind": "event",
           "placeKey": "arte",
           "steps": [
-            "準備 BIG5，先換票再入場"
+            "用 BIG5 藍色名額換票，進場看光影展"
           ],
-          "note": "預計使用 BIG5 藍色景點額度。"
+          "note": "看展與回廣安里需要分開留時間，18:00 晚餐目前偏緊；不要把最後入場時間當成可以逛到的時間。",
+          "visitMinutes": {
+            "min": 60,
+            "max": 90
+          }
         },
         {
           "time": "18:00",
           "title": "回廣安里吃晚餐",
           "kind": "event",
           "steps": [
-            "Nasari 或嚴泳帛，想吃簡單一點就買 All Sunday 麵包"
+            "想喝海鮮湯選 Nasari；想吃湯飯選嚴湧帛"
           ],
-          "note": "依大家胃口與候位狀況選一家，地圖放在備案頁。"
+          "note": "All Sunday 留作貝果點心或輕食。餐廳特色與地圖都在備案頁；若下午看展較久，晚餐會順延。"
         },
         {
           "time": "20:00",
@@ -193,18 +224,18 @@
           "title": "集合叫車",
           "kind": "event",
           "steps": [
-            "分 3＋3＋4 三組，準備好票券"
+            "分 3＋3＋4 三組，08:00 前完成集合叫車"
           ],
-          "note": "08:00 要出發，叫車與集合先完成。"
+          "note": "每組確認乘車成員與票券保管人；三台車都設「尾浦站」。"
         },
         {
           "time": "08:00",
           "title": "出發前往尾浦",
           "kind": "event",
           "steps": [
-            "三台車一起往尾浦膠囊站出發"
+            "三台車同時往尾浦站出發"
           ],
-          "note": ""
+          "note": "08:00 出發後，到站後還需步行找入口與排隊，叫車較慢就會壓縮 08:30 的入場時間。"
         },
         {
           "time": "到站後",
@@ -212,9 +243,9 @@
           "kind": "event",
           "placeKey": "mipo",
           "steps": [
-            "找到天空膠囊入口，準備 08:30 時段票"
+            "找天空膠囊入口，備妥 08:30 時段票"
           ],
-          "note": ""
+          "note": "到站先進入自己的預約隊伍，不把這段留給早餐或買咖啡。"
         },
         {
           "time": "08:30",
@@ -222,9 +253,9 @@
           "status": "booked",
           "kind": "event",
           "steps": [
-            "尾浦 → 青沙浦，三廂依現場順序上車"
+            "尾浦 → 青沙浦，3＋3＋4 分三廂搭乘"
           ],
-          "note": "持 08:30 時段票入場，依現場順序上車。"
+          "note": "單程約 30 分鐘；08:30 是預約入場時段，實際上車仍看現場隊伍。三廂可能分開上車，下車後在青沙浦站會合。"
         },
         {
           "time": "09:30",
@@ -232,9 +263,13 @@
           "kind": "event",
           "placeKey": "diart",
           "steps": [
-            "先看候位，再決定要不要坐下來喝"
+            "開門時間待確認；保留 09:30，抵達先看是否營業"
           ],
-          "note": "候位太久就先逛青沙浦，接著搭海岸列車。"
+          "note": "想喝咖啡可坐下來休息，11:00 前還需到青沙浦站換票候車。若尚未開門或候位太久，就改在港邊散步。",
+          "visitMinutes": {
+            "min": 45,
+            "max": 60
+          }
         },
         {
           "time": "11:00",
@@ -242,9 +277,9 @@
           "kind": "event",
           "placeKey": "cheongsapo",
           "steps": [
-            "在青沙浦換票，確認往松亭的班次"
+            "換好票、確認往松亭班次，再到乘車處候車"
           ],
-          "note": "預計使用 BIG5 藍色景點額度；換票時一起確認下午松亭回尾浦的搭法。"
+          "note": "11:00 是預計搭乘時間，尚非已預約班次。使用 BIG5 藍色名額，換票時一起問下午松亭 → 尾浦的使用方式。\n若換到的是 2 次券，兩段直達行程已用完次數，途中下車逛 Helinox 可能要另購票。"
         },
         {
           "time": "到松亭後",
@@ -253,23 +288,31 @@
         },
         {
           "time": "12:00",
-          "title": "樂天 Outlet 午餐",
+          "title": "樂天 Outlet 午餐／Luge 彈性安排",
           "kind": "event",
           "placeKey": "lotte_outlet",
           "steps": [
-            "先吃午餐，再前往 Luge"
+            "先看 Luge 隊伍；人少可先玩，再到 Outlet 吃午餐"
           ],
-          "note": ""
+          "note": "午餐與 Luge 可以互換順序。到站後先說好集合位置，下午還要回松亭。",
+          "visitMinutes": {
+            "min": 45,
+            "max": 60
+          }
         },
         {
-          "time": "午餐後",
+          "time": "午餐前後",
           "title": "Skyline Luge",
           "kind": "event",
           "placeKey": "luge",
           "steps": [
-            "出示 BIG5 換票，再領裝備、排隊"
+            "用 BIG5 紫色名額換票，領裝備並聽操作說明"
           ],
-          "note": "預計使用 BIG5 紫色景點額度；搭乘次數依購買時的方案。"
+          "note": "搭乘次數依兌換票券。預留時間包括換裝與遊玩，排隊另計；15:00 還要回松亭接列車。",
+          "visitMinutes": {
+            "min": 60,
+            "max": 90
+          }
         },
         {
           "time": "15:00",
@@ -277,9 +320,9 @@
           "kind": "event",
           "placeKey": "songjeong",
           "steps": [
-            "先搭車回松亭站，再轉海岸列車"
+            "回松亭搭往尾浦的列車；16:00 看展，候車時間要留意"
           ],
-          "note": "有時間可中途散步或逛 Helinox；上下車方式依換到的車票規則。"
+          "note": "16:00 還要到 Grand Josun 看展；候車若比預期久，先省略中途散步與 Helinox。不是每種車票都能不限次上下車。"
         },
         {
           "time": "16:00",
@@ -287,19 +330,27 @@
           "kind": "event",
           "placeKey": "werner",
           "steps": [
-            "到 Grand Josun Busan 4 樓"
+            "Grand Josun Busan 4 樓，持票或購票後換票入場"
           ],
-          "note": "The Whole World’s a Canvas，需另外購票。看完再去吃晚餐。"
+          "note": "需另購門票，購買狀態待家人確認。16:00 看展，18:30 吃晚餐。",
+          "visitMinutes": {
+            "min": 60,
+            "max": 90
+          }
         },
         {
-          "time": "18:00",
+          "time": "18:30",
           "title": "Ribs of Legend",
           "kind": "event",
           "placeKey": "ribs",
           "steps": [
-            "先詢問 10 人座位或分桌"
+            "先問 10 人座位或分桌，再選牛肋排與配菜"
           ],
-          "note": ""
+          "note": "18:30 預計用餐，尚未確認訂位。若候位太久，海雲台市場是當晚備案。",
+          "visitMinutes": {
+            "min": 60,
+            "max": 75
+          }
         },
         {
           "time": "晚餐後",
@@ -307,9 +358,13 @@
           "kind": "event",
           "placeKey": "haeundae_market",
           "steps": [
-            "邊走邊逛，有胃口再買小吃"
+            "有胃口再買小吃，吃飽就沿市場慢慢走"
           ],
-          "note": ""
+          "note": "晚餐 18:30 開始，預計 20:00 回住宿；若用餐較久，這站就縮短。",
+          "visitMinutes": {
+            "min": 20,
+            "max": 30
+          }
         },
         {
           "time": "20:00",
@@ -331,9 +386,9 @@
           "title": "出發前往 SPA LAND",
           "kind": "event",
           "steps": [
-            "帶好 BIG5，往 Centum City 出發"
+            "08:30 出發，目標 09:00 到 SPA LAND"
           ],
-          "note": "目標 09:00 抵達；交通方式與集合上車點出發前確認。"
+          "note": "帶好 BIG5；集合上車點與交通方式出發前確認。"
         },
         {
           "time": "09:00",
@@ -341,19 +396,27 @@
           "kind": "event",
           "placeKey": "spaland",
           "steps": [
-            "換票後領置物櫃鑰匙，先放好隨身物品"
+            "用 BIG5 紫色名額入場，午餐可在館內吃"
           ],
-          "note": "預計使用 BIG5 紫色景點額度，尚未購買；一般入場可使用 4 小時。"
+          "note": "09:00 入場、13:00 接逛街，這 4 小時也要包含換裝與結帳。館內加購若符合延長條件，可以待更久，但會壓縮後面的百貨時間。",
+          "visitMinutes": {
+            "min": 210,
+            "max": 240
+          }
         },
         {
           "time": "13:00",
-          "title": "新世界午餐、逛街",
+          "title": "新世界百貨逛街",
           "kind": "event",
           "placeKey": "shinsegae",
           "steps": [
-            "先吃飯，再分組逛想看的品牌"
+            "在 SPA 吃過午餐就直接逛；沒吃再到百貨用餐"
           ],
-          "note": "服務中心：詢問會員卡（原表列 3F）。\nB2：emis、Covernat、Mardi Mercredi、thisisneverthat。\nB1：Gentle Monster。\n樓層以現場指引為準。"
+          "note": "想逛的品牌與樓層：\n3F：辦會員、Aesop。\nB2：emis、Covernat、Mardi Mercredi、thisisneverthat。\nB1：Gentle Monster。\n先問服務台當日櫃位與會員辦理位置，再分組逛；離開前確認李禹煥空間是否開館。",
+          "visitMinutes": {
+            "min": 120,
+            "max": 150
+          }
         },
         {
           "time": "16:00",
@@ -361,9 +424,13 @@
           "kind": "event",
           "placeKey": "lee_ufan",
           "steps": [
-            "開館待確認，確認後再從百貨出發"
+            "可能休館，確認開館後再從百貨出發"
           ],
-          "note": "10/5 為補休日，依館方規則 10/6 可能補休，家人確認中。若休館，就留在新世界或提早往西面。"
+          "note": "16:00 先保留這一站，開館狀態仍待確認。10/6 開放狀態待家人確認；若休館，留在新世界或提早前往西面即可，後續晚餐照原安排。",
+          "visitMinutes": {
+            "min": 30,
+            "max": 45
+          }
         },
         {
           "time": "17:00",
@@ -376,18 +443,22 @@
           "kind": "event",
           "placeKey": "strut",
           "steps": [
-            "想喝咖啡再去坐一下"
+            "田浦咖啡店坐一下；晚餐若已能入座，就先去吃飯"
           ],
-          "note": ""
+          "note": "17:00 才從 Centum City 一帶往西面，咖啡、晚餐和 19:00 採買會共用傍晚這段時間；若烤肉已能入座，就先吃飯。",
+          "visitMinutes": {
+            "min": 30,
+            "max": 45
+          }
         },
         {
           "time": "晚餐",
           "title": "西面晚餐",
           "kind": "event",
           "steps": [
-            "83 獬豸、Shake Shack 或老宅邸，依候位選一家"
+            "83 獬豸、Shake Shack、老宅邸，按胃口和候位選一家"
           ],
-          "note": "餐廳地圖放在備案頁。"
+          "note": "三個選項都保留。想吃烤肉看 83 獬豸或老宅邸；想換個口味可選漢堡。餐點特色與地圖在備案頁。"
         },
         {
           "time": "19:00",
@@ -395,9 +466,13 @@
           "kind": "event",
           "placeKey": "seomyeon_shopping",
           "steps": [
-            "補齊想買的伴手禮與日用品"
+            "先逛自己的購物清單，分開前約好集合時間與位置"
           ],
-          "note": "分開逛之前先約好集合位置。"
+          "note": "若前面的咖啡、晚餐延後，採買也要跟著縮短；回住宿後還有行李要整理。",
+          "visitMinutes": {
+            "min": 60,
+            "max": 90
+          }
         },
         {
           "time": "21:00",
@@ -420,28 +495,32 @@
           "status": "flexible",
           "kind": "event",
           "steps": [
-            "先收好行李，有時間再出去走走"
+            "先整理行李，再到海邊走一小段"
           ],
-          "note": ""
+          "note": "早餐和退房之間保留回住宿的時間，散步不另外繞遠。"
         },
         {
           "time": "09:00",
-          "title": "workingholiday",
+          "title": "Working Holiday 海景早午餐",
           "kind": "event",
           "placeKey": "workingholiday",
           "steps": [
-            "吃早餐、喝杯咖啡"
+            "09:00 吃早餐，預計 10:00 左右回住宿拿行李"
           ],
-          "note": ""
+          "note": "10:00 是為 11:00 前退房預留的規劃時間；若出餐或座位等候較久，就縮短早餐後的散步。",
+          "visitMinutes": {
+            "min": 45,
+            "max": 60
+          }
         },
         {
           "time": "11:00 前",
           "title": "整理行李、完成退房",
           "kind": "event",
           "steps": [
-            "11:00 前退房，檢查行李並歸還鑰匙"
+            "拿齊行李、歸還鑰匙，11:00 前完成退房"
           ],
-          "note": "11:00 是退房上限；實際集合出發時間等接送確認。"
+          "note": "11:00 是退房上限，接送集合時間尚未確認。先查抽屜、插座和冰箱，再把 9 人去機場的行李集中。"
         },
         {
           "time": "退房後",
@@ -454,9 +533,9 @@
           "kind": "event",
           "placeKey": "airport",
           "steps": [
-            "回台灣的 9 人找 BX791 櫃台"
+            "回台灣的 9 人先找 BX791 報到櫃台"
           ],
-          "note": "先完成出境手續，有時間再吃東西。"
+          "note": "先完成報到、托運與安檢，再依登機證時間安排用餐及前往登機門。"
         },
         {
           "time": "14:15",
@@ -496,11 +575,9 @@
       "label": "10/3 廣安里晚餐",
       "items": [
         {
-          "main": "水邊豬肉湯飯民樂本店",
-          "mainMapUrl": "https://map.naver.com/p/search/%EC%88%98%EB%B3%80%EC%B5%9C%EA%B3%A0%EB%8F%BC%EC%A7%80%EA%B5%AD%EB%B0%A5%20%EB%AF%BC%EB%9D%BD%EB%B3%B8%EC%A0%90",
-          "backup": "Nasari 廣安店",
-          "altMapUrl": "https://map.naver.com/p/search/%EB%82%98%EC%82%AC%EB%A6%AC%EC%8B%9D%EB%8B%B9%20%EA%B4%91%EC%95%88%EC%A0%90",
-          "note": "先看 Catchtable 候位；10 人可詢問分桌。"
+          "mainPlaceKey": "water_soup",
+          "backupPlaceKey": "nasari",
+          "note": "水邊最高先看 Tabling 叫號，10 人詢問分桌；Nasari 改吃海鮮麵，出發前確認仍收客。"
         }
       ]
     },
@@ -509,18 +586,14 @@
       "label": "10/4 廣安里晚餐",
       "items": [
         {
-          "main": "Nasari 廣安店",
-          "mainMapUrl": "https://map.naver.com/p/search/%EB%82%98%EC%82%AC%EB%A6%AC%EC%8B%9D%EB%8B%B9%20%EA%B4%91%EC%95%88%EC%A0%90",
-          "backup": "嚴泳帛豬肉湯飯（廣安里）",
-          "altMapUrl": "https://map.naver.com/p/search/%EC%97%84%EC%9A%A9%EB%B0%B1%EB%8F%BC%EC%A7%80%EA%B5%AD%EB%B0%A5%20%EA%B4%91%EC%95%88%EB%A6%AC",
-          "note": "依胃口與候位選一家。"
+          "mainPlaceKey": "nasari",
+          "backupPlaceKey": "eom_soup",
+          "note": "Nasari 配海景吃麵；嚴湧帛換成湯飯，位置在水營站一帶，需另外看路線。"
         },
         {
-          "main": "All Sunday（廣安里）",
-          "mainMapUrl": "https://map.naver.com/p/search/All%20Sunday%20%EA%B4%91%EC%95%88%EB%A6%AC",
-          "backup": "Nasari 廣安店",
-          "altMapUrl": "https://map.naver.com/p/search/%EB%82%98%EC%82%AC%EB%A6%AC%EC%8B%9D%EB%8B%B9%20%EA%B4%91%EC%95%88%EC%A0%90",
-          "note": "想吃簡單一點就買麵包；想坐下吃熱食可選 Nasari。"
+          "mainPlaceKey": "all_sunday",
+          "backupPlaceKey": "nasari",
+          "note": "All Sunday 適合貝果輕食；還想吃熱湯正餐就選 Nasari。"
         }
       ]
     },
@@ -529,11 +602,9 @@
       "label": "10/5 海雲台晚餐",
       "items": [
         {
-          "main": "Ribs of Legend 海雲台",
-          "mainMapUrl": "https://map.naver.com/p/search/%EC%A0%84%EC%84%A4%EC%9D%98%EC%9A%B0%EB%8C%80%EA%B0%88%EB%B9%84%20%ED%95%B4%EC%9A%B4%EB%8C%80",
-          "backup": "海雲台傳統市場",
-          "altMapUrl": "https://map.naver.com/p/search/%ED%95%B4%EC%9A%B4%EB%8C%80%EC%A0%84%ED%86%B5%EC%8B%9C%EC%9E%A5",
-          "note": "若餐廳候位太久，可先到市場找吃的。"
+          "mainPlaceKey": "ribs",
+          "backupPlaceKey": "haeundae_market",
+          "note": "Ribs 以牛肋排為主，預計 18:30 用餐；若候位久，市場可分組找吃的。"
         }
       ]
     },
@@ -542,18 +613,12 @@
       "label": "10/6 西面晚餐",
       "items": [
         {
-          "main": "83 獬豸（西面）",
-          "mainMapUrl": "https://map.naver.com/p/search/83%ED%95%B4%EC%B9%98%20%EC%84%9C%EB%A9%B4",
-          "backup": "Shake Shack（西面）",
-          "altMapUrl": "https://map.naver.com/p/search/%EC%89%90%EC%9D%B4%ED%81%AC%EC%89%91%20%EC%84%9C%EB%A9%B4",
-          "note": "想吃烤肉先看 83 獬豸；想快一點就選 Shake Shack。"
-        },
-        {
-          "main": "老宅邸燒肉 Old Mansion",
-          "mainMapUrl": "https://map.naver.com/p/search/%EC%98%AC%EB%93%9C%EB%A7%A8%EC%85%98%20%EB%B6%80%EC%82%B0%20%EC%A0%84%ED%8F%AC",
-          "backup": "83 獬豸（西面）",
-          "altMapUrl": "https://map.naver.com/p/search/83%ED%95%B4%EC%B9%98%20%EC%84%9C%EB%A9%B4",
-          "note": "兩家烤肉都是選項，先確認 10 人能否分桌。"
+          "mainPlaceKey": "haechi83",
+          "backupPlaceKey": "shake_shack",
+          "otherPlaceKeys": [
+            "old_mansion"
+          ],
+          "note": "三家擇一：83 獬豸與老宅邸吃烤肉，Shake Shack 吃漢堡。10 人先確認座位，別把候位時間當成已能入座。"
         }
       ]
     }
@@ -581,8 +646,13 @@
         "booked": true
       },
       {
+        "label": "味贊王富平店",
+        "content": "10/4 11:30 · 已透過 Naver 訂位",
+        "booked": true
+      },
+      {
         "label": "Visit Busan Pass BIG5",
-        "content": "已選 BIG5，尚未購買 · 紫 2＋藍 3，首次使用起 180 天",
+        "content": "已選 BIG5，尚未購買 · 紫 2：Luge、SPA LAND；藍 3：松島纜車、ARTE、海岸列車 · 首次使用起 180 天",
         "booked": false
       }
     ],
@@ -614,7 +684,7 @@
       {
         "leg": "10/5 Luge → 松亭 → 尾浦",
         "mode": "計程車 → 海岸列車",
-        "budget": "15:00 左右往松亭，回程車票規則換票時確認",
+        "budget": "原表 15:00 回松亭接列車，16:00 看展；隊伍長就省略途中散步",
         "pending": false
       },
       {
@@ -642,114 +712,122 @@
         "detail": "需要申報的人，在抵韓前 3 天內完成。以韓國時間計算，送出後 72 小時內有效。"
       },
       {
-        "item": "購買 BIG5、確認領卡方式",
-        "detail": "已選 BIG5，尚未購買。紫色 2 項：Luge、SPA LAND；藍色 3 項：松島纜車、ARTE、海岸列車。實體卡預計在金海機場 WiFi Dosirak 領取，購買後依憑證確認。"
+        "item": "購買 BIG5，確認實體卡領取及各站兌換內容",
+        "detail": "名額已按官方分類核對：紫色是 Luge、SPA LAND；藍色是松島纜車、ARTE、海岸列車。購買前確認領卡櫃台、纜車種類、Luge 次數與海岸列車票種。WiFi Dosirak 官網列金海國際線 1 樓 3 號出口旁、06:00–22:00；PASS 兌換時段仍須以購買憑證核對。"
       },
       {
-        "item": "確認機場接送",
-        "detail": "去程 10 人，原表預估 NT$3,000；車數、是否含全部行李與等候費待確認。回程是 9 人，接送時間與費用另確認。"
+        "item": "確認兩趟機場接送",
+        "detail": "去程 10 人、兩班分別 17:05／17:55 落地，原表預估 NT$3,000；報價需涵蓋行李、車數與等候。回程 9 人搭 14:15 航班，11:00 是退房上限，接送時間需把報到、托運與交通緩衝算進去。"
       },
       {
-        "item": "設定 Uber PIN、安排集合",
-        "detail": "出發前完成 Uber PIN 設定。10/5 分 3＋3＋4 三組，08:00 一起出發前往尾浦。"
+        "item": "準備候位 App 與 10 人分桌安排",
+        "detail": "水邊最高民樂本店公告用 Tabling，遠端登記後仍需到店輸入確認碼；無法使用時改現場取號。原表的 Catchtable 仍可保留給其他店家。味贊王已有 Naver 訂位；其他餐廳如需訂位，先詢問 10 人的座位安排。"
       },
       {
-        "item": "確認 10/6 李禹煥空間開館",
-        "detail": "行程先保留，家人確認中。10/5 是補休日，依館方規則 10/6 可能補休。"
+        "item": "安排早上出發時間與 Uber PIN",
+        "detail": "10/4 目標 09:00 到松島，準備時間要包含車程。10/5 三台車 3＋3＋4，08:00 出發接 08:30 膠囊時段；事先設定 Uber PIN、確認每組票券保管人。10/6 08:30 出發去 SPA LAND 的上車點也要一併決定。"
       },
       {
-        "item": "確認 10/6 SPA LAND 營運",
-        "detail": "確認當月營運公告，再安排 08:30 出發的交通。"
+        "item": "確認 DIART 開門時間、海岸列車票種",
+        "detail": "DIART 有 09:30／10:30 不同公開營業版本，先保留 Excel 的 09:30。11:00 海岸列車尚非已訂班次；換票時確認首次乘車時間與回程，若是 2 次券，青沙浦 → 松亭、松亭 → 尾浦已用完兩次。"
       },
       {
-        "item": "安排展覽門票",
-        "detail": "Werner Bronkhorst 展需另外購票；已排 10/5 下午，購票狀態待家人確認。"
+        "item": "確認 10/6 李禹煥與 SPA LAND 營運",
+        "detail": "李禹煥依 Excel 保留 16:00，原表註記可能沒開，家人仍需確認。SPA LAND 也需查看 10 月休館公告；若李禹煥休館，百貨後直接往西面即可。"
+      },
+      {
+        "item": "確認 Werner 展門票、10/3 無人機場次",
+        "detail": "展期涵蓋 10/5，另購門票狀態待家人確認；即使預購仍需現場換票與候位。無人機秀保留原表 21:00，出發前核對 10/3 公告。"
+      },
+      {
+        "item": "出發前決定兩段偏緊的時間取捨",
+        "detail": "10/4 的 16:00 P.ARK＋ARTE＋18:00 廣安里晚餐，以及 10/6 的 17:00 往西面＋咖啡＋晚餐＋19:00 採買，目前都照原表保留。要慢慢看展、喝咖啡，就讓晚餐或採買順延；時間固定時，縮短咖啡或逛街。"
       }
     ],
     "address": [
       {
-        "label": "松島海上纜車（下站）",
-        "url": "https://map.naver.com/p/search/%EC%86%A1%EB%8F%84%ED%95%B4%EC%83%81%EC%BC%80%EC%9D%B4%EB%B8%94%EC%B9%B4%20%EC%86%A1%EB%8F%84%EB%B2%A0%EC%9D%B4%EC%8A%A4%ED%85%8C%EC%9D%B4%EC%85%98"
+        "placeKey": "songdo_cable"
       },
       {
-        "label": "味贊王富平店",
-        "url": "https://map.naver.com/p/search/%EB%A7%9B%EC%B0%AC%EB%93%A4%EC%99%95%EC%86%8C%EA%B8%88%EA%B5%AC%EC%9D%B4%20%EB%B6%80%ED%8F%89%EC%A0%90"
+        "placeKey": "matjjang"
       },
       {
-        "label": "樂天百貨光復店",
-        "url": "https://map.naver.com/p/search/%EB%A1%AF%EB%8D%B0%EB%B0%B1%ED%99%94%EC%A0%90%20%EA%B4%91%EB%B3%B5%EC%A0%90"
+        "placeKey": "nampo_lotte"
       },
       {
-        "label": "白淺灘（흰여울문화마을）",
-        "url": "https://map.naver.com/p/search/%ED%9D%B0%EC%97%AC%EC%9A%B8%EB%AC%B8%ED%99%94%EB%A7%88%EC%9D%84%20%EB%B6%80%EC%82%B0%20%EC%98%81%EB%8F%84%EA%B5%AC"
+        "placeKey": "baekcheon"
       },
       {
-        "label": "P.ARK 咖啡廳",
-        "url": "https://map.naver.com/p/search/%ED%94%BC%EC%95%84%ED%81%AC%20%EB%B6%80%EC%82%B0%20%EC%98%81%EB%8F%84"
+        "placeKey": "park_cafe"
       },
       {
-        "label": "ARTE MUSEUM BUSAN",
-        "url": "https://map.naver.com/p/search/%EC%95%84%EB%A5%B4%EB%96%BC%EB%AE%A4%EC%A7%80%EC%97%84%20%EB%B6%80%EC%82%B0"
+        "placeKey": "arte"
       },
       {
-        "label": "尾浦膠囊站入口",
-        "url": "https://map.naver.com/p/search/%ED%95%B4%EC%9A%B4%EB%8C%80%EB%B8%94%EB%A3%A8%EB%9D%BC%EC%9D%B8%ED%8C%8C%ED%81%AC%20%EB%AF%B8%ED%8F%AC%EC%A0%95%EA%B1%B0%EC%9E%A5"
+        "placeKey": "mipo"
       },
       {
-        "label": "青沙浦站",
-        "url": "https://map.naver.com/p/search/%ED%95%B4%EC%9A%B4%EB%8C%80%EB%B8%94%EB%A3%A8%EB%9D%BC%EC%9D%B8%ED%8C%8C%ED%81%AC%20%EC%B2%AD%EC%82%AC%ED%8F%AC%EC%A0%95%EA%B1%B0%EC%9E%A5"
+        "placeKey": "cheongsapo"
       },
       {
-        "label": "DIART Coffee（青沙浦）",
-        "url": "https://map.naver.com/p/search/%EB%94%94%EC%95%84%ED%8A%B8%EC%BB%A4%ED%94%BC%20%EC%B2%AD%EC%82%AC%ED%8F%AC"
+        "placeKey": "diart"
       },
       {
-        "label": "海岸列車松亭站",
-        "url": "https://map.naver.com/p/search/%ED%95%B4%EC%9A%B4%EB%8C%80%EB%B8%94%EB%A3%A8%EB%9D%BC%EC%9D%B8%ED%8C%8C%ED%81%AC%20%EC%86%A1%EC%A0%95%EC%A0%95%EA%B1%B0%EC%9E%A5"
+        "placeKey": "songjeong"
       },
       {
-        "label": "樂天 Premium Outlet 東釜山店",
-        "url": "https://map.naver.com/p/search/%EB%A1%AF%EB%8D%B0%ED%94%84%EB%A6%AC%EB%AF%B8%EC%97%84%EC%95%84%EC%9A%B8%EB%A0%9B%20%EB%8F%99%EB%B6%80%EC%82%B0%EC%A0%90"
+        "placeKey": "lotte_outlet"
       },
       {
-        "label": "Luge（스카이라인루지）",
-        "url": "https://map.naver.com/p/search/%EC%8A%A4%EC%B9%B4%EC%9D%B4%EB%9D%BC%EC%9D%B8%EB%A3%A8%EC%A7%80%20%EB%B6%80%EC%82%B0"
+        "placeKey": "luge"
       },
       {
-        "label": "Werner Bronkhorst 展・Grand Josun Busan 4F",
-        "url": "https://map.naver.com/p/search/%EA%B7%B8%EB%9E%9C%EB%93%9C%20%EC%A1%B0%EC%84%A0%20%EB%B6%80%EC%82%B0"
+        "placeKey": "werner"
       },
       {
-        "label": "Ribs of Legend 海雲台",
-        "url": "https://map.naver.com/p/search/%EC%A0%84%EC%84%A4%EC%9D%98%EC%9A%B0%EB%8C%80%EA%B0%88%EB%B9%84%20%ED%95%B4%EC%9A%B4%EB%8C%80"
+        "placeKey": "ribs"
       },
       {
-        "label": "海雲台傳統市場",
-        "url": "https://map.naver.com/p/search/%ED%95%B4%EC%9A%B4%EB%8C%80%EC%A0%84%ED%86%B5%EC%8B%9C%EC%9E%A5"
+        "placeKey": "haeundae_market"
       },
       {
-        "label": "SPA LAND（汗蒸幕）",
-        "url": "https://map.naver.com/p/search/%EC%8A%A4%ED%8C%8C%EB%9E%9C%EB%93%9C%20%EC%84%BC%ED%85%80%EC%8B%9C%ED%8B%B0"
+        "placeKey": "spaland"
       },
       {
-        "label": "新世界百貨 Centum City",
-        "url": "https://map.naver.com/p/search/%EC%8B%A0%EC%84%B8%EA%B3%84%EB%B0%B1%ED%99%94%EC%A0%90%20%EC%84%BC%ED%85%80%EC%8B%9C%ED%8B%B0"
+        "placeKey": "shinsegae"
       },
       {
-        "label": "李禹煥空間",
-        "url": "https://map.naver.com/p/search/%EC%9D%B4%EC%9A%B0%ED%99%98%20%EA%B3%B5%EA%B0%84%20%EB%B6%80%EC%82%B0"
+        "placeKey": "lee_ufan"
       },
       {
-        "label": "Strut Coffee（西面）",
-        "url": "https://map.naver.com/p/search/Strut%20Coffee%20%EC%84%9C%EB%A9%B4"
+        "placeKey": "strut"
       },
       {
-        "label": "workingholiday（廣安里）",
-        "url": "https://map.naver.com/p/search/workingholiday%20%EA%B4%91%EC%95%88%EB%A6%AC"
+        "placeKey": "workingholiday"
       },
       {
-        "label": "機場國際線",
-        "url": "https://map.naver.com/p/search/%EA%B9%80%ED%95%B4%EA%B5%AD%EC%A0%9C%EA%B3%B5%ED%95%AD%20%EA%B5%AD%EC%A0%9C%EC%84%A0"
+        "placeKey": "airport"
+      },
+      {
+        "placeKey": "water_soup"
+      },
+      {
+        "placeKey": "nasari"
+      },
+      {
+        "placeKey": "eom_soup"
+      },
+      {
+        "placeKey": "all_sunday"
+      },
+      {
+        "placeKey": "haechi83"
+      },
+      {
+        "placeKey": "shake_shack"
+      },
+      {
+        "placeKey": "old_mansion"
       }
     ]
   },
@@ -848,111 +926,206 @@
   "places": {
     "songdo_cable": {
       "label": "松島海上纜車（下站）",
-      "query": "송도해상케이블카 송도베이스테이션"
+      "query": "송도해상케이블카 송도베이스테이션",
+      "description": "從松島海面上方看海灣與岸邊步道，到 Sky Park 再回程，去回兩趟都能換個角度看海。",
+      "details": [
+        "下站是 Songdo Bay／松島 Base Station，上站是 Songdo Sky Park；導航先設下站。"
+      ]
     },
     "baekcheon": {
       "label": "白淺灘（흰여울문화마을）",
-      "query": "흰여울문화마을 부산 영도구"
+      "query": "흰여울문화마을 부산 영도구",
+      "description": "沿著海崖延伸的小巷，一側是住家與小店，另一側就是開闊海景。",
+      "details": [
+        "上方村落巷道與下方海岸步道有高低差；想少爬階梯，可把散步集中在上方。"
+      ]
     },
     "arte": {
       "label": "ARTE MUSEUM BUSAN",
-      "query": "아르떼뮤지엄 부산"
+      "query": "아르떼뮤지엄 부산",
+      "description": "用投影、聲音與氣味營造自然場景的沉浸式展覽，適合慢慢走進光影裡看。",
+      "details": [
+        "位於 P.ARK 園區別館。官網目前列每日 10:00–20:00，最後入場 19:00。"
+      ]
     },
     "mipo": {
       "label": "尾浦膠囊站入口",
-      "query": "해운대블루라인파크 미포정거장"
+      "query": "해운대블루라인파크 미포정거장",
+      "description": "天空膠囊從尾浦沿著海岸前往青沙浦，每廂最多 4 人，單程約 30 分鐘。",
+      "details": [
+        "預約時段是入場安排，仍需依序候車；天空膠囊與海岸列車是不同乘車入口。"
+      ]
     },
     "cheongsapo": {
       "label": "青沙浦站",
-      "query": "해운대블루라인파크 청사포정거장"
+      "query": "해운대블루라인파크 청사포정거장",
+      "description": "青沙浦站連接小漁港與海岸列車，可從這裡繼續往松亭。",
+      "details": [
+        "海岸列車需換票並確認首次乘車安排；中途站候車、再次上車可能要等下一班，也可能站立。"
+      ]
     },
     "luge": {
       "label": "Luge（스카이라인루지）",
-      "query": "스카이라인루지 부산"
+      "query": "스카이라인루지 부산",
+      "description": "先搭吊椅上坡，再自己控制滑車的速度與方向，沿彎道和隧道滑下來。",
+      "details": [
+        "釜山園區有 4 條滑道。首次搭乘先聽操作說明，回到起點後再接下一趟。"
+      ]
     },
     "spaland": {
       "label": "SPA LAND（汗蒸幕）",
-      "query": "스파랜드 센텀시티"
+      "query": "스파랜드 센텀시티",
+      "description": "泡湯、主題汗蒸房與休息區集中在新世界百貨內，上午可以慢慢放鬆，也能在館內吃午餐。",
+      "details": [
+        "位於 Centum City 本館 1 樓；目前營業 09:00–22:00，最後入場 21:00。",
+        "一般入場限 4 小時；館內消費滿 ₩10,000（不含門票）可延長為 6 小時。超時每小時另收 ₩5,000。"
+      ]
     },
     "airport": {
       "label": "機場國際線",
       "query": "김해국제공항 국제선"
     },
     "water_soup": {
-      "label": "水邊豬肉湯飯民樂本店",
-      "query": "수변최고돼지국밥 민락본점"
+      "label": "水邊最高豬肉湯飯・民樂本店",
+      "query": "수변최고돼지국밥 민락본점",
+      "description": "招牌是豬頸肉湯飯，濃厚豬骨湯配上帶點彈性的肉片；想把肉與湯分開吃，也有水煮肉套餐。",
+      "details": [
+        "民樂本店目前列 24 小時營業，每人需點一份餐。",
+        "店家公告使用 Tabling 遠端候位：等候達 2 組才開放；前面剩 1 組之前，要到店輸入現場的 6 位確認碼，否則會取消。"
+      ]
     },
     "matjjang": {
       "label": "味贊王富平店",
-      "query": "맛찬들왕소금구이 부평점"
+      "query": "맛찬들왕소금구이 부평점",
+      "description": "主打熟成厚切豬五花與梅花肉，烤得香的肉片可以先沾鹽，再配小菜換個吃法。",
+      "details": [
+        "可搭配石鍋飯或大醬湯。這一站吃的是韓式烤豬肉。"
+      ]
     },
     "nampo_lotte": {
       "label": "樂天百貨光復店",
-      "query": "롯데백화점 광복점"
+      "query": "롯데백화점 광복점",
+      "description": "從南浦洞街區逛到樂天百貨光復店，把街邊小店與百貨購物排在同一段。"
     },
     "park_cafe": {
       "label": "P.ARK 咖啡廳",
-      "query": "피아크 부산 영도"
+      "query": "피아크 부산 영도",
+      "description": "面向影島港景的大型咖啡與烘焙空間，可以坐著看船、分著吃麵包。",
+      "details": [
+        "咖啡與烘焙主要在 4 樓；官網列 10:00–22:00，最後點餐 21:00。"
+      ]
     },
     "nasari": {
       "label": "Nasari 廣安店",
-      "query": "나사리식당 광안점"
+      "query": "나사리식당 광안점",
+      "description": "海鮮刀削麵配上廣安大橋景色，適合想吃熱湯、又想繼續看海的一餐。",
+      "details": [
+        "菜單有海鮮刀削麵、海鮮韭菜煎餅與生牛肉拌麵；不吃生食可選前兩項。景觀座位需看空位。"
+      ]
     },
     "eom_soup": {
-      "label": "嚴泳帛豬肉湯飯（廣安里）",
-      "query": "엄용백돼지국밥 광안리"
+      "label": "嚴湧帛豬肉湯飯・水營本店",
+      "query": "엄용백돼지국밥 수영본점",
+      "description": "清湯與濃湯是這家的兩種吃法：釜山式較清爽，密陽式則有濃厚豬骨香。",
+      "details": [
+        "地圖定位水營本店，靠近水營站，與廣安里海灘餐廳的所在區域不同；從住宿出發時再確認交通。"
+      ]
     },
     "all_sunday": {
       "label": "All Sunday（廣安里）",
-      "query": "All Sunday 광안리"
+      "query": "올선데이 광안점",
+      "description": "以貝果與不同口味的奶油乳酪為主，買回住宿當點心或隔天早餐都方便。",
+      "details": [
+        "晚餐時段到店，口味與數量看當日剩餘；想吃一頓熱食可改選旁邊的餐廳備案。"
+      ]
     },
     "diart": {
       "label": "DIART Coffee（青沙浦）",
-      "query": "디아트커피 청사포"
+      "query": "디아트커피 청사포",
+      "description": "青沙浦海景咖啡店，可點手沖咖啡，配麵包、蜂蜜與 Kaymak 奶霜。",
+      "details": [
+        "公開營業資料有 09:30 與 10:30 兩個版本，10/5 開門時間仍需向店家確認。"
+      ]
     },
     "songjeong": {
       "label": "海岸列車松亭站",
-      "query": "해운대블루라인파크 송정정거장"
+      "query": "해운대블루라인파크 송정정거장",
+      "description": "海岸列車東端的終點站，往西可搭到青沙浦與尾浦。",
+      "details": [
+        "到尾浦終點須下車；途中下車會影響票券可用次數，換票時先決定要直達還是中途散步。"
+      ]
     },
     "lotte_outlet": {
       "label": "樂天 Premium Outlet 東釜山店",
-      "query": "롯데프리미엄아울렛 동부산점"
+      "query": "롯데프리미엄아울렛 동부산점",
+      "description": "東釜山的 Outlet，這裡可以逛品牌商店，也能找地方坐下吃飯。"
     },
     "werner": {
       "label": "Werner Bronkhorst 展・Grand Josun Busan 4F",
-      "query": "그랜드 조선 부산"
+      "query": "그랜드 조선 부산",
+      "description": "The Whole World’s a Canvas 展覽，位於海雲台 Grand Josun Busan 4 樓，需另購門票。",
+      "details": [
+        "主辦方公布展期為 2026/5/22–10/25，涵蓋 10/5。入場處在 4 樓 OKNP 畫廊往洗手間方向的走廊。",
+        "持預購票仍需現場換票；人多時須候位，購票不代表可以立即入場。"
+      ]
     },
     "ribs": {
       "label": "Ribs of Legend 海雲台",
-      "query": "전설의우대갈비 해운대"
+      "query": "전설의우대갈비 해운대",
+      "description": "主打韓式帶骨牛肋排（우대갈비），店員協助烤肉，適合幾個人一起分著吃。",
+      "details": [
+        "另有豬五花等品項；位於海雲台海邊路 277 號 3 樓。牛肋排與其他肉品可先問每桌最低點餐份量。"
+      ]
     },
     "haeundae_market": {
       "label": "海雲台傳統市場",
-      "query": "해운대전통시장"
+      "query": "해운대전통시장",
+      "description": "海雲台街區裡的傳統市場，晚餐後可以散步看小吃攤，也能分頭找想吃的熱食。",
+      "details": [
+        "攤位與餐館各自營業，10 人一起去時先約好集合點，再分組逛。"
+      ]
     },
     "shinsegae": {
       "label": "新世界百貨 Centum City",
-      "query": "신세계백화점 센텀시티"
+      "query": "신세계백화점 센텀시티",
+      "description": "Centum City 的大型百貨，服飾、香氛、美妝與餐飲選擇集中，SPA LAND 也在同一棟。"
     },
     "lee_ufan": {
       "label": "李禹煥空間",
-      "query": "이우환 공간 부산"
+      "query": "이우환 공간 부산",
+      "description": "以李禹煥作品為主的美術空間，可從繪畫與雕塑感受作品、空間和留白之間的關係。"
     },
     "strut": {
       "label": "Strut Coffee（西面）",
-      "query": "Strut Coffee 서면"
+      "query": "스트럿커피 전포",
+      "description": "田浦巷弄裡的咖啡店，手沖與義式咖啡都能選，逛街中途可以坐下喝一杯。",
+      "details": [
+        "位於田浦東城路 39 街一帶，從西面採買區過來時，先看地圖再決定是否順路。"
+      ]
     },
     "haechi83": {
       "label": "83 獬豸（西面）",
-      "query": "83해치 서면"
+      "query": "83해치 서면",
+      "description": "以豬五花、梅花肉為主的韓式烤肉店，店員協助烤肉，可配清爽蘿蔔絲一起吃。",
+      "details": [
+        "想一起吃烤肉可選這家；10 人的座位與分桌方式需向店家確認。"
+      ]
     },
     "shake_shack": {
       "label": "Shake Shack（西面）",
-      "query": "쉐이크쉑 서면"
+      "query": "쉐이크쉑 서면",
+      "description": "漢堡、波浪薯條與奶昔，適合這晚想吃簡單一點、各自選餐的時候。",
+      "details": [
+        "西面店位於三井 Tower 1 樓（中央大路 672 號）。人多時先找好座位，再分組點餐。"
+      ]
     },
     "old_mansion": {
       "label": "老宅邸燒肉 Old Mansion",
-      "query": "올드맨션 부산 전포"
+      "query": "올드맨션 서면전포점",
+      "description": "田浦的老屋烤肉店，主打熟成豬肉與多樣小菜，喜歡木質老屋氣氛可以選這家。",
+      "details": [
+        "10 人用餐宜先詢問可否訂位、分桌及每桌最低點餐份量。"
+      ]
     },
     "seomyeon_shopping": {
       "label": "西面 Olive Young",
@@ -960,7 +1133,11 @@
     },
     "workingholiday": {
       "label": "workingholiday（廣安里）",
-      "query": "workingholiday 광안리"
+      "query": "workingholiday 광안리",
+      "description": "面向廣安里海灘的 3 樓早午餐咖啡店，班尼迪克蛋與咖啡可以配著海景慢慢享用。",
+      "details": [
+        "公開店家資料列 09:00 開門；位於廣安海邊路 235 號 3 樓。是否能坐在一起需看當天座位。"
+      ]
     }
   },
   "statusMeta": {
