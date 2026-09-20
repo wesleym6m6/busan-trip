@@ -12,4 +12,6 @@
 
 2026-09-16 使用者明確定案目前外觀與動畫，開始以新版 Google 行程表更新內容。哥哥 1 人續往大阪、9 人回台灣；BIG5 尚待購買；10/5 確認 08:00 出門；李禹煥空間保留且開館待確認；機場至住宿 NT$3,000 是原表預估，車數與報價範圍仍未確認。詳細來源與維護範圍見 [CONTENT_UPDATE_20260916.md](CONTENT_UPDATE_20260916.md)。
 
-2026-09-20 重新核對最新表後，於 `codex/content-20260920` 整理行程文案與共用場所資料，修正時間附註並加入停留預算。李禹煥仍保留 10/6 16:00／可能休館。詳見 [CONTENT_UPDATE_20260920.md](CONTENT_UPDATE_20260920.md) 與 [CONTENT_SOURCES_20260920.md](CONTENT_SOURCES_20260920.md)。這是獨立分支的本機預覽；不要據此宣稱正式 GitHub Pages 已更新，也不要讀舊版 `backupGroups` 連結欄位作為目前契約。
+2026-09-20 重新核對最新表後，整理行程文案與共用場所資料，修正時間附註並加入停留預算；再依使用者回饋改善卡片層級、間距與備案展開。李禹煥仍保留 10/6 16:00／可能休館。詳見 [CONTENT_UPDATE_20260920.md](CONTENT_UPDATE_20260920.md)、[CONTENT_SOURCES_20260920.md](CONTENT_SOURCES_20260920.md) 與 [LAYOUT_UPDATE_20260920.md](LAYOUT_UPDATE_20260920.md)。不要讀舊版 `backupGroups` 連結欄位作為目前契約。
+
+使用者隨後明確要求發布給家人查看，GitHub Pages 已成功更新。部署來源 `18630283140d2d387499fbb0054bd740c3d486ee`，正式 JS 為 `index-BRHalZz0.js`；50 tests、完整來源樹比對、公開產物位元比對與 360 / 390px 操作檢查皆通過。發布證據與限制見 [DEPLOYMENT.md](DEPLOYMENT.md)。之後的紀錄文件提交不代表網站再次部署；工作流仍需手動觸發。
