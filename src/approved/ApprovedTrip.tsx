@@ -6,7 +6,7 @@ import { renderApprovedView } from './view';
 type Tab = 'itinerary' | 'backups' | 'tools' | 'packing';
 type Fx = { rate: number; updatedAt: string; savedAt: number };
 interface State {
- tab: Tab; selectedDayId: string | null; expanded: Record<string, boolean>; packChecked: Record<string, boolean>;
+ tab: Tab; selectedDayId: string | null; expanded: Record<string, boolean>;
  gullLaunch: number; reduceMotion: boolean;
  showDriverCard: boolean; prepOpen: boolean; showManualRate: boolean; krwInput: string; manualRateInput: string;
  fx: Fx | null; fxStale?: boolean; fxError?: boolean; showAllBackups: boolean;
@@ -39,7 +39,7 @@ export class ApprovedTrip extends ReactComponent<Record<string, never>, State> {
   defaultDayId: string;
   render(): ReactNode { return renderApprovedView(this.renderVals()); }
 
-  state: State = { tab: 'itinerary', selectedDayId: null, expanded: {}, packChecked: {}, gullLaunch: 0, reduceMotion: false, showDriverCard: false, prepOpen: false, showManualRate: false, krwInput: '', manualRateInput: '', fx: null, showAllBackups: false };
+  state: State = { tab: 'itinerary', selectedDayId: null, expanded: {}, gullLaunch: 0, reduceMotion: false, showDriverCard: false, prepOpen: false, showManualRate: false, krwInput: '', manualRateInput: '', fx: null, showAllBackups: false };
 
   constructor(props: Record<string, never>) {
     super(props);
@@ -54,10 +54,9 @@ export class ApprovedTrip extends ReactComponent<Record<string, never>, State> {
 
   componentDidMount() {
     try {
-      const savedPack = JSON.parse(localStorage.getItem('busan-pack-v1') || '{}');
       const savedReduce = localStorage.getItem('busan-reduce-motion');
       const prefersReduce = window.matchMedia && window.matchMedia('(prefers-reduced-motion: reduce)').matches;
-      this.setState({ packChecked: savedPack, reduceMotion: savedReduce !== null ? savedReduce === '1' : !!prefersReduce });
+      this.setState({ reduceMotion: savedReduce !== null ? savedReduce === '1' : !!prefersReduce });
     } catch { /* Storage can be unavailable in private browsing. */ }
     this.loadFx();
   }
@@ -90,11 +89,6 @@ export class ApprovedTrip extends ReactComponent<Record<string, never>, State> {
   };
   goToday = () => { this.selectDay(this.defaultDayId); };
   toggleExpand = (key: string) => this.setState((s) => ({ expanded: { ...s.expanded, [key]: !s.expanded[key] } }));
-  togglePack = (id: string) => this.setState((s) => {
-    const next = { ...s.packChecked, [id]: !s.packChecked[id] };
-    try { localStorage.setItem('busan-pack-v1', JSON.stringify(next)); } catch { /* Storage can be unavailable in private browsing. */ }
-    return { packChecked: next };
-  });
   toggleDriverCard = () => this.setState((s) => ({ showDriverCard: !s.showDriverCard }));
   togglePrep = () => this.setState((s) => ({ prepOpen: !s.prepOpen }));
   toggleReduceMotion = () => this.setState((s) => {
@@ -108,7 +102,7 @@ export class ApprovedTrip extends ReactComponent<Record<string, never>, State> {
   onManualRateChange = (e: ChangeEvent<HTMLInputElement>) => this.setState({ manualRateInput: e.target.value });
 
   renderVals() {
-    const { tab, selectedDayId, expanded, packChecked, gullLaunch, reduceMotion, showDriverCard, prepOpen, showManualRate, krwInput, manualRateInput, fx, fxStale, fxError, showAllBackups } = this.state;
+    const { tab, selectedDayId, expanded, gullLaunch, reduceMotion, showDriverCard, prepOpen, showManualRate, krwInput, manualRateInput, fx, fxStale, fxError, showAllBackups } = this.state;
     const trip = this.trip;
     const todayKR = ymd(new Date());
 
@@ -174,16 +168,6 @@ export class ApprovedTrip extends ReactComponent<Record<string, never>, State> {
     }));
     const noBackupsToday = !showAllBackups && dayBackups.length === 0;
 
-    const packCats = trip.packing.map((cat) => {
-      const items = cat.items.map((it) => {
-        const checked = !!packChecked[it.id];
-        return { ...it, checked, toggle: () => this.togglePack(it.id), textColor: checked ? '#5B7280' : '#183848', strike: checked ? 'line-through' : 'none' };
-      });
-      return { ...cat, items };
-    });
-    const packTotal = packCats.reduce((a, c) => a + c.items.length, 0);
-    const packDone = packCats.reduce((a, c) => a + c.items.filter((i) => i.checked).length, 0);
-
     let rate = null;
     let fxStatusLine = '正在取得匯率…';
     const manualNum = parseFloat(manualRateInput);
@@ -222,7 +206,7 @@ export class ApprovedTrip extends ReactComponent<Record<string, never>, State> {
       krwInput, onKrwChange: this.onKrwChange, twdResult, fxStatusLine,
       showManualRate, manualRateInput, onManualRateChange: this.onManualRateChange, toggleManualRate: this.toggleManualRate,
       manualToggleLabel: showManualRate ? '收起手動輸入' : '沒有網路？手動輸入匯率',
-      packCats, packDone, packTotal,
+      packing: trip.packing,
       navIndicatorLeft: 'calc(' + tabIndex + ' * 25%)',
       itineraryColor: colorFor('itinerary'), backupsColor: colorFor('backups'), toolsColor: colorFor('tools'), packingColor: colorFor('packing'),
       itineraryCurrent: currentFor('itinerary'), backupsCurrent: currentFor('backups'), toolsCurrent: currentFor('tools'), packingCurrent: currentFor('packing'),

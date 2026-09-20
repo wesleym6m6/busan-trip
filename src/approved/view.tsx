@@ -1,4 +1,5 @@
 import { CoastalHeader } from './CoastalHeader';
+import { PackingList } from './PackingList';
 import { BackupCard, ItineraryCard } from './ContentCards';
 import { Fragment, type CSSProperties, type ReactNode } from 'react';
 import type { ApprovedTrip } from './ApprovedTrip';
@@ -173,24 +174,7 @@ export function renderApprovedView(v: ReturnType<ApprovedTrip['renderVals']>): R
 </section>
 </div>
  </>}
-{!!(v.isPacking) && <>
-<div style={({"padding": "16px 0", "display": "flex", "flexDirection": "column", "gap": "18px"} as CSSProperties)}>
-<div style={({"fontSize": "14px", "color": "#5B7280"} as CSSProperties)}>{"已準備 "}{v.packDone}{"／"}{v.packTotal}{"・只保存在這支手機"}</div>
-{v.packCats.map((cat, index11) => <Fragment key={index11}>
-<div >
-<h3 style={({"fontSize": "13px", "fontWeight": 700, "color": "#5B7280", "margin": "0 0 6px"} as CSSProperties)}>{cat.label}</h3>
-<div style={({"display": "flex", "flexDirection": "column", "gap": "6px"} as CSSProperties)}>
-{cat.items.map((it, index12) => <Fragment key={index12}>
-<label style={({"display": "flex", "alignItems": "center", "gap": "10px", "background": "#fff", "border": "1px solid #D6E3E8", "borderRadius": "12px", "padding": "12px 14px", "minHeight": "44px", "cursor": "pointer"} as CSSProperties)}>
-<input type={"checkbox"} checked={it.checked} onChange={it.toggle} style={({"width": "20px", "height": "20px", "flex": "none", "accentColor": "#246B8E"} as CSSProperties)}/>
-<span style={({"fontSize": "15px", "color": it.textColor, "textDecoration": it.strike} as CSSProperties)}>{it.label}</span>
-</label>
-</Fragment>)}
-</div>
-</div>
-</Fragment>)}
-</div>
- </>}
+<div hidden={!v.isPacking}><PackingList baseCategories={v.packing} /></div>
 </main>
 <nav aria-label={"主要頁面"} style={({"position": "fixed", "inset": "auto 0 0 0", "zIndex": 20, "background": "#fff", "borderTop": "1px solid #D6E3E8", "paddingBottom": "env(safe-area-inset-bottom)"} as CSSProperties)}>
 <div style={({"maxWidth": "640px", "margin": "0 auto", "position": "relative", "display": "grid", "gridTemplateColumns": "repeat(4,1fr)", "height": "58px"} as CSSProperties)}>
