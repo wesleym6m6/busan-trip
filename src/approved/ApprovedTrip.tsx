@@ -29,9 +29,9 @@ function parseRangeMinutes(t: string) {
   return { start: parseInt(m[1]!, 10) * 60 + parseInt(m[2]!, 10), end: parseInt(m[3]!, 10) * 60 + parseInt(m[4]!, 10) };
 }
 function splitTime(t: string) {
-  const m = t.match(/^(\d{1,2}:\d{2})(?:[–-](\d{1,2}:\d{2}))?/);
-  if (!m) return { isClock: false, start: '', end: '' };
-  return { isClock: true, start: m[1], end: m[2] || '' };
+  const m = t.match(/^(\d{1,2}:\d{2})(?:\s*[–-]\s*(\d{1,2}:\d{2}))?(.*)$/);
+  if (!m) return { isClock: false, start: '', end: '', qualifier: '' };
+  return { isClock: true, start: m[1], end: m[2] || '', qualifier: m[3]!.trim() };
 }
 
 export class ApprovedTrip extends ReactComponent<Record<string, never>, State> {
@@ -129,12 +129,17 @@ export class ApprovedTrip extends ReactComponent<Record<string, never>, State> {
       const isTransit = it.kind === 'transit';
       const range = !isTransit ? parseRangeMinutes(it.time) : null;
       const isNow = range && nowMin >= range.start && nowMin <= range.end;
-      const clock = !isTransit ? splitTime(it.time) : { isClock: false, start: '', end: '' };
-      const hasDetails = !isTransit && !!(it.note && it.note.trim());
-      const hasSteps = !isTransit && !!(it.steps && it.steps.length);
+      const clock = !isTransit ? splitTime(it.time) : { isClock: false, start: '', end: '', qualifier: '' };
       const place = it.placeKey ? trip.places[it.placeKey] : null;
+      const description = place?.description || '';
+      const placeDetails = place?.details || [];
+      const hasDetails = !isTransit && !!(description || placeDetails.length || it.note?.trim());
+      const hasSteps = !isTransit && !!(it.steps && it.steps.length);
+      const minutes = it.visitMinutes;
       return {
         ...it,
+        description, placeDetails,
+        visitLabel: minutes ? `預留 ${minutes.min}${minutes.max !== minutes.min ? '–' + minutes.max : ''} 分` : '',
         key,
         isTransit,
         isEvent: !isTransit,
@@ -145,7 +150,7 @@ export class ApprovedTrip extends ReactComponent<Record<string, never>, State> {
         tagColor: isNow ? '#246B8E' : (meta ? meta.color : '#5B7280'),
         borderColor: isNow ? '#246B8E' : '#EEF3F5',
         isClockTime: clock.isClock,
-        timeStart: clock.start, timeEnd: clock.end,
+        timeStart: clock.start, timeEnd: clock.end, timeQualifier: clock.qualifier,
         showTimeLabel: !isTransit && !clock.isClock,
         hasDetails, noDetails: !hasDetails, hasSteps, stepList: it.steps || [],
         ariaLabel: it.title + '詳情',
@@ -156,7 +161,17 @@ export class ApprovedTrip extends ReactComponent<Record<string, never>, State> {
     });
 
     const dayBackups = trip.backupGroups.filter((g) => g.dayId === selectedDayId);
-    const visibleBackupGroups = showAllBackups ? trip.backupGroups : dayBackups;
+    const resolvePlace = (key: string) => {
+      const place = trip.places[key]!;
+      return {...place, mapUrl: naverUrl(place.query)};
+    };
+    const visibleBackupGroups = (showAllBackups ? trip.backupGroups : dayBackups).map(group => ({
+      ...group,
+      items: group.items.map(item => ({...item,
+        main: resolvePlace(item.mainPlaceKey), backup: resolvePlace(item.backupPlaceKey),
+        others: (item.otherPlaceKeys || []).map(resolvePlace),
+      })),
+    }));
     const noBackupsToday = !showAllBackups && dayBackups.length === 0;
 
     const packCats = trip.packing.map((cat) => {
@@ -200,7 +215,7 @@ export class ApprovedTrip extends ReactComponent<Record<string, never>, State> {
       visibleBackupGroups, hasVisibleBackups: visibleBackupGroups.length > 0, noBackupsToday,
       toolsFixed: trip.tools.fixed.map((f) => ({ ...f, statusLabel: f.booked ? '已訂' : '未購買', statusColor: f.booked ? '#1F6B3A' : '#8F4718' })),
       toolsTransit: trip.tools.transit.map((t) => ({ ...t, pendingLabel: t.pending ? '待訂' : '' })),
-      toolsTodo: trip.tools.todo, toolsAddress: trip.tools.address,
+      toolsTodo: trip.tools.todo, toolsAddress: trip.tools.address.map(a => ({label: trip.places[a.placeKey]!.label, url: naverUrl(trip.places[a.placeKey]!.query)})),
       lodging: trip.lodging, showDriverCard, toggleDriverCard: this.toggleDriverCard,
       prepOpen, prepChevronDeg: prepOpen ? '180deg' : '0deg', togglePrep: this.togglePrep,
       reduceMotionChecked: reduceMotion, toggleReduceMotion: this.toggleReduceMotion,
