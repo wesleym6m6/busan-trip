@@ -5,6 +5,8 @@
 `main.tsx` → `App.tsx` → `approved/ApprovedTrip.tsx` → `approved/view.tsx`。
 React 19 + TypeScript + Vite；純靜態網站。`ApprovedTrip` 保存原匯出的互動邏輯，view 對應原模板，`approved.css` 保存動畫與 active 樣式。
 
+2026-09-20 使用者另行要求改善新增內容後的排版。`ContentCards.tsx` / `content-cards.css` 負責行程卡與餐廳備案的分段、字級及間距；日期、四分頁、工具、打包與海岸頁首仍由原模組負責。這次授權及驗證見 [LAYOUT_UPDATE_20260920.md](LAYOUT_UPDATE_20260920.md)。
+
 ## 2. 設計和資源
 
 原件位於 `design/approved-2026-09-15/`，manifest 記錄來源檔與 `public/uploads/` 五張 PNG 的 SHA-256。原件只留一份；PNG 以原始位元保留。`approved/assets.ts` 依 Vite BASE_URL 解決 project Pages 子路徑。
@@ -23,16 +25,24 @@ React 19 + TypeScript + Vite；純靜態網站。`ApprovedTrip` 保存原匯出�
 
 - `trip`: 名稱、顯示日期字串。
 - `days`: id、日期、顯示文字、可選主題圖、依順序呈現的 items。
-- `items`: event/transit、time 顯示字串、title、可選 steps/note/placeKey/status。
-- `backupGroups`: 所屬 dayId、標題與主/備選餐廳搜尋連結。
-- `tools`: fixed 航班票券、transit 交通、todo 待辦、address 地點快查。
+- `items`: event/transit、time 顯示字串、title、可選 steps/note/placeKey/status。`steps` 是收合時也能讀到的當天行動或重要限制，`note` 是展開後的當次安排。
+- `items.visitMinutes?`: `{ min, max }` 正整數分鐘區間，僅供 event。這是停留預算，不是營業時間、預約、交通或保證候位時間；max 不得小於 min。沒有合理預算的項目可省略。
+- `backupGroups`: 所屬 dayId、標題，以及各組的 `mainPlaceKey`、`backupPlaceKey`、可選 `otherPlaceKeys` 和選擇說明 `note`。引用共用地點，不另存店名、介紹或地圖 URL。
+- `tools`: fixed 航班票券、transit 交通、todo 待辦、address 地點快查。`address` 各項僅存 `placeKey`，名稱與地圖從共用地點衍生。
 - `packing`: 類別與穩定 item id；ID 用於本機勾選保存。
 - `lodging`: 原件中的區域、附近地標韓文地址及待確認說明，沒有新增精確住宿門牌。
-- `places` / `statusMeta`: 地圖 query 和狀態文案/色彩。
+- `places`: `label`、Naver 搜尋詞 `query`，可選的 `description`（自然、具體的一句介紹）與 `details`（菜色、入口、已查證規則等）。行程展開區與備案共用；只在這趟成立的時間、分桌與取捨放回 item，不寫入場所事實。
+- `statusMeta`: 狀態文案/色彩。
 
-空 note 代表沒有額外詳情，不製造空白展開。空 steps 不製造佔位文字。此資料是使用者定案內容，並不表示本輪重新向第三方核實了航班/營業時間/預約。
+展開內容將場所 description、details、當次 note 依序分段呈現，不先拼接成一個字串；三者皆空才不顯示展開控制。備案的 description 直接可見，details 由每間餐廳獨立展開；這項暫時狀態不持久化。空 steps 不製造佔位文字。`splitTime` 保留時刻或時段後的限制詞，像「11:00 前」「15:50 台灣時間」，不把字尾丟掉。
+
+資料驗證涵蓋日程、備案的主／備／其他選項與工具地址的引用，及停留時間正整數與前後順序。連結一律由 query 經 encodeURIComponent 組成 Naver search URL，不製造未查證的 place ID。
+
+來源優先順序：使用者最新行程表決定安排、預約與候選；店家／營運方資料補充場所事實；編輯推算只作停留預算或條件提醒。查證日、來源與未解衝突維護在 [CONTENT_SOURCES_20260920.md](CONTENT_SOURCES_20260920.md)。資料寫入不代表航班或所有日期敏感資訊已獲第三方保證。
 
 2026-09-16 內容依使用者新版行程表及明確回覆更新，詳見 [CONTENT_UPDATE_20260916.md](CONTENT_UPDATE_20260916.md)。資料形狀與 UI 未變；packing 的既有 id 保留。Google 原表與私人票券資訊不進 repo；公開資料只含必要航班時間、人數與地圖搜尋詞。工具頁 fixed 的 booked=false 會顯示「未購買」，不能拿來表示訂購狀態未知；未知的展覽門票放 todo 確認。
+
+2026-09-20 採用上述共用場所與停留預算契約，整份靜態資料同步遷移，沒有外部 API 消費者或需遷移的持久化行程資料。既有四個 localStorage 鍵與 packing ID 不變。當次來源同步及驗證見 [CONTENT_UPDATE_20260920.md](CONTENT_UPDATE_20260920.md)。
 
 ## 5. 歷史模組與部署
 
