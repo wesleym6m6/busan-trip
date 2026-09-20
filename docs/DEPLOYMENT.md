@@ -1,6 +1,18 @@
 # 發布紀錄
 
-## 2026-09-16 最新：保持畫質的載入改善
+## 2026-09-20 最新：行程內容與卡片排版
+
+使用者確認新版內容與排版後，明確要求發布供家人查看。正式網址：https://wesleym6m6.github.io/busan-trip/ 。
+
+部署來源：`18630283140d2d387499fbb0054bd740c3d486ee`。[GitHub Actions](https://github.com/wesleym6m6/busan-trip/actions/runs/35484777915) 已完成，build / deploy 均 success；typecheck、lint、50 tests、資料驗證與 Pages build 通過。經公開 fetch 比對，GitHub 完整檔案樹 `b0dd931c0fe1de4c7499dac040d1c01ccc134bb5` 與本機通過檢查的版本完全一致。
+
+公開站 HTML、`assets/index-BRHalZz0.js`、`assets/index-B0Jys5dx.css`、五張 lossless WebP 與海鷗 PNG 共九個檔案均 HTTP 200，位元與本機正式 build 完全一致。手機寬度 360 / 390px 逐日檢查五天、40 張行程卡與 38 個可展開內容，無空白詳情或水平溢出；已載入圖片正常。備案「查看全部」的 11 間餐廳可各自展開，11 個 Naver 地圖搜尋連結存在；四分頁、韓元換算與打包勾選／還原正常。頁首可見時 `layered-surf` 為 `playing=true`；瀏覽器 console error / warn 為空。
+
+本輪為公開網站的瀏覽器手機尺寸驗證，未重新宣稱已完成真實 iPhone Safari 或完整動畫逐幀驗收。內容與排版細節見 [CONTENT_UPDATE_20260920.md](CONTENT_UPDATE_20260920.md)、[LAYOUT_UPDATE_20260920.md](LAYOUT_UPDATE_20260920.md)。李禹煥空間仍依原表保留，開館狀態待確認。
+
+CLI 與整合工具寫入認證不可用，改由既有 GitHub 登入頁面的檔案編輯器提交，再 fetch 比對整棵檔案樹；未修改瀏覽器擴充功能權限或手動部署設定。本機原始內容／排版提交 `1f062a6`、`28a8cf6` 及遠端發布前基準 `f243a2b` 均保留於 Git 歷史。這份發布紀錄在驗收後補入，不改變上述已部署的網站產物。
+
+## 2026-09-16 保持畫質的載入改善（歷史紀錄）
 
 正式網址：https://wesleym6m6.github.io/busan-trip/
 
