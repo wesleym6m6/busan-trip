@@ -21,4 +21,19 @@ describe('approved trip data contract', () => {
     expect(validateApprovedTripData({...data, days: []}).ok).toBe(false);
     expect(validateApprovedTripData({...data, lodging: {...data.lodging, mapUrl:'javascript:alert(1)'}}).ok).toBe(false);
   });
+  it('rejects missing places in backup choices and quick addresses', () => {
+    const broken = structuredClone(data);
+    Object.assign(broken.backupGroups[0]!.items[0]!, {mainPlaceKey: 'missing'});
+    expect(validateApprovedTripData(broken).ok).toBe(false);
+    const address = structuredClone(data);
+    Object.assign(address.tools.address[0]!, {placeKey: 'missing'});
+    expect(validateApprovedTripData(address).ok).toBe(false);
+  });
+  it('rejects reversed or non-positive visit budgets without requiring one for every event', () => {
+    for (const visitMinutes of [{min: 0, max: 30}, {min: 90, max: 30}, {min: 1.5, max: 30}]) {
+      const broken = structuredClone(data);
+      Object.assign(broken.days[0]!.items[0]!, {visitMinutes});
+      expect(validateApprovedTripData(broken).ok).toBe(false);
+    }
+  });
 });
