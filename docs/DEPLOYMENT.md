@@ -1,6 +1,16 @@
 # 發布紀錄
 
-## 2026-09-20 最新：行程內容與卡片排版
+## 2026-09-20 最新：個人打包分類與項目
+
+網址維持 https://wesleym6m6.github.io/busan-trip/ 。手動部署 [Run 35487351453](https://github.com/wesleym6m6/busan-trip/actions/runs/35487351453) 結果為 completed / success，部署來源 `42a192565d5cdcac879b191bb331f4fba6da165b`。發布前已 fetch origin，比對遠端完整來源樹與本機驗證版本一致，tree SHA 為 `51e8f8a930848569dab624a93c3b7518c35d394d`。
+
+正式 `assets/index-C94WQP2l.js`、`assets/index-CoQ8DEKr.css`、HTML、五張 lossless WebP 及海鷗 PNG 共九個檔案均 HTTP 200，與本機正式建置位元完全一致。型別、lint、62 項測試、正式與歷史資料驗證及 build 通過。完整功能和儲存契約見 [PACKING_20260920.md](PACKING_20260920.md)。
+
+公開網站在 360 / 390px 寬度實際操作：舊版勾選升級後保留，新增分類、連續加入兩項、改名、移除與復原、重整後內容與勾選保存正常。五個日期與四個分頁可操作，無水平溢出，console error / warn 為空。本機另驗證雙分頁同步與編輯草稿保留。此次自行建立的測試分類、項目及勾選已從公開站測試瀏覽器還原。
+
+個人清單只存在目前瀏覽器，沒有跨裝置同步或雲端備份。此次為瀏覽器手機尺寸檢查，真實 iPhone Safari 鍵盤與螢幕閱讀器仍未驗證。此部署後的文件紀錄提交不改變部署產物。
+
+## 2026-09-20：行程內容與卡片排版
 
 使用者確認新版內容與排版後，明確要求發布供家人查看。正式網址：https://wesleym6m6.github.io/busan-trip/ 。
 
