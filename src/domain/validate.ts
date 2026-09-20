@@ -280,17 +280,25 @@ export function validateApprovedTripData(input: unknown) {
     if (day.image && !/^uploads\/[a-z0-9-]+\.png$/.test(day.image)) issues.push(`Invalid image path: ${day.image}`);
     for (const item of day.items) {
       if (item.placeKey && !data.places[item.placeKey]) issues.push(`Unknown place: ${item.placeKey}`);
+      if (item.visitMinutes && (item.kind !== 'event' || item.visitMinutes.max < item.visitMinutes.min)) {
+        issues.push(`Invalid visit budget: ${day.id}/${item.title}`);
+      }
     }
   }
   for (const group of data.backupGroups) {
     if (!dayIds.has(group.dayId)) issues.push(`Unknown backup day: ${group.dayId}`);
+    for (const item of group.items) for (const key of [item.mainPlaceKey, item.backupPlaceKey, ...(item.otherPlaceKeys || [])]) {
+      if (!data.places[key]) issues.push(`Unknown backup place: ${key}`);
+    }
+  }
+  for (const address of data.tools.address) {
+    if (!data.places[address.placeKey]) issues.push(`Unknown address place: ${address.placeKey}`);
   }
   for (const category of data.packing) for (const item of category.items) {
     if (packIds.has(item.id)) issues.push(`Duplicate packing id: ${item.id}`);
     packIds.add(item.id);
   }
-  const urls = [data.lodging.mapUrl, ...data.tools.address.map((a) => a.url),
-    ...data.backupGroups.flatMap((g) => g.items.flatMap((i) => [i.mainMapUrl, i.altMapUrl]))];
+  const urls = [data.lodging.mapUrl];
   for (const url of urls) if (!url.startsWith('https://map.naver.com/p/search/')) issues.push(`Unexpected map URL: ${url}`);
   return issues.length ? { ok: false as const, issues } : { ok: true as const, issues, data };
 }
