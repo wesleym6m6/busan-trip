@@ -28,3 +28,7 @@
 原始 baseline、動畫逐幀高度、結果 JSON 與截圖：工作區 `outputs/busan-card-motion-20260922/`（repo 外）。
 
 重跑：先啟動 `/busan-trip/` preview；以 `QA_BASE_URL` 指定 URL、`QA_OUTPUT_DIR` 指定證據目錄。修改前用 `MODE=baseline node scripts/qa/card-motion.mjs` 記錄基準；修改後執行 `node scripts/qa/card-motion.mjs`。預設為 4180 與 `/tmp/busan-card-motion`。不要拿修改後的新基準宣稱與修改前一致。
+
+## 後續發布
+
+使用者要求直接上線後，已由 Run `35627597788` 发布來源 `7ddca7b`，正式網站另完成同一套瀏覽器驗證與 37 檔案位元核對。以上「本機預覽／未發布」描述為實作完成當時的狀態，最新發布證據見 [DEPLOYMENT.md](DEPLOYMENT.md)。

@@ -1,6 +1,16 @@
 # 發布紀錄
 
-## 2026-09-21 最新：卡片水彩插圖與緊湊排版
+## 2026-09-22 最新：行程卡片互動
+
+使用者明確要求「直接上線」。[Run 35627597788](https://github.com/wesleym6m6/busan-trip/actions/runs/35627597788) 已 completed / success，build、deploy 均通過。部署來源 `7ddca7bf827c34f6974fff28966a13e28e2bd011`，tree `0e42843d6b0fedc9978b0e8002d4f08997a9d202`。發布前 fast-forward push 後重新 fetch，遠端 main 與本機來源完全一致；手動 workflow 設定保持不變。
+
+正式 HTML、favicon、`assets/index-DPxl-rT-.js`、`assets/index-C_ZUicuR.css`、32 張 lossless WebP 與海鷗 PNG 共 37 個檔案均 HTTP 200，SHA-256 與本機正式建置完全一致。CI 的型別、lint、測試、資料驗證與 build 通過。
+
+在正式 HTTPS 網站重跑 `scripts/qa/card-motion.mjs`：五天 × 320／360／390／1024px，共 156 次收合卡片幾何完全符合修改前基準；無橫向溢出。展開有中間高度且標題位置穩定，快速反向收合、inert／aria-hidden、Enter／Space 焦點、系統與站內減少動態皆通過。360／390px 的 74 次展開檢查無內容裁切、收回高度恢復。插圖首次可見有動畫，滑回及切日返回不重播，卡片高度不變；四分頁可操作，runtime errors 為空。App 內正式分頁亦已重新載入並實際展開卡片確認內容。
+
+證據：工作區 `outputs/busan-publish-20260922/` 的 workflow-run、live-byte-verification、verification JSON 與手機尺寸截圖。實作詳見 [CARD_MOTION_20260922.md](CARD_MOTION_20260922.md)。未宣稱完成真實 iPhone Safari、螢幕閱讀器或低階手機幀率驗收。後續這份文件提交不會重新部署網站。
+
+## 2026-09-21：卡片水彩插圖與緊湊排版
 
 使用者確認放大圖片後的版本，明確要求上線。正式網址維持 https://wesleym6m6.github.io/busan-trip/ 。[Run 35616292499](https://github.com/wesleym6m6/busan-trip/actions/runs/35616292499) 為 completed / success，build、deploy 均通過。部署來源 `89bfa102be25a7d53c7eb4ca0387e0e63f10ab9f`，來源 tree `f39afc815cd430acb21e142598a6253c9223e6fa`；push 後已重新 fetch，比對遠端 main 與本機來源完全一致。
 
