@@ -58,3 +58,7 @@ GitHub Pages 維持 workflow_dispatch 手動部署；已依後續使用者要求
 ## 6. 2026-09-16 頁首
 
 view.tsx → CoastalHeader（獨立海鷗陣列、素材載入、可見性）→ SeaCanvas / seaRenderer / surfMotion（固定前景、生成海面底圖與原圖碎浪的 WebGL 分層合成）。ApprovedTrip 僅傳入切日序號與減少動態偏好；不再使用單一 showGull 或共用結束計時器。詳見 HEADER_MOTION.md。
+
+## 7. 2026-09-22 卡片動態
+
+依使用者新增授權，`CardMotion.tsx` 的 provider 包住原 view，保存 session 內已看過的卡片插圖並監聽系統減少動態偏好；不寫入 localStorage 或行程 JSON。`CardIllustration` 以 item key 作為一次性浮現識別，載入成功且可見才播放，卸載時清理。`ContentCards` 的詳情改為常駐 grid disclosure，CSS 處理展開／收合與即時反向；關閉時 inert／aria-hidden，內層 clip 保證 0px 收合高度。資料契約不變，詳見 [CARD_MOTION_20260922.md](CARD_MOTION_20260922.md)。

@@ -19,8 +19,16 @@
   color: inherit;
   font: inherit;
 }
-button.trip-card-heading { cursor: pointer; }
-button.trip-card-heading:active { background: #F7FBFC; }
+button.trip-card-heading {
+  cursor: pointer;
+  transition: background-color 120ms ease-out, box-shadow 120ms ease-out;
+  -webkit-tap-highlight-color: transparent;
+}
+button.trip-card-heading:active {
+  background: #F0F7F9;
+  box-shadow: inset 0 0 0 1px #DCEEF2;
+  transition-duration: 60ms;
+}
 .trip-card-meta { display: flex; flex-wrap: wrap; align-items: center; gap: 8px; min-height: 22px; }
 .trip-card-time { font: 700 16px/1.4 'Manrope', sans-serif; font-variant-numeric: tabular-nums; }
 .trip-card-time-end { margin-left: 3px; font-weight: 500; }
@@ -31,6 +39,7 @@ button.trip-card-heading:active { background: #F7FBFC; }
 .trip-card-meta > .content-chevron { margin-left: auto; }
 .content-chevron { flex: none; color: #5B7280; transition: transform 180ms ease; }
 .content-chevron[data-expanded="true"] { transform: rotate(180deg); }
+.trip-card .content-chevron { transition: transform 260ms cubic-bezier(.2,.7,.2,1); }
 .trip-card-body { display: block; margin-top: 7px; }
 .trip-card-title { display: block; font-size: 19px; font-weight: 600; line-height: 1.45; letter-spacing: .01em; text-wrap: pretty; }
 .trip-card-summary { display: block; margin-top: 7px; }
@@ -68,7 +77,23 @@ button.trip-card-heading:active { background: #F7FBFC; }
 .content-map { display: inline-flex; justify-content: center; align-items: center; gap: 5px; min-height: 44px; padding: 8px 10px; border-radius: 10px; background: #F0F7F9; text-decoration: none; color: #246B8E; font-size: 13px; font-weight: 700; white-space: nowrap; }
 .trip-card-actions > .content-map, .backup-place-actions > .content-map { margin-left: auto; }
 .content-map:hover { background: #DCEEF2; }
-.trip-card-detail { border-top: 1px solid #E6EEF1; padding: 18px 16px; animation: fx-fade 180ms ease; }
+/* Keeping the panel mounted lets native transitions reverse immediately.
+   Padding/border live inside the clipped child, so a closed panel is truly 0px. */
+.trip-card-disclosure {
+  display: grid;
+  grid-template-rows: 0fr;
+  opacity: 0;
+  visibility: hidden;
+  transition: grid-template-rows 260ms cubic-bezier(.2,.7,.2,1), opacity 180ms ease-out, visibility 0s 260ms;
+}
+.trip-card-disclosure[data-expanded="true"] {
+  grid-template-rows: 1fr;
+  opacity: 1;
+  visibility: visible;
+  transition-delay: 0s;
+}
+.trip-card-disclosure-clip { min-height: 0; overflow: hidden; }
+.trip-card-detail { border-top: 1px solid #E6EEF1; padding: 18px 16px; }
 .content-description { font-size: 15px; line-height: 1.8; color: #3E5A69; margin: 0; }
 .content-label { color: #5B7280; font-size: 12px; line-height: 1.5; font-weight: 700; margin: 0 0 8px; }
 .content-practical { margin-top: 18px; }
@@ -96,8 +121,10 @@ button.trip-card-heading:active { background: #F7FBFC; }
 .backup-decision { margin: 0; padding: 14px 16px; background: #F0F7F9; border-top: 1px solid #E6EEF1; border-radius: 0 0 16px 16px; color: #3E5A69; font-size: 13px; line-height: 1.8; }
 .trip-card button:focus-visible, .backup-card button:focus-visible, .content-map:focus-visible { outline: 2px solid #246B8E; outline-offset: 3px; }
 [data-reduce-motion="true"] .trip-card-detail, [data-reduce-motion="true"] .backup-place-details { animation: none; }
-[data-reduce-motion="true"] .content-chevron { transition: none; }
+[data-reduce-motion="true"] .content-chevron,
+[data-reduce-motion="true"] .trip-card-disclosure,
+[data-reduce-motion="true"] button.trip-card-heading { transition: none; }
 @media (prefers-reduced-motion: reduce) {
   .trip-card-detail, .backup-place-details { animation: none; }
-  .content-chevron { transition: none; }
+  .content-chevron, .trip-card .content-chevron, .trip-card-disclosure, button.trip-card-heading { transition: none; }
 }

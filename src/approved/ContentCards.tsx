@@ -26,7 +26,7 @@ export function ItineraryCard({ item: it }: { item: Item }) {
   if (it.isTransit) return <li className="trip-transit"><span>{it.time}</span><span>{it.title}</span></li>;
 
   const heading = <>
-    {it.hasSteps && it.illustrationKey && <CardIllustration key={it.illustrationKey} name={it.illustrationKey} />}
+    {it.hasSteps && it.illustrationKey && <CardIllustration key={it.illustrationKey} name={it.illustrationKey} id={it.key} />}
     <span className="trip-card-meta">
       <span className={it.isClockTime ? 'trip-card-time' : 'trip-card-relative'}>
         {it.isClockTime ? <>{it.timeStart}{it.timeEnd && <span className="trip-card-time-end">–{it.timeEnd}</span>}{it.timeQualifier && <span data-time-qualifier className="trip-card-qualifier">{it.timeQualifier}</span>}</> : it.time}
@@ -46,7 +46,8 @@ export function ItineraryCard({ item: it }: { item: Item }) {
       {it.visitLabel && <span className="trip-card-budget">{it.visitLabel}</span>}
       {it.showMap && <MapLink url={it.mapUrl} label={it.title} />}
     </div>}
-    {it.expanded && <div id={it.detailId} className="trip-card-detail">
+    {it.hasDetails && <div id={it.detailId} className="trip-card-disclosure" data-expanded={it.expanded} aria-hidden={!it.expanded} inert={!it.expanded}>
+    <div className="trip-card-disclosure-clip"><div className="trip-card-detail">
       {it.description && <p className="content-description">{it.description}</p>}
       {!!it.placeDetails.length && <section className="content-practical" aria-label="現場資訊">
         <h3 className="content-label">現場資訊</h3>
@@ -56,7 +57,7 @@ export function ItineraryCard({ item: it }: { item: Item }) {
         <h3 className="content-label">這次安排</h3>
         {it.note.split('\n').filter(line => line.trim()).map((line, i) => <p key={i}>{line}</p>)}
       </section>}
-    </div>}
+    </div></div></div>}
   </li>;
 }
 

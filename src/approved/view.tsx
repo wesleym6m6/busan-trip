@@ -1,13 +1,14 @@
 import { CoastalHeader } from './CoastalHeader';
 import { PackingList } from './PackingList';
 import { BackupCard, ItineraryCard } from './ContentCards';
+import { CardMotionProvider } from './CardMotion';
 import { Fragment, type CSSProperties, type ReactNode } from 'react';
 import type { ApprovedTrip } from './ApprovedTrip';
 import { assetUrl } from './assets';
 
 /** Approved ocean shell with the user-requested content layout refinement (2026-09-20). */
 export function renderApprovedView(v: ReturnType<ApprovedTrip['renderVals']>): ReactNode {
- return <>
+ return <CardMotionProvider reduced={v.reduceMotion === 'true'}>
 <div data-reduce-motion={v.reduceMotion} style={({"fontFamily": "'Noto Sans TC','Manrope',-apple-system,BlinkMacSystemFont,'PingFang TC','Apple SD Gothic Neo','Noto Sans KR','Segoe UI',Roboto,sans-serif", "color": "#183848", "background": "#F7FBFC", "minHeight": "100dvh", "position": "relative"} as CSSProperties)}>
 <header style={({"paddingTop": "env(safe-area-inset-top)"} as CSSProperties)}>
 <CoastalHeader launchId={v.gullLaunch} reduced={v.reduceMotion === 'true'} />
@@ -198,5 +199,5 @@ export function renderApprovedView(v: ReturnType<ApprovedTrip['renderVals']>): R
 </div>
 </nav>
 </div>
-</>;
+</CardMotionProvider>;
 }
