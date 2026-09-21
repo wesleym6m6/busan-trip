@@ -1,6 +1,18 @@
 # 發布紀錄
 
-## 2026-09-20 最新：個人打包分類與項目
+## 2026-09-21 最新：卡片水彩插圖與緊湊排版
+
+使用者確認放大圖片後的版本，明確要求上線。正式網址維持 https://wesleym6m6.github.io/busan-trip/ 。[Run 35616292499](https://github.com/wesleym6m6/busan-trip/actions/runs/35616292499) 為 completed / success，build、deploy 均通過。部署來源 `89bfa102be25a7d53c7eb4ca0387e0e63f10ab9f`，來源 tree `f39afc815cd430acb21e142598a6253c9223e6fa`；push 後已重新 fetch，比對遠端 main 與本機來源完全一致。
+
+正式 HTML、favicon、`assets/index-BwjhgvNj.js`、`assets/index-CtxdeuA8.css`、32 張 lossless WebP 與海鷗 PNG 共 37 個檔案，全部 HTTP 200，SHA-256 與本機正式建置相同。CLI 認證本次可用，透過正常 fast-forward push 與既有手動 workflow 發布，未變更部署設定。本機與 CI 的型別、lint、65 項測試、資料驗證及 build 均通過。
+
+五天共有 39 張活動卡片，圖片與時間、標題、摘要共用高度，地圖及展開內容保留完整寬度；風景圖柔化真正的圖像邊緣。哥哥續程及相關說明、來回航班人數已在行程與工具頁移除。尺寸、逐卡高度比較及內容範圍見 [CARD_DENSITY_20260921.md](CARD_DENSITY_20260921.md)。
+
+正式站在實際 601px 視窗檢查五天／四分頁、每日卡片開合、日期重載保存、地圖與圖片：39 張卡片圖片均載入成功（10/5 最後兩張在捲動後完成延遲載入），沒有破圖、圖文行框交疊、水平溢出或 console error。公開 renderer 為 layered-surf；本次正式站於背景分頁驗收，沒有重新宣稱前景動畫逐幀驗證。發布前本機同版已檢查 320／360／390／640px 共 156 次卡片幾何及 360／390px 四分頁，來源與公開產物位元比對完整通過。未做真實手機 Safari、螢幕閱讀器或慢速網路實測。
+
+本輪證據位於工作區 `outputs/busan-publish-20260921/`，包含 workflow、公開檔案雜湊比對、瀏覽器操作紀錄與正式畫面。此發布紀錄的後續文件提交不會重新部署網站。
+
+## 2026-09-20：個人打包分類與項目
 
 網址維持 https://wesleym6m6.github.io/busan-trip/ 。手動部署 [Run 35487351453](https://github.com/wesleym6m6/busan-trip/actions/runs/35487351453) 結果為 completed / success，部署來源 `42a192565d5cdcac879b191bb331f4fba6da165b`。發布前已 fetch origin，比對遠端完整來源樹與本機驗證版本一致，tree SHA 為 `51e8f8a930848569dab624a93c3b7518c35d394d`。
 
