@@ -21,3 +21,5 @@
 打包功能已發布：部署來源 `42a192565d5cdcac879b191bb331f4fba6da165b`、Run `35487351453` 成功，正式 JS `index-C94WQP2l.js`。62 項測試、遠端來源樹、公開產物位元與手機尺寸操作檢查通過；舊勾選升級與新內容重載保存已在正式站驗證。後續文件提交不代表重新部署。
 
 2026-09-21 使用者已確認 `busan-card-art-20260921` 的逐卡插圖修訂，要求整合進正式卡片並優先維持閱讀。新增 `items.illustrationKey` 與 `src/data/card-illustrations.json`；40 張活動卡片各有配圖、9 筆交通提示不配圖。標題保留完整寬度，右側小圖只環繞摘要文字；詳情及地圖不縮窄。新增 `CardIllustration`，來源及無損副本紀錄在 `design/card-illustrations-2026-09-21/manifest.json`。整合與驗證見 [CARD_ILLUSTRATIONS_20260921.md](CARD_ILLUSTRATIONS_20260921.md)。本次尚未發布，是否已上線仍以 DEPLOYMENT.md 為準。
+
+2026-09-21 後續回饋修正：圖片與時間、標題、摘要共用整個 heading 的高度，不能重新包進有獨立留高的摘要區。圖片在 360／390px 分別為 72／80px，較寬卡片 88px；保留大圖可讀性，風景圖改以 cover 填滿真正的遮罩範圍。使用者明確要求移除哥哥續程，不留替代說明，來回航班不標人數；行程及工具頁均已同步，現為 39 張活動卡與 9 筆交通提示。最新驗證見 [CARD_DENSITY_20260921.md](CARD_DENSITY_20260921.md)，仍未發布。

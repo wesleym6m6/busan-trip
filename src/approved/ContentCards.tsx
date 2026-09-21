@@ -26,6 +26,7 @@ export function ItineraryCard({ item: it }: { item: Item }) {
   if (it.isTransit) return <li className="trip-transit"><span>{it.time}</span><span>{it.title}</span></li>;
 
   const heading = <>
+    {it.hasSteps && it.illustrationKey && <CardIllustration key={it.illustrationKey} name={it.illustrationKey} />}
     <span className="trip-card-meta">
       <span className={it.isClockTime ? 'trip-card-time' : 'trip-card-relative'}>
         {it.isClockTime ? <>{it.timeStart}{it.timeEnd && <span className="trip-card-time-end">–{it.timeEnd}</span>}{it.timeQualifier && <span data-time-qualifier className="trip-card-qualifier">{it.timeQualifier}</span>}</> : it.time}
@@ -33,11 +34,10 @@ export function ItineraryCard({ item: it }: { item: Item }) {
       {it.tagLabel && <span className="trip-card-status" style={{color: it.tagColor}}><span aria-hidden="true">●</span>{it.tagLabel}</span>}
       {it.hasDetails && <Chevron expanded={it.expanded} />}
     </span>
-    <span className="trip-card-title">{it.title}</span>
-    {(it.hasSteps || it.illustrationKey) && <span className="trip-card-summary">
-      {it.illustrationKey && <CardIllustration key={it.illustrationKey} name={it.illustrationKey} />}
-      {it.hasSteps && <span className="trip-card-steps">{it.stepList.map((step, i) => <span key={i}>{step}</span>)}</span>}
-    </span>}
+    <span className="trip-card-body">
+      <span className="trip-card-title">{it.title}</span>
+      {it.hasSteps && <span className="trip-card-summary"><span className="trip-card-steps">{it.stepList.map((step, i) => <span key={i}>{step}</span>)}</span></span>}
+    </span>
   </>;
 
   return <li className="trip-card" style={{'--card-border': it.borderColor} as CSSProperties}>

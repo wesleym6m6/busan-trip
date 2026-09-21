@@ -41,7 +41,7 @@ React 19 + TypeScript + Vite；純靜態網站。`ApprovedTrip` 保存原匯出�
 
 資料驗證涵蓋日程、備案的主／備／其他選項與工具地址的引用，及停留時間正整數與前後順序。連結一律由 query 經 encodeURIComponent 組成 Naver search URL，不製造未查證的 place ID。
 
-2026-09-21 使用者確認逐卡重繪圖後，要求正式整合進卡片。`CardIllustration` 由 catalog 與 `assetUrl` 取圖，圖片為 `alt=""`／`aria-hidden` 的非必要裝飾；載入失敗直接移除，文字恢復完整空間。`ContentCards` 保留標題、時間、狀態、地圖與詳情完整寬度，只讓摘要文字在右側小圖旁自然環繞，長文接續至圖下。原圖保留於 `design/card-illustrations-2026-09-21/`（既有三張圖沿用原有來源），公開副本維持原解析度與無損 RGBA；新增圖片 lazy load，不加入裝飾動畫。
+2026-09-21 使用者確認逐卡重繪圖後，要求正式整合進卡片。`CardIllustration` 由 catalog 與 `assetUrl` 取圖，圖片為 `alt=""`／`aria-hidden` 的非必要裝飾；載入失敗直接移除，文字恢復完整空間。依後續回饋，插圖浮動於整個 heading 的右側，與時間、標題及摘要共用高度，文字越過圖片底緣即恢復完整寬度；不再於摘要中建立獨立圖片高度。詳情、地圖與停留預算仍使用完整卡片寬度。僅有標題而無摘要的項目不為配圖額外留高。原圖保留於 `design/card-illustrations-2026-09-21/`（既有三張圖沿用原有來源），公開副本維持原解析度與無損 RGBA；新增圖片 lazy load，不加入裝飾動畫。版面與內容移除範圍見 [CARD_DENSITY_20260921.md](CARD_DENSITY_20260921.md)。
 
 來源優先順序：使用者最新行程表決定安排、預約與候選；店家／營運方資料補充場所事實；編輯推算只作停留預算或條件提醒。查證日、來源與未解衝突維護在 [CONTENT_SOURCES_20260920.md](CONTENT_SOURCES_20260920.md)。資料寫入不代表航班或所有日期敏感資訊已獲第三方保證。
 

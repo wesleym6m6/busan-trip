@@ -52,6 +52,6 @@ describe('approved trip data contract', () => {
     moved.days[0]!.items.push(event);
     const result = validateApprovedTripData(moved);
     expect(result.ok).toBe(true);
-    if (result.ok) expect(result.data.days[0]!.items.at(-1)).toMatchObject({title: 'BX794 抵達（9 人）', illustrationKey: 'flight'});
+    if (result.ok) expect(result.data.days[0]!.items.at(-1)).toMatchObject({title: 'BX794 抵達', illustrationKey: 'flight'});
   });
 });

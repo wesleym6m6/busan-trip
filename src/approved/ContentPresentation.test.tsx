@@ -40,7 +40,7 @@ describe('行程資訊的呈現', () => {
   it('shows a visit budget as a plan, separately from instructions and clock time', () => {
     Object.assign(data.days[0]!.items[0]!, {visitMinutes: {min: 45, max: 60}});
     render(<ApprovedTrip />);
-    const card = screen.getByRole('button', {name: 'BX794 抵達（9 人）詳情'}).closest('li')!;
+    const card = screen.getByRole('button', {name: 'BX794 抵達詳情'}).closest('li')!;
     expect(within(card).getByText('預留 45–60 分')).toBeTruthy();
     expect(screen.getByText('17:05')).toBeTruthy();
   });

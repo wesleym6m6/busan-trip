@@ -17,7 +17,7 @@ describe('使用者定案版', () => {
       expect(screen.getByRole('button',{name:new RegExp(date)})).toBeTruthy();
     }
     expect(within(screen.getByRole('navigation')).getAllByRole('button')).toHaveLength(4);
-    const arrival = screen.getByRole('button',{name:'BX794 抵達（9 人）詳情'});
+    const arrival = screen.getByRole('button',{name:'BX794 抵達詳情'});
     expect(arrival.getAttribute('aria-expanded')).toBe('false');
     fireEvent.click(arrival);
     expect(arrival.getAttribute('aria-expanded')).toBe('true');
